@@ -1,0 +1,18 @@
+.search_img {
+    margin: 0 33%;
+}
+
+.info_search {
+    font-size: 14px;
+    line-height: 13px;
+    color: #003360;
+    text-align: center;
+}
+.search_border_bottom {
+    display: block;
+    height: 1px;
+    width: 60px;
+    color: black;
+    border-top: 1px solid #d3dff0;
+    margin: 0 10px;
+}
