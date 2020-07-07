@@ -1,11 +1,15 @@
 import React from "react";
 import BlockSearch from "../components/BlockSearch/BlockSearch";
+import BlockSearchInput from "../components/BlockSearch/BlockSearchInput/BlockSearchInput";
+import SearchTable from "../components/searchTable/searchTable";
 
 
 const Content = () => {
     return (
-        <div >
+        <div style={{display:"flex", paddingTop: "8vh"}} >
        <BlockSearch/>
+       <BlockSearchInput/>
+       <SearchTable/>
         </div>
 
     )

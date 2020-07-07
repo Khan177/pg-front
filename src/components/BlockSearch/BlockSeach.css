@@ -8,6 +8,7 @@
     color: #003360;
     text-align: center;
 }
+
 .search_border_bottom {
     display: block;
     height: 1px;
@@ -15,4 +16,10 @@
     color: black;
     border-top: 1px solid #d3dff0;
     margin: 0 10px;
+}
+
+.blockSearch {
+    border-bottom: 2px solid #d7e2f1;
+    width: 70px;
+    background: #f5f7fa;
 }
