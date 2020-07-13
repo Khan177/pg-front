@@ -1,0 +1,9 @@
+.search_counterparty_table {
+    display: flex;
+    border-radius: 4px;
+    justify-content: flex-end;
+    border: solid 1px #d3dff0;
+    background-color: #e7eef8;
+    padding: 7px 5px;
+    margin-right: 11px;
+}

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Col, Form, FormGroup, Input, Label} from "reactstrap";
+import { Form, FormGroup, Input} from "reactstrap";
 import "./BlockSearchInput.css"
 
 const BlockSearchInput = () => {
@@ -24,14 +24,11 @@ const BlockSearchInput = () => {
         }
         setisOpenBin(!isOpenBin);
     }
-    console.log(isOpen)
     let searchforSetting = (
         <div>
-            <FormGroup row className="form-group">
-                <Col sm={10}>
+            <FormGroup  className="form-group">
                     <Input type="select"
                            className=" form-control input_search_all input_search"
-                           style={{paddingLeft: "44px", width: "95%"}}
                            placeholder="Контрагент">
                         <option className="form-control input_search_all input_search">Контрагент</option>
                         <option>2</option>
@@ -39,49 +36,37 @@ const BlockSearchInput = () => {
                         <option>4</option>
                         <option>5</option>
                     </Input>
-                </Col>
             </FormGroup>
-            <FormGroup row>
-                <Col sm={10}>
+            <FormGroup >
                     <Input type="text"
-                           style={{paddingLeft: "44px"}}
                            className=" form-control input_search_all input_search"
                            placeholder="Бренд"/>
-                </Col>
             </FormGroup>
-            <FormGroup row>
-                <Col sm={10}>
+            <FormGroup >
                     <Input type="text" name="select" id="exampleSelect"
                            placeholder="Рекламодатель"
-                           style={{paddingLeft: "44px"}}
                            className=" form-control input_search_all  input_search"
                     />
-                </Col>
             </FormGroup>
-            <FormGroup row>
-                <Col sm={20}>
+            <FormGroup >
                     <Input type="text" name="selectMulti" id="exampleSelectMulti"
-                           style={{paddingLeft: "44px"}}
                            placeholder="Сектор деятельности "
                            className=" form-control input_search_all input_search"/>
 
-                </Col>
             </FormGroup>
-            <label>
+            <FormGroup>
                 <input type="text"
-                       style={{paddingLeft: "44px"}}
                        placeholder="Сектор деятельности "
                        className=" form-control input_search_all input_search"/>
-            </label>
+            </FormGroup>
         </div>
     )
     let dropDown=(
-        <label>
+        <FormGroup>
             <input type="text"
                    placeholder=" Введите БИН "
-                   style={{paddingLeft: "44px"}}
                    className="form-control input_search_all input_search  setting"/>
-        </label>
+        </FormGroup>
     )
     return (
         <div className="search">

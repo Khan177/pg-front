@@ -22,8 +22,7 @@
     color: #171717;
 }
 .arrowDownSecond{
-    height: 21px;
-    padding: 14px 6px 14px 54px;
+    padding: 0 6px 15px 54px;
     cursor: pointer;
 }
 
@@ -48,7 +47,6 @@
 }
 .input_search_all {
     font-size: 12px;
-    padding: 9px 0;
 }
 
 .search_bin {

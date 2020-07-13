@@ -43,8 +43,8 @@ const Header = () => {
                     <img className="img_profile_photo"
                          src={require("../../img/bx-anchor.svg")} alt=""/>
                     <span className="arrowDown"  style={{transform: valueArrow}}>
-                        <img src={require("../../img/icons8-развернуть-16.png")}
-                          alt=""/>
+                        {/*<img src={require("../../img/icons8-развернуть-16.png")}*/}
+                        {/*  alt=""/>*/}
                     </span>
                     {isOpen && infoUser}
         </span>

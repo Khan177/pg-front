@@ -1,15 +1,13 @@
-a{
+a {
     text-decoration: none;
 }
+
 .header {
     display: flex;
     justify-content: space-between;
     height: 80px;
     box-shadow: 0 1px 2px 0 #92b6e8, inset 0 -3px 0 0 #e7eef8;
-    position: fixed;
-    width: 100%;
     background: #fff;
-    z-index: 999;
 }
 
 
@@ -24,6 +22,7 @@ a{
     text-align: center;
     padding: 0 20px;
 }
+
 .menu_link:hover {
     color: #003360;
     border-bottom: 3px solid #003360;
@@ -32,7 +31,7 @@ a{
 }
 
 .menu_link:active,
-.active{
+.active {
     color: red;
     border-bottom: 3px solid red;
     text-decoration: none;
@@ -44,7 +43,8 @@ a{
 .profile {
     padding: 21px 15px 15px 15px;
 }
-.menu{
+
+.menu {
     padding-top: 25px;
 }
 
@@ -77,7 +77,7 @@ a{
     border: solid 2px red;
 }
 
-.arrowDown{
+.arrowDown {
     content: '';
     position: absolute;
     top: 29px;
@@ -88,21 +88,24 @@ a{
     height: 25px;
     background: url(../../img/icons8-развернуть-16.png) no-repeat;
 }
-.all_info_user{
+
+.all_info_user {
     position: absolute;
     background: #f5f7fa;
-    top: 8vh;
+    top: 13vh;
     border: 1px solid #d7e2f1;
     border-radius: 4px;
     padding: 10px 15px;
     right: 0;
 }
-.all_info_user_text{
+
+.all_info_user_text {
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 4px;
 }
-.all_info_user_text:hover{
+
+.all_info_user_text:hover {
     background: #2C5DE5;
     color: #ffffff;
 }

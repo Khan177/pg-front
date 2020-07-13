@@ -1,8 +1,31 @@
-import React from "react";
+import React, {useEffect} from "react";
 import "./InfoTable.css"
 import {Table} from "reactstrap";
+import {fetchTableInfo} from "../../store/action";
+import {connect} from "react-redux";
+import {NavLink} from "react-router-dom";
 
-const InfoTable = () => {
+const InfoTable = (props) => {
+    useEffect(() => {
+        props.takeAllInfoTable()
+    }, [ ])
+    let tableLink = Object.keys(props.tableInfo).map(infoTable => {
+        const info = props.tableInfo[infoTable];
+        return <tr className="table_record" key={infoTable}>
+            {/* eslint-disable-next-line jsx-a11y/scope */}
+            <td scope="row">{info.model}</td>
+            <td>{info.owner}</td>
+            <td>{info.family}</td>
+            <td>{info.nameSide}</td>
+            <td>{info.advertisingSide}</td>
+            <td className="button_pencil_style">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                <NavLink exact to={"/partnerEdit"}  className="button_pencil">
+                    <img src={require("../../img/bx-pencil.svg")} alt=""/>
+                </NavLink>
+            </td>
+        </tr>
+    })
     return (
         <div className="table" style={{border: "1px solid #dee2e6"}}>
 
@@ -10,202 +33,16 @@ const InfoTable = () => {
                 <Table className="table">
                     <thead>
                     <tr className="header_table">
-                        <th   className="link_table">Тип контрагента</th>
-                        <th  className="link_table">Контрагент</th>
-                        <th  className="link_table">Бренд</th>
-                        <th  className="link_table">Сектор деятельности</th>
-                        <th  className="link_table">Тип клиента</th>
-                        <th > </th>
+                        <th className="link_table">Тип контрагента</th>
+                        <th className="link_table">Контрагент</th>
+                        <th className="link_table">Бренд</th>
+                        <th className="link_table">Сектор деятельности</th>
+                        <th className="link_table">Тип клиента</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr className="table_record">
-                        <td scope="row">Рекламное агентство</td>
-                        <td>ТОО Юниверсал МакКэнн</td>
-                        <td>Coca-Cola, Fuse Tea, Fanta, Sprite</td>
-                        <td>Безалкогольные напитки</td>
-                        <td>По личным связям</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td scope="row">Рекламное агентство</td>
-                        <td>ТОО Optimum Market</td>
-                        <td>Базис, Danone</td>
-                        <td>Продукты питания, Другое</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td scope="row">Рекламное агентство</td>
-                        <td>Публисис Групп Медиа Казахстан</td>
-                        <td>KFC, Hardee's</td>
-                        <td>Медиа</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>АО Эйр Астана</td>
-                        <td>Air Astana</td>
-                        <td>Отдых / Путешествия / Транспорт</td>
-                        <td>ККК</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>АО Сбербанк ДБ</td>
-                        <td>Сбербанк</td>
-                        <td>Финансы</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>ТОО Жигалма</td>
-                        <td>Буратино</td>
-                        <td>Безалкогольные напитки</td>
-                        <td>По личным связям</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>АО АТФ Банк</td>
-                        <td>АТФ</td>
-                        <td>Финансы</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>АО Кселл</td>
-                        <td>Kcell, Activ</td>
-                        <td>Связь</td>
-                        <td>По личным связям</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламное агентство</td>
-                        <td>ТОО Media Birds</td>
-                        <td>БИПЭК Авто</td>
-                        <td>Автомобили</td>
-                        <td>ККК</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>ИП Smart School</td>
-                        <td>Smart School</td>
-                        <td>Другое</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>ТОО Aviata</td>
-                        <td>Aviata</td>
-                        <td>Отдых / Путешествия / Транспорт</td>
-                        <td>По личным связям</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламное агентство</td>
-                        <td>ТОО FIRST buying agency</td>
-                        <td>Air Astana, Burger King</td>
-                        <td>Ресторан, Отдых / Путешествия / Транспорт</td>
-                        <td>ККК</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>АО АТФ Банк</td>
-                        <td>АТФ</td>
-                        <td>Финансы</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>АО Кселл</td>
-                        <td>Kcell, Activ</td>
-                        <td>Связь</td>
-                        <td>По личным связям</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламное агентство</td>
-                        <td>ТОО Media Birds</td>
-                        <td>БИПЭК Авто</td>
-                        <td>Автомобили</td>
-                        <td>ККК</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>ИП Smart School</td>
-                        <td>Smart School</td>
-                        <td>Другое</td>
-                        <td>Корпоративный</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
-                    <tr className="table_record">
-                        <td>Рекламодатель</td>
-                        <td>ТОО Aviata</td>
-                        <td>Aviata</td>
-                        <td>Отдых / Путешествия / Транспорт</td>
-                        <td>По личным связям</td>
-                        <td className="button_pencil_style"><a href="#"
-                                                               className="button_pencil">
-                            <img src={require("../../img/bx-pencil.svg")} alt=""/></a>
-                        </td>
-                    </tr>
+                    {tableLink}
                     </tbody>
                 </Table>
                 <div className="footer_table_records">
@@ -213,25 +50,17 @@ const InfoTable = () => {
                         <p className="show_text">Показано 10 из 205</p>
                     </div>
                     <div className="pages">
-                        <a href="#" className="pages_link"> Назад</a>
-                        <a href="#" className="pages_link"
-                           style={{
-                               color: "#656565",
-                               paddingTop: "4px",
-                               fontSize: "12px"
-                           }}>1</a>
-                        <a href="#" className="pages_link"
-                           style={{color: "#656565", paddingTop: "4px", fontSize: "12px"}}>2</a>
-                        <a href="#" className="pages_link"
-                           style={{color: " #656565", paddingTop: "4px", fontSize: "12px"}}>3</a>
-                        <a href="#" className="pages_link" style={{fontSize: "12px"}}>4</a>
-                        <a href="#" className="pages_link"
-                           style={{color: "#656565", paddingTop: "4px", fontSize: "12px"}}>5</a>
-                        <a href="#" className="pages_link"
-                           style={{color: "#656565", paddingTop: "4px", fontSize: "12px"}}>6</a>
-                        <a href="#" className="pages_link"
-                           style={{color: "#656565", paddingTop: "4px", fontSize: "12px"}}>7</a>
-                        <a href="#" className="pages_link">Вперед <span className="arrow_right"> > </span> </a>
+                        <a  className="pages_link"> <span> &#60; </span> Назад</a>
+                        <a  className="pages_link">1</a>
+                        <a  className="pages_link">2</a>
+                        <a  className="pages_link">3</a>
+                        <a  className="pages_link">4</a>
+                        <a  className="pages_link">5</a>
+                        <a  className="pages_link">6</a>
+                        <a  className="pages_link">7</a>
+                        <a  className="pages_link">Вперед
+                            <span className="arrow_right"> &#62; </span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -240,4 +69,15 @@ const InfoTable = () => {
 
     )
 }
-export default InfoTable
+const mapStateToProps = state => {
+    return {
+        tableInfo: state.table.tableInfo,
+        errorName: state.table.error
+    }
+}
+const mapDispatchToProps = dispatch => {
+    return {
+        takeAllInfoTable: () => dispatch(fetchTableInfo())
+    }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(InfoTable)
