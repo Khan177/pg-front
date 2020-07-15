@@ -64,7 +64,7 @@ export default function SimpleTabs() {
                                     borderRadius: "4px",
                                     background: "red"
                                 }}>
-                    <img src={require("../../img/bx-book.svg")} alt="" style={{width: "16px", margin: "8px"}}/>
+                    <img src={require("../../img/outdoor_furniture/bx-book.svg")} alt="" style={{width: "16px", margin: "8px"}}/>
                     </span>
                         <h1 className="logo_title_counterparty">Контрагенты</h1>
                     </div>

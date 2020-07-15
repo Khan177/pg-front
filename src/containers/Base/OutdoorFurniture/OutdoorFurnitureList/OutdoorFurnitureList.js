@@ -1,10 +1,8 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import styled from 'styled-components'
-import {fetchTableInfo} from "../../../../store/action";
-import {connect} from "react-redux";
-import icon from "./../../../../img/bx-book.svg"
-import breadcrumbs from "./../../../../img/breadcrumbs.svg"
+import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
+import breadcrumbs from "../../../../img/outdoor_furniture/breadcrumbs.svg"
 
 const Section = styled.div`
       width: 100%;
@@ -48,7 +46,7 @@ const TitleLogo = styled.div`
       height: 32px;
       background-color: #D42D11;
       border-radius: 4px;
-      background-image: url(${icon});
+      background-image: url(${icon_book});
       background-repeat: no-repeat;
       background-position: center;
 `;
@@ -88,8 +86,11 @@ const Separator = styled.span`
 
 class OutdoorFurnitureList extends Component {
 
-    render() {
+    clickHandler = () => {
+        console.log("click")
+    }
 
+    render() {
         return (
             <Section>
                 <BreadCrumbs>
@@ -113,24 +114,13 @@ class OutdoorFurnitureList extends Component {
                             Конструкции
                         </Title>
                     </ListTitle>
-
-                    <StyledButton variant="contained" >Создать конструкцию</StyledButton>
-
+                    <StyledButton
+                    onClick={this.clickHandler}
+                    >Создать конструкцию</StyledButton>
                 </ListHeader>
             </Section>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        tableInfo: state.table.tableInfo,
-        errorName: state.table.error
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return {
-        takeAllInfoTable: () => dispatch(fetchTableInfo())
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(OutdoorFurnitureList)
+export default OutdoorFurnitureList
