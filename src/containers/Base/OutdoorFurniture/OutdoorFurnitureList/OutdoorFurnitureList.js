@@ -4,6 +4,7 @@ import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
 import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import Link from '@material-ui/core/Link';
+import TableList from "./Table/Table";
 
 const Section = styled.div`
       width: 100%;
@@ -24,6 +25,7 @@ const ListHeader = styled.div`
       justify-content: space-between;
       align-content: center;
       margin-top: 30px;
+      margin-bottom: 9%;
 `;
 
 const ListTitle = styled.div`
@@ -113,6 +115,8 @@ class OutdoorFurnitureList extends Component {
                     onClick={this.clickHandler}
                     >Создать конструкцию</StyledButton>
                 </ListHeader>
+
+                <TableList/>
 
 
             </Section>
