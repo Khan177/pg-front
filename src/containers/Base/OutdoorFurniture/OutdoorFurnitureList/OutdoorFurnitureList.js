@@ -7,7 +7,8 @@ import Link from '@material-ui/core/Link';
 
 const Section = styled.div`
       width: 100%;
-      margin: 20px;
+      margin-left: 30px;
+      margin-top: 20px;
 `;
 
 const BreadCrumbs = styled(Breadcrumbs)`
@@ -15,6 +16,7 @@ const BreadCrumbs = styled(Breadcrumbs)`
         height: 14px;
         font-size: 11px;
         line-height: 13px;
+        padding-top: 8px;
 `;
 
 const ListHeader = styled.div`
@@ -75,9 +77,6 @@ class OutdoorFurnitureList extends Component {
 
     render() {
         return (
-
-
-
             <Section>
                 <BreadCrumbs aria-label="breadcrumb"
                              style={{color: '#8aa1c1', fontSize: 13}}
@@ -114,6 +113,10 @@ class OutdoorFurnitureList extends Component {
                     onClick={this.clickHandler}
                     >Создать конструкцию</StyledButton>
                 </ListHeader>
+
+                <div>
+
+                </div>
             </Section>
         )
     }
