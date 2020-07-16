@@ -114,9 +114,7 @@ class OutdoorFurnitureList extends Component {
                     >Создать конструкцию</StyledButton>
                 </ListHeader>
 
-                <div>
 
-                </div>
             </Section>
         )
     }
