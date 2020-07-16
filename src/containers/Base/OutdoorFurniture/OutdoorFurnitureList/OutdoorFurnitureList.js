@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import styled from 'styled-components'
 import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
-import breadcrumbs from "../../../../img/outdoor_furniture/breadcrumbs.svg"
+import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 
 const Section = styled.div`
       width: 100%;
