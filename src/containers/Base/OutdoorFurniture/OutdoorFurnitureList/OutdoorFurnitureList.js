@@ -1,35 +1,27 @@
 import React, {Component} from "react";
-import {Link} from "react-router-dom";
 import styled from 'styled-components'
 import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
 import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
+import Breadcrumbs from '@material-ui/core/Breadcrumbs';
+import Link from '@material-ui/core/Link';
 
 const Section = styled.div`
       width: 100%;
       margin: 20px;
 `;
 
-const Span = styled(Link)`
-        color: #8aa1c1;
-        font-size: 13px;
-        :hover {
-              cursor: pointer;
-        }
-        margin-right: 2px;
-`;
-
-const BreadCrumbs = styled.div`
-        width: 203px;
+const BreadCrumbs = styled(Breadcrumbs)`
+        width: 250px;
         height: 14px;
         font-size: 11px;
         line-height: 13px;
-        margin-bottom: 10px;
 `;
 
 const ListHeader = styled.div`
       display: flex;
       justify-content: space-between;
       align-content: center;
+      margin-top: 30px;
 `;
 
 const ListTitle = styled.div`
@@ -74,15 +66,6 @@ const StyledButton = styled.button`
         }
 `;
 
-const Separator = styled.span`
-        //font-family: Montserrat;
-        font-style: normal;
-        font-weight: 500;
-        font-size: 11px;
-        line-height: 13px;
-        color: #8AA1C1;
-        margin-right: 2px;
-`;
 
 class OutdoorFurnitureList extends Component {
 
@@ -92,21 +75,34 @@ class OutdoorFurnitureList extends Component {
 
     render() {
         return (
+
+
+
             <Section>
-                <BreadCrumbs>
-                    <Span>
+                <BreadCrumbs aria-label="breadcrumb"
+                             style={{color: '#8aa1c1', fontSize: 13}}
+                >
+                    <Link>
                         <img src={breadcrumbs} alt=""/>
-                    </Span>
-                    <Span> Главная</Span>
-                    <Separator>
-                        /
-                    </Separator>
-                    <Span to={"/"}> Базы </Span>
-                    <Separator>
-                        /
-                    </Separator>
-                    <Span to={"/outdoor_furniture"}>Конструкции</Span>
+                    </Link>
+                    <Link  href="/"
+                                 style={{color: '#8aa1c1', fontSize: 13}}
+                    >
+                        Главная
+                    </Link>
+                    <Link href="/installation/"
+                                style={{color: '#8aa1c1', fontSize: 13}}
+                    >
+                        Базы
+                    </Link>
+
+                    <Link href="/outdoor_furniture"
+                                style={{color: '#8aa1c1', fontSize: 13}}
+                    >
+                        Конструкции
+                    </Link>
                 </BreadCrumbs>
+
                 <ListHeader>
                     <ListTitle>
                         <TitleLogo/>
