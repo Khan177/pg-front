@@ -4,14 +4,13 @@ import "./../../../../assets/fonts/sf-ui-display-cufonfonts-webfont/style.css"
 import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
 import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
-import Link from '@material-ui/core/Link';
-import TableList from "./Table/Table";
+import {Link} from "react-router-dom";
+import Table from "./Table/Table";
 
 const Section = styled.div`
       font-family: "SF UI Display Light", sans-serif;
       width: 100%;
-      margin-left: 30px;
-      margin-top: 20px;
+      margin: 20px;
 `;
 
 const BreadCrumbs = styled(Breadcrumbs)`
@@ -86,21 +85,23 @@ class OutdoorFurnitureList extends Component {
                 <BreadCrumbs aria-label="breadcrumb"
                              style={{color: '#8aa1c1', fontSize: 13}}
                 >
-                    <Link>
+                    <Link
+                    to="/"
+                    >
                         <img src={breadcrumbs} alt=""/>
                     </Link>
-                    <Link  href="/"
+                    <Link  to="/"
                                  style={{color: '#8aa1c1', fontSize: 13}}
                     >
                         Главная
                     </Link>
-                    <Link href="/installation/"
+                    <Link to="/installation/"
                                 style={{color: '#8aa1c1', fontSize: 13}}
                     >
                         Базы
                     </Link>
 
-                    <Link href="/outdoor_furniture"
+                    <Link to="/outdoor_furniture"
                                 style={{color: '#8aa1c1', fontSize: 13}}
                     >
                         Конструкции
@@ -119,7 +120,7 @@ class OutdoorFurnitureList extends Component {
                     >Создать конструкцию</StyledButton>
                 </ListHeader>
 
-                <TableList/>
+                <Table/>
 
             </Section>
         )
