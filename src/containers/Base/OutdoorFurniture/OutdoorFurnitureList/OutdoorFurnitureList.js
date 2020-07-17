@@ -121,7 +121,6 @@ class OutdoorFurnitureList extends Component {
 
                 <TableList/>
 
-
             </Section>
         )
     }
