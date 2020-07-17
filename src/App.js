@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './assets/fonts/sf-ui-display-cufonfonts-webfont/style.css'
 import AllHeader from "./containers/AllHeader/AllHeader";
 import Content from "./containers/PartnerTable/Content";
 import {BrowserRouter} from "react-router-dom";

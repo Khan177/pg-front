@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import styled from 'styled-components'
+import "./../../../../assets/fonts/sf-ui-display-cufonfonts-webfont/style.css"
 import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
 import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
@@ -7,6 +8,7 @@ import Link from '@material-ui/core/Link';
 import TableList from "./Table/Table";
 
 const Section = styled.div`
+      font-family: "SF UI Display Light", sans-serif;
       width: 100%;
       margin-left: 30px;
       margin-top: 20px;
@@ -48,6 +50,7 @@ const TitleLogo = styled.div`
 `;
 
 const Title = styled.h1`
+        font-family: "SF UI Display Medium", sans-serif;
         font-size: 24px;
         line-height: 28px;
         color: #003360;
