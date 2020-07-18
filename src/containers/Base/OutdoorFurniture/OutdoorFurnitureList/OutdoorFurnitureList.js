@@ -9,7 +9,7 @@ import List from "./Table/Table";
 
 const Section = styled.div`
       font-family: "SF UI Display Light", sans-serif;
-      width: 100%;
+      width: 72%;
       margin: 20px;
 `;
 
