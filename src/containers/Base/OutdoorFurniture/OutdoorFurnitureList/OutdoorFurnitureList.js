@@ -5,7 +5,7 @@ import icon_book from "../../../../img/outdoor_furniture/bx-book.svg"
 import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import {Link} from "react-router-dom";
-import Test from "./Table/Table";
+import List from "./Table/Table";
 
 const Section = styled.div`
       font-family: "SF UI Display Light", sans-serif;
@@ -120,7 +120,7 @@ class OutdoorFurnitureList extends Component {
                     >Создать конструкцию</StyledButton>
                 </ListHeader>
 
-                <Test/>
+                <List/>
 
             </Section>
         )
