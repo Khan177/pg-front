@@ -20,26 +20,28 @@ const SearchTableInfo = () => {
                         borderRadius: " 4px",
                         background: "red"
                     }}>
-                    <img src={require("../../img/outdoor_furniture/bx-book.svg")} alt="" style={{width: "16px", margin: "8px"}}/>
+                    <img src={require("../../img/outdoor_furniture/bx-book.svg")} alt=""
+                         style={{width: "16px", margin: "8px"}}/>
                     </span>
                         <h1 className="logo_title_counterparty">Контрагенты</h1>
                     </div>
                     <div className="counterparty_Header_Buttons">
-                        <NavLink to={"/partnerEdit"}  className="counterparty_Header_Button">Создать контрагента</NavLink>
+                        <NavLink to={"/partnerEdit"} className="counterparty_Header_Button">Создать
+                            контрагента</NavLink>
                         <button className="counterparty_Header_Button">Создать договор</button>
                     </div>
                 </div>
                 <div className="search_counterparty_table">
                 <span className="input_fast_search">
                     <input type="text" placeholder="Быстрый поиск" className="fast_search"/>
-                    <a href="#" className="input_fast_search_button">Найти</a>
+                    <a href="/#" className="input_fast_search_button">Найти</a>
                 </span>
 
-                    <a href="" className="button_setting">
+                    <a href="/#" className="button_setting">
                         <img src={require("../../img/print.png")} alt="" style={{padding: "8px"}}/>
                     </a>
                     <button className="export">Экспорт</button>
-                    <a href="" className="button_setting">
+                    <a href="/#" className="button_setting">
                         <img src={require("../../img/bx-cog.svg")} alt="" style={{padding: "8px"}}/>
                     </a>
                 </div>

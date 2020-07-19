@@ -25,14 +25,14 @@ const Header = () => {
 
         <header className="header">
             <div className="logo">
-                <a href="" className="logo_img"><img src={require("../../img/logo.svg")} alt=""/></a>
+                <a href="/#" className="logo_img"><img src={require("../../img/logo.svg")} alt=""/></a>
             </div>
             <div className="menu">
-                <a href="" className="menu_link">Продажи</a>
-                <a href="" className="menu_link">Монтажи</a>
-                <a href="" className="menu_link active ">Базы</a>
-                <a href="" className="menu_link">Отчеты</a>
-                <a href="" className="menu_link">Администрация</a>
+                <a href="/#" className="menu_link">Продажи</a>
+                <a href="/#" className="menu_link">Монтажи</a>
+                <a href="/#" className="menu_link active ">Базы</a>
+                <a href="/#" className="menu_link">Отчеты</a>
+                <a href="/#" className="menu_link">Администрация</a>
             </div>
             <div className="profile">
          <span style={{marginRight: "20px", transform: "translate(6px, -2px)"}}>
