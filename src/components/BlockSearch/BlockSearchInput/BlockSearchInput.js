@@ -78,7 +78,7 @@ const BlockSearchInput = () => {
                             <p className="search_params" >Поиск по параметрам</p>
                             <img src={require("../../../img/icons8-развернуть-16.png")}
                                  style={{transform: valueArrow}}
-                                 className="arrowDownSecond"/>  </span>
+                                 className="arrowDownSecond" alt=""/>  </span>
                         {isOpen && searchforSetting}
                     </Form>
                 </div>
@@ -88,14 +88,16 @@ const BlockSearchInput = () => {
                             <p className="search_params" >Поиск по БИН</p>
                             <img src={require("../../../img/icons8-развернуть-16.png")}
                                  style={{transform: valueArrowBin,     paddingLeft: "104px"}}
-                                 className="arrowDownSecond"/>  </span>
+                                 className="arrowDownSecond" alt=""/>  </span>
+
+                        {isOpenBin && dropDown}
                         {isOpenBin && dropDown}
                     </Form>
 
                 </div>
                 <div className="searchButtons">
-                    <a href="#" className="search_Button_clear">Очистить</a>
-                    <a href="#" className="search_Button">Искать</a>
+                    <a href="/#" className="search_Button_clear">Очистить</a>
+                    <a href="/#" className="search_Button">Искать</a>
                 </div>
             </div>
         </div>

@@ -50,15 +50,15 @@ const InfoTable = (props) => {
                         <p className="show_text">Показано 10 из 205</p>
                     </div>
                     <div className="pages">
-                        <a  className="pages_link"> <span> &#60; </span> Назад</a>
-                        <a  className="pages_link">1</a>
-                        <a  className="pages_link">2</a>
-                        <a  className="pages_link">3</a>
-                        <a  className="pages_link">4</a>
-                        <a  className="pages_link">5</a>
-                        <a  className="pages_link">6</a>
-                        <a  className="pages_link">7</a>
-                        <a  className="pages_link">Вперед
+                        <a href="/#"  className="pages_link"> <span> &#60; </span> Назад</a>
+                        <a href="/#"  className="pages_link">1</a>
+                        <a href="/#"  className="pages_link">2</a>
+                        <a href="/#"  className="pages_link">3</a>
+                        <a href="/#"  className="pages_link">4</a>
+                        <a href="/#"  className="pages_link">5</a>
+                        <a href="/#"  className="pages_link">6</a>
+                        <a href="/#"  className="pages_link">7</a>
+                        <a href="/#"  className="pages_link">Вперед
                             <span className="arrow_right"> &#62; </span>
                         </a>
                     </div>
