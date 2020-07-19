@@ -16,9 +16,9 @@ function App() {
                     <AllHeader/>
                 </header>
                 <Switch>
-                    <Route path="/" exact component={Content}/>
+                    <Route path="/base/partners" exact component={Content}/>
                     {/*<Route path="" exact component={Content}/>*/}
-                    <Route path="/partnerEdit" exact component={PartnerEdit}/>
+                    <Route path="/base/partner/info" exact component={PartnerEdit}/>
                     <Route path="/outdoor_furniture" exact component={OutdoorFurniture}/>
                 </Switch>
             </BrowserRouter>

@@ -28,15 +28,27 @@ const fetchInputInfoSuccess = () => {
     return {type: TAKE_INFO_INPUT_SUCCESS}
 }
 export const PostInfoInput = (post) => {
-    return dispatch => {
-        return axios.post('/table', post).then(res => {
-            console.log(res.data)
-            dispatch(fetchInputInfoSuccess())
-        }).catch((error) =>{
+    console.log(post)
+    if (post.length !== 0){
+        console.log("wqe")
+        return dispatch => {
+            return axios.post('/table', post).then(res => {
+                console.log(res.data)
+                dispatch(fetchInputInfoSuccess())
+            }).catch((error) =>{
+                dispatch(fetchTableInfoError({
+                    error:" error"
+                }))
+                console.log(error)
+            })
+        }
+    }else{
+        console.log("asd")
+        return dispatch => {
             dispatch(fetchTableInfoError({
-                error:" error"
+                error:"please fill in the field"
             }))
-            console.log(error)
-        })
+        }
     }
+
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
@@ -9,7 +8,7 @@ import NewAndAllBlockInput from "./NewAndAllBlockInput/NewAndAllBlockInput";
 import TableContent from "./TableContent/TableContent";
 import RelatedBrands from "./RelatedBrands/RelatedBrands";
 import RelatedAdvertisers from "./relatedAdvertisers/relatedAdvertisers";
-import {PostInfoInput, takeValueInput} from "../../store/action";
+import {PostInfoInput} from "../../store/action";
 import {connect} from "react-redux";
 
 
@@ -48,7 +47,7 @@ function a11yProps(index) {
     };
 }
 
-const  SimpleTabs=(props)=> {
+const SimpleTabs = (props) => {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {

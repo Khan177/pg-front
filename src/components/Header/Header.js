@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import "./header.css"
+import {NavLink} from "react-router-dom";
 
 
 const Header = () => {
@@ -30,7 +31,12 @@ const Header = () => {
             <div className="menu">
                 <a href="/#" className="menu_link">Продажи</a>
                 <a href="/#" className="menu_link">Монтажи</a>
-                <a href="/#" className="menu_link active ">Базы</a>
+                <NavLink to={"/base"} className="menu_link  base_hover ">Базы
+                    <div className="base_hover_info">
+                        <NavLink to="/outdoor_furniture" className="base_hover_info_text">Конструкции</NavLink>
+                        <NavLink to="/base/partners" className="base_hover_info_text">Контрагенты</NavLink>
+                    </div>
+                </NavLink>
                 <a href="/#" className="menu_link">Отчеты</a>
                 <a href="/#" className="menu_link">Администрация</a>
             </div>

@@ -2,6 +2,33 @@ a {
     text-decoration: none;
 }
 
+.base_hover {
+    position: relative;
+}
+
+.base_hover_info {
+    position: absolute;
+    left: 0;
+    top: 110%;
+    background: grey;
+    padding: 5px;
+    opacity: 0;
+    display: flex;
+    flex-flow: column;
+    border-radius: 4px;
+}
+
+.base_hover:hover .base_hover_info {
+    opacity: 1;
+}
+
+.base_hover_info_text  {
+    text-decoration: none;
+    color: white;
+    padding: 10px 0;
+
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -30,8 +57,14 @@ a {
     padding-bottom: 32px;
 }
 
-.menu_link:active,
-.active {
+.menu_link:active {
+    color: red;
+    border-bottom: 3px solid red;
+    text-decoration: none;
+    padding-bottom: 32px;
+}
+
+.menu_link:nth-child(3) {
     color: red;
     border-bottom: 3px solid red;
     text-decoration: none;
@@ -109,3 +142,10 @@ a {
     background: #2C5DE5;
     color: #ffffff;
 }
+
+/*.base_hover_info{*/
+/*    display: none;*/
+/*}*/
+/*.base_hover:hover .base_hover_info{*/
+/*    display: block;*/
+/*}*/
