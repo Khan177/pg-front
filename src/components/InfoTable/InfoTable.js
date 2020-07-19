@@ -13,14 +13,12 @@ const InfoTable = (props) => {
     let tableLink = Object.keys(props.tableInfo).map(infoTable => {
         const info = props.tableInfo[infoTable];
         return <tr className="table_record" key={infoTable}>
-            {/* eslint-disable-next-line jsx-a11y/scope */}
             <td scope="row">{info.model}</td>
             <td>{info.owner}</td>
             <td>{info.family}</td>
             <td>{info.nameSide}</td>
             <td>{info.advertisingSide}</td>
             <td className="button_pencil_style">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <NavLink exact to={"/partnerEdit"}  className="button_pencil">
                     <img src={require("../../img/bx-pencil.svg")} alt=""/>
                 </NavLink>

@@ -476,6 +476,10 @@ tbody {
 .pages_link {
     color: #2c5de5;
     text-decoration: none;
+    border: none;
+}
+.pages_link button{
+    border:none
 }
 
 .pages_link:first-child {
@@ -546,15 +550,20 @@ tbody {
 
 }
 
-.tablinks {
+.MuiTab-wrapper {
     font-size: 12px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
     line-height: 1;
     letter-spacing: normal;
+    color: black;
 }
-
+.MuiTab-textColorInherit.Mui-selected{
+    background: #2C5DE5;
+    border-radius: 4px;
+    color: white;
+}
 .checkbox > span {
     color: #34495E;
     padding: 0 0.25rem;
@@ -628,14 +637,17 @@ tbody {
     display: none;
 }
 .brand{
-    display: none;
     color: white;
     background: #2C5DE5;
     font-size: 13px;
-    border: 1px solid #000000;
+    border: none;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 4px;
     margin-right: 13px;
+}
+.MuiBox-root-26
+.MuiBox-root-13{
+    width: 100%;
 }
 
 @media screen and (max-width: 1580px) {
@@ -724,6 +736,7 @@ button:focus {
 }
 .input_icon{
     padding-left: 44px;
+    width: 100%;
 }
 .agent_style{
     margin-bottom: 7px;

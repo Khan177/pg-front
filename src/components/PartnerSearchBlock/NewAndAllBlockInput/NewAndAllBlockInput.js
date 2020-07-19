@@ -1,10 +1,11 @@
 import React from "react";
-import {Form, FormGroup, Label, Row} from "reactstrap";
-import {fetchTableInfo} from "../../../store/action";
+import {Form, FormGroup, Input, Label, Row} from "reactstrap";
+import {takeValueInput} from "../../../store/action";
 import {connect} from "react-redux";
 
 
 const NewAndAllBlockInput = (props) => {
+    console.log(props.infoForm)
     return (
         <Form action="" className="form_all_input start_link ">
             <FormGroup style={{display: "flex"}}>
@@ -33,24 +34,25 @@ const NewAndAllBlockInput = (props) => {
                                             input_search_img
                                             input_search_anchor
                                             input_icon"
+                                            name="sectorActivity"
+                                            onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                                     >
                                         <option value="#">Производство напитков</option>
+                                        <option value="#">Производство напитков2</option>
                                     </select>
                                 </Label>
                             </label>
                             <Label className=" search_params_textarea search_params">
                                 Комментарий
-                                <textarea cols="20" rows="6"
+                                <Input  type="textarea"
                                           className="
                                           input_search_img
                                           textArea_width
                                           text_area_search_params"
-                                          defaultValue="..."
+                                          placeholder="..."
                                           onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                                           name="commentPartner"
                                 />
-                                onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
-
                             </Label>
                         </label>
                         <label className="form_group_input">
@@ -63,6 +65,8 @@ const NewAndAllBlockInput = (props) => {
                                     input_search_anchor
                                     search_params_input
                                     input_icon"
+                                    name="typePartner"
+                                    onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                                 >
                                     <option> Рекламодатель</option>
                                     <option> Рекламное агентсво</option>
@@ -125,14 +129,16 @@ const NewAndAllBlockInput = (props) => {
                             search_params
                             search_params_input
                             postCode">Почтовый индек
-                                <select type="email"
-                                        className="
+                                <select className="
                                         form-group
                                         input_search_img
                                         input_search_envelope
                                         form-control more_width_input"
+                                        name="postIndex"
+                                        onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                                 >
                                     <option value="#">1254789</option>
+                                    <option value="#">987456321</option>
 
                                 </select>
                             </label>
@@ -259,10 +265,8 @@ const NewAndAllBlockInput = (props) => {
                                     input_search_anchor
                                      form-control input_icon"
                                    placeholder="Гордеев Амровский "
-                                   name="contactFace"
-
-                                   onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
-
+                                   name="contactFaceFullName1"
+                                   // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                             />
                         </label>
                         <label className="
@@ -276,8 +280,8 @@ const NewAndAllBlockInput = (props) => {
                                            input_search_anchor
                                            form-control input_icon"
                                    placeholder="+7-(745)-523-65-48"
-                                   onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
-
+                                   name="contactFaceNumber1"
+                                   // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                             />
                         </label>
 
@@ -293,15 +297,15 @@ const NewAndAllBlockInput = (props) => {
                                    form-control
                                    input_icon"
                                    placeholder="hello@mail.kz"
-                                   onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
+                                   name="contactFaceEmail1"
+                                   // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
 
                             />
                         </label>
                         <label className="
                         contact_face_inputs
                         label_button_trash">
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a href="#" className="button_trash">
+                            <a href="/#" className="button_trash">
                                 <img src={require("../../../img/bx-trash.svg")} alt=""/>
                             </a>
                         </label>
@@ -318,7 +322,8 @@ const NewAndAllBlockInput = (props) => {
                                    input_search_anchor
                                    form-control input_icon"
                                    placeholder="Гордеев Амровский "
-                                   onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
+                                   name="contactFaceFullName2"
+                                   // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
 
                             />
                         </label>
@@ -333,7 +338,8 @@ const NewAndAllBlockInput = (props) => {
                                     input_search_anchor
                                     form-control input_icon"
                                    placeholder="+7-(745)-523-65-48"
-                                   onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
+                                   name="contactFaceNumber2"
+                                   // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
 
                             />
                         </label>
@@ -348,15 +354,15 @@ const NewAndAllBlockInput = (props) => {
                                    input_search_anchor
                                    form-control input_icon"
                                    placeholder="hello@mail.kz"
-                                   onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
+                                   name="contactFaceEmail1"
+                                   // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
 
                             />
                         </label>
                         <label className="
                         contact_face_inputs
                         label_button_trash">
-                            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a href="#" className="button_trash">
+                            <a href="/#" className="button_trash">
                                 <img src={require("../../../img/bx-trash.svg")} alt=""/>
                             </a>
                         </label>
@@ -381,12 +387,13 @@ const NewAndAllBlockInput = (props) => {
                     <label className="
                         contact_face_inputs
                         search_params ">Тип АК
-                        <select type="email"
+                        <select
                                 className="
                                      form-group
                                       input_search_img
                                       input_search_anchor
                                       form-control"
+                                // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                         >
                             <option value="#">В процентах</option>
 
@@ -403,7 +410,8 @@ const NewAndAllBlockInput = (props) => {
                                    input_search_anchor
                                     form-control"
                                placeholder="10"
-                               onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
+                               name="agentCommission"
+                               // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
 
                         />
                     </label>
@@ -418,10 +426,11 @@ const NewAndAllBlockInput = (props) => {
                                    input_search_anchor
                                    form-control"
                                placeholder="На сумму без НДС"
-                               onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
+                               name="agentNDS"
+                               // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                         />
                     </label>
-                    <label className="contact_face_inputs search_params"
+                    <Label className="contact_face_inputs search_params"
                            style={{marginRight: "11px"}}>
                         На какие услуги рассматриваются АК
                         <select className="
@@ -429,10 +438,11 @@ const NewAndAllBlockInput = (props) => {
                                     input_search_img
                                     input_search_anchor
                                     form-control"
+                                // onChange={(e) => props.onFormCreated(e.target.name, e.target.value)}
                         >
                             <option value="#">Печать монтаж</option>
                         </select>
-                    </label>
+                    </Label>
                 </label>
             </FormGroup>
         </Form>
@@ -441,13 +451,12 @@ const NewAndAllBlockInput = (props) => {
 }
 const mapStateToProps = state => {
     return {
-        tableInfo: state.table.tableInfo,
-        errorName: state.table.error
+        infoForm: state.table.infoForm
     }
 }
 const mapDispatchToProps = dispatch => {
     return {
-        onFormCreated: () => dispatch(fetchTableInfo())
+        onFormCreated: (name, value) => dispatch(takeValueInput(name, value))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(NewAndAllBlockInput)
