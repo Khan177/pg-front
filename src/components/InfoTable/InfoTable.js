@@ -6,8 +6,9 @@ import {connect} from "react-redux";
 import {NavLink} from "react-router-dom";
 
 const InfoTable = (props) => {
+    let takeinfo =props.takeAllInfoTable
     useEffect(() => {
-        props.takeAllInfoTable()
+        takeinfo()
     }, [ ])
     let tableLink = Object.keys(props.tableInfo).map(infoTable => {
         const info = props.tableInfo[infoTable];

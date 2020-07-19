@@ -1,15 +1,15 @@
 import React from "react";
-import {Form, Label} from "reactstrap";
+import {Form, FormGroup, Label, Row} from "reactstrap";
 import {fetchTableInfo} from "../../../store/action";
 import {connect} from "react-redux";
 
 
 const NewAndAllBlockInput = (props) => {
     return (
-        <Form action="" className="form_all_input start_link " id="all_info">
-            <label style={{display: "flex"}}>
-                <label className="form_action form_info">
-                    <h1 className="title_info">Общая информация</h1>
+        <Form action="" className="form_all_input start_link ">
+            <FormGroup style={{display: "flex"}}>
+                <Row className="form_action form_info">
+                    <Label className="title_info">Общая информация</Label>
                     <label className="form-groups">
                         <label className="title_boom_input" style={{display: "flex"}}>
                             <label>
@@ -19,7 +19,7 @@ const NewAndAllBlockInput = (props) => {
                                            className="
                                            input_search_img
                                            input_search_case
-                                           form-control
+                                           f-control
                                            input_icon"
                                            placeholder="Юниверсал ТОО"
                                            aria-describedby="emailHelp"
@@ -86,7 +86,7 @@ const NewAndAllBlockInput = (props) => {
                             </label>
                         </label>
                     </label>
-                </label>
+                </Row>
                 <Label className="form_action form_address">
                     <Label className="title_info">Адрес</Label>
                     <Label className="form-groups-address">
@@ -125,7 +125,7 @@ const NewAndAllBlockInput = (props) => {
                             search_params
                             search_params_input
                             postCode">Почтовый индек
-                                <select
+                                <select type="email"
                                         className="
                                         form-group
                                         input_search_img
@@ -230,8 +230,8 @@ const NewAndAllBlockInput = (props) => {
                     </Label>
 
                 </Label>
-            </label>
-            <Form className=" form_action       form_info_contact_face">
+            </FormGroup>
+            <FormGroup className=" form_action form_info_contact_face">
                 <label className="contact_face_title">
                     <label className="
                     contact_face_title
@@ -245,7 +245,7 @@ const NewAndAllBlockInput = (props) => {
                 <label className="
                     form-groups-contact-face
                     agent_style"
-                       style={{display:"flex", flexFlow:"column"}}
+                       style={{display: "flex", flexFlow: "column"}}
                 >
                     <label className="agent_form">
                         <label className="
@@ -301,7 +301,7 @@ const NewAndAllBlockInput = (props) => {
                         contact_face_inputs
                         label_button_trash">
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a href={null} className="button_trash">
+                            <a href="#" className="button_trash">
                                 <img src={require("../../../img/bx-trash.svg")} alt=""/>
                             </a>
                         </label>
@@ -356,15 +356,15 @@ const NewAndAllBlockInput = (props) => {
                         contact_face_inputs
                         label_button_trash">
                             {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                            <a href={null} className="button_trash">
+                            <a href="#" className="button_trash">
                                 <img src={require("../../../img/bx-trash.svg")} alt=""/>
                             </a>
                         </label>
 
                     </label>
                 </label>
-            </Form>
-            <Form className="
+            </FormGroup>
+            <FormGroup className="
             form_action
             form_info_contact_face
             form_typeAk
@@ -381,7 +381,7 @@ const NewAndAllBlockInput = (props) => {
                     <label className="
                         contact_face_inputs
                         search_params ">Тип АК
-                        <select
+                        <select type="email"
                                 className="
                                      form-group
                                       input_search_img
@@ -434,7 +434,7 @@ const NewAndAllBlockInput = (props) => {
                         </select>
                     </label>
                 </label>
-            </Form>
+            </FormGroup>
         </Form>
 
     )
