@@ -19,7 +19,7 @@ const InfoTable = (props) => {
             <td>{info.nameSide}</td>
             <td>{info.advertisingSide}</td>
             <td className="button_pencil_style">
-                <NavLink exact to={"/partnerEdit"}  className="button_pencil">
+                <NavLink exact to={"/base/partner/info"}  className="button_pencil">
                     <img src={require("../../img/bx-pencil.svg")} alt=""/>
                 </NavLink>
             </td>

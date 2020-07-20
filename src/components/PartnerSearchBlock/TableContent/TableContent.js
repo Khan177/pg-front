@@ -3,8 +3,7 @@ import React from "react";
 
 const TableContent = () => {
     return (
-        <div className="tables tabcontent table_link">
-            <div className="table_records">
+        <div className="tables tabcontent table_link table_records">
                 <table className="table">
                     <thead>
                     <tr className="header_table">
@@ -23,8 +22,8 @@ const TableContent = () => {
                         <td>Кока-Кола Алматы Боттлерс</td>
                         <td>
                             <label className="checkbox">
-                                <input type="checkbox" checked/>
-                                <p>да</p>
+                                <input type="checkbox" />
+                                <span>да</span>
                             </label>
                         </td>
                     </tr>
@@ -35,8 +34,8 @@ const TableContent = () => {
                         <td>Кока-Кола Алматы Боттлерс</td>
                         <td>
                             <label className="checkbox">
-                                <input type="checkbox" checked/>
-                                <p>да</p>
+                                <input type="checkbox" />
+                                <span>да</span>
                             </label>
                         </td>
                     </tr>
@@ -47,8 +46,8 @@ const TableContent = () => {
                         <td>Кока-Кола Алматы Боттлерс</td>
                         <td>
                             <label className="checkbox">
-                                <input type="checkbox" checked/>
-                                <p>да</p>
+                                <input type="checkbox" />
+                                <span>да</span>
                             </label>
                         </td>
                     </tr>
@@ -60,7 +59,7 @@ const TableContent = () => {
                         <td>
                             <label className="checkbox">
                                 <input type="checkbox"/>
-                                <p>нет</p>
+                                <span>нет</span>
                             </label>
                         </td>
                     </tr>
@@ -83,7 +82,6 @@ const TableContent = () => {
                         <button className="pages_link">Вперед <span className="arrow_right"> > </span></button>
                     </div>
                 </div>
-            </div>
         </div>
     )
 }

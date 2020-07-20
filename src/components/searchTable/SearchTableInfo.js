@@ -26,7 +26,7 @@ const SearchTableInfo = () => {
                         <h1 className="logo_title_counterparty">Контрагенты</h1>
                     </div>
                     <div className="counterparty_Header_Buttons">
-                        <NavLink to={"/partnerEdit"} className="counterparty_Header_Button">Создать
+                        <NavLink to={"/base/partner/info"} className="counterparty_Header_Button">Создать
                             контрагента</NavLink>
                         <button className="counterparty_Header_Button">Создать договор</button>
                     </div>
