@@ -15,8 +15,8 @@ function App() {
                     <AllHeader/>
                 </header>
                 <Switch>
-                    <Route path="/" exact component={Content}/>
-                    {/*<Route path="" exact component={Content}/>*/}
+                    <Route path="/base/partners" exact component={Content}/>
+                    {/*<Route path="" exact component={newFilter}/>*/}
                     <Route path="/partnerEdit" exact component={PartnerEdit}/>
                     <Route path="/outdoor_furniture" exact component={OutdoorFurniture}/>
                 </Switch>
