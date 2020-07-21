@@ -7,6 +7,7 @@ import {Route, Switch} from "react-router";
 import PartnerEdit from "./containers/PartnerEdit/PartnerEdit";
 import OutdoorFurniture from "./containers/Base/OutdoorFurniture/OudoorFurniture";
 import Header from "./components/Header/Header";
+
 function App() {
     return (
         <>
