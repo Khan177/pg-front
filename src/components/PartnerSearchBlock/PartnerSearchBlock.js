@@ -13,19 +13,17 @@ import {connect} from "react-redux";
 
 
 function TabPanel(props) {
-    const {children, value, index, ...other} = props;
+    const {children, value, index } = props;
 
     return (
         <div>
             <div
-                role="tabpanel"
-                hidden={value !== index}
                 id={`simple-tabpanel-${index}`}
-                aria-labelledby={`simple-tab-${index}`}
-                {...other}
+                // aria-labelledby={`simple-tab-${index}`}
+
             >
                 {value === index && (
-                    <Box p={3} style={{width: "100%"}}>
+                    <Box p={2} style={{width: "100%"}}>
                         <Typography>{children}</Typography>
                     </Box>
                 )}
@@ -43,17 +41,19 @@ TabPanel.propTypes = {
 function a11yProps(index) {
     return {
         id: `simple-tab-${index}`,
-        'aria-controls': `simple-tabpanel-${index}`,
     };
 }
-
 const SimpleTabs = (props) => {
     const [value, setValue] = React.useState(0);
 
     const handleChange = (event, newValue) => {
         console.log(event)
         console.log(newValue)
-        setValue(newValue);
+        setValue(newValue)
+        return{
+            class:"active",
+        }
+
     };
     let fastSearch =
         <span className="input_fast_search" id="input_fast_search">
