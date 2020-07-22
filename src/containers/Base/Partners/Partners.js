@@ -1,5 +1,4 @@
 import React from "react";
-import SearchTable from "../../../components/searchTable/searchTable";
 import FilterBar from "./SidebarPartners/Filters/FilterBar";
 import SearchBar from "../OutdoorFurniture/Sidebar/Search/SearchBar";
 import styled from "styled-components";
