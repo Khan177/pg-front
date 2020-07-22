@@ -6,15 +6,20 @@ import {BreadCrumbs, ListHeader, ListTitle, Section, StyledButton, Title, TitleL
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../Table/Table";
+import { useHistory } from "react-router-dom";
 
 
 export default function OutdoorFurnitureList() {
 
     const columns = React.useMemo(() => makeColumns, [])
     const data = React.useMemo(() => makeData, []);
-    const clickHandler = () => {
-        console.log("click")
+
+    const history = useHistory();
+    const routeChange = () =>{
+        let path = `/base/outdoor_furniture/new`;
+        history.push(path);
     }
+
 
     return (
         <Section>
@@ -51,7 +56,7 @@ export default function OutdoorFurnitureList() {
                     </Title>
                 </ListTitle>
                 <StyledButton
-                    onClick={clickHandler}
+                    onClick={routeChange}
                 >Создать конструкцию</StyledButton>
             </ListHeader>
             <Table

@@ -7,6 +7,7 @@ import {Route, Switch} from "react-router";
 import PartnerEdit from "./containers/PartnerEdit/PartnerEdit";
 import OutdoorFurniture from "./containers/Base/OutdoorFurniture/OudoorFurniture";
 import Header from "./components/Header/Header";
+import CreateNew from "./containers/Base/OutdoorFurniture/CreateNew/CreateNew"
 
 function App() {
     return (
@@ -20,9 +21,9 @@ function App() {
                     {/*<Route path="" exact component={newFilter}/>*/}
                     <Route path="/base/partner/info" exact component={PartnerEdit}/>
                     <Route path="/outdoor_furniture" exact component={OutdoorFurniture}/>
+                    <Route path="/base/outdoor_furniture/new" exact component={CreateNew}/>
                 </Switch>
             </BrowserRouter>
-
         </>
     );
 }
