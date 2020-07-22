@@ -14,7 +14,7 @@ import {
 } from "./PartnersStyles"
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
-import Table from "../../OutdoorFurniture/Table/Table";
+import Table from "../../../../components/Table/Table";
 
 
 export default function PartnersList() {

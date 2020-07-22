@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 import {BreadCrumbs, ListHeader, ListTitle, Section, StyledButton, Title, TitleLogo} from "./OutdootFurnitureStyles"
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
-import Table from "../Table/Table";
+import Table from "../../../../components/Table/Table";
 import { useHistory } from "react-router-dom";
 
 
