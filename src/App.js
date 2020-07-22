@@ -6,11 +6,8 @@ import {BrowserRouter} from "react-router-dom";
 import {Route, Switch} from "react-router";
 import OutdoorFurniture from "./containers/Base/OutdoorFurniture/OudoorFurniture";
 import Header from "./components/Header/Header";
-<<<<<<< HEAD
 import CreateNew from "./containers/Base/OutdoorFurniture/CreateNew/CreateNew"
-=======
 import PartnerSearchBlock from "./containers/Base/Partners/PartnersSearchBlock/PartnerSearchBlock";
->>>>>>> 2917ca9a248a6afba083b712a4e2829bfdf5edb3
 
 function App() {
     return (
