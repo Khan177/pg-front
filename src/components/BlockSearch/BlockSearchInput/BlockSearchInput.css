@@ -35,7 +35,7 @@
     border-radius: 4px;
     padding-left: 48px;
     margin-bottom: 10px;
-    background-image: url(../../../img/bx-anchor.svg);
+    background-image: url(../../../img/partners/bx-anchor.svg);
     background-repeat: no-repeat;
     background-position: 20px 5px;
     border-color: #92b6e8;
@@ -76,7 +76,7 @@
 }
 .setting {
     background-position: 20px 7px;
-    background-image: url(../../../img/bx-hash.svg);
+    background-image: url(../../../img/partners/bx-hash.svg);
 }
 .input_search_img {
     border-radius: 4px;

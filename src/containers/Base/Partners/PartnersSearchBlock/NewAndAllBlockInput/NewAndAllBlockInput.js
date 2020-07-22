@@ -1,6 +1,6 @@
 import React from "react";
 import {Form, FormGroup, Input, Label, Row} from "reactstrap";
-import {takeValueInput} from "../../../store/action";
+import {takeValueInput} from "../../../../../store/action";
 import {connect} from "react-redux";
 
 
@@ -307,7 +307,7 @@ const NewAndAllBlockInput = (props) => {
                         contact_face_inputs
                         label_button_trash">
                                 <a href="/#" className="button_trash">
-                                    <img src={require("../../../img/bx-trash.svg")} alt=""/>
+                                    <img src={require("../../../../../img/partners/bx-trash.svg")} alt=""/>
                                 </a>
                             </label>
                         </label>
@@ -364,7 +364,7 @@ const NewAndAllBlockInput = (props) => {
                         contact_face_inputs
                         label_button_trash">
                                 <a href="/#" className="button_trash">
-                                    <img src={require("../../../img/bx-trash.svg")} alt=""/>
+                                    <img src={require("../../../../../img/partners/bx-trash.svg")} alt=""/>
                                 </a>
                             </label>
 

@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
-import {fetchTableInfo} from "../../../store/action";
+import {fetchTableInfo} from "../../../../../store/action";
 import {connect} from "react-redux";
 
-const RelatedAdvertisers = (props) => {
+const RelatedBrands =(props) =>{
     useEffect(() => {
         props.takeAllInfoTable()
-    }, [])
+    }, [ ])
     let tableLink = Object.keys(props.tableInfo).map(infoTable => {
         const info = props.tableInfo[infoTable];
         return <tr className="table_record" key={infoTable}>
@@ -15,13 +15,14 @@ const RelatedAdvertisers = (props) => {
             <td>{info.nameSide}</td>
         </tr>
     })
-    return (
+    return(
         <div className="table_records tables tabcontent table_link">
+
             <table className="table">
                 <thead>
                 <tr className="header_table">
                     <th scope="col" className="link_table">Код</th>
-                    <th scope="col" className="link_table">Рекламодатель</th>
+                    <th scope="col" className="link_table">Бренд</th>
                     <th scope="col" className="link_table">Сектор деятельности</th>
                     <th scope="col" className="link_table">Привязано</th>
                 </tr>
@@ -48,7 +49,7 @@ const RelatedAdvertisers = (props) => {
             </div>
         </div>
 
-    )
+)
 }
 const mapStateToProps = state => {
     return {
@@ -61,5 +62,5 @@ const mapDispatchToProps = dispatch => {
         takeAllInfoTable: () => dispatch(fetchTableInfo())
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedAdvertisers)
+export default connect(mapStateToProps, mapDispatchToProps)(RelatedBrands)
 
