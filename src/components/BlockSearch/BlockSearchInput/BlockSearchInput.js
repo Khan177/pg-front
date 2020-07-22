@@ -76,7 +76,7 @@ const BlockSearchInput = () => {
                     <Form action="">
                         <span   onClick={toggle}  style={{display: "flex"}}  >
                             <p className="search_params" >Поиск по параметрам</p>
-                            <img src={require("../../../img/icons8-развернуть-16.png")}
+                            <img src={require("../../../img/partners/icons8-развернуть-16.png")}
                                  style={{transform: valueArrow}}
                                  className="arrowDownSecond" alt=""/>  </span>
                         {isOpen && searchforSetting}
@@ -86,7 +86,7 @@ const BlockSearchInput = () => {
                     <Form>
                          <span   onClick={toggleTwo}  style={{display: "flex"}}  >
                             <p className="search_params" >Поиск по БИН</p>
-                            <img src={require("../../../img/icons8-развернуть-16.png")}
+                            <img src={require("../../../img/partners/icons8-развернуть-16.png")}
                                  style={{transform: valueArrowBin,     paddingLeft: "104px"}}
                                  className="arrowDownSecond" alt=""/>  </span>
 

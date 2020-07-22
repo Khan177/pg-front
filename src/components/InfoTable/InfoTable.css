@@ -96,7 +96,7 @@
     position: absolute;
     width: 16px;
     height: 16px;
-    background: url(../../img/bx-search-alt.svg) no-repeat;
+    background: url(../../img/partners/bx-search-alt.svg) no-repeat;
     margin: 8px;
 }
 
@@ -133,7 +133,7 @@
 .export::before {
     content: "";
     display: block;
-    background: url(../../img/bx-export.svg) no-repeat  ;
+    background: url(../../img/partners/bx-export.svg) no-repeat  ;
     width: 16px;
     height: 16px;
     padding-right: 20px;
@@ -193,7 +193,7 @@ table td:nth-child(1){
     margin-left: 10px;
     width: 25px;
     height: 25px;
-    background: url(../../img/icons8-развернуть-16.png) no-repeat;
+    background: url(../../img/partners/icons8-развернуть-16.png) no-repeat;
 }
 
 /*.link_table:nth-child(5) {*/

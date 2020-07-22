@@ -10,7 +10,7 @@ const Header = () => {
 
         <header className="header">
             <div className="logo">
-                <a href="/#" className="logo_img"><img src={require("../../img/logo.svg")} alt=""/></a>
+                <a href="/#" className="logo_img"><img src={require("../../img/partners/logo.svg")} alt=""/></a>
             </div>
             <div className="menu">
                 <HeaderMenu/>

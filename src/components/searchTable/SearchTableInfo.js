@@ -38,11 +38,11 @@ const SearchTableInfo = () => {
                 </span>
 
                     <a href="/#" className="button_setting">
-                        <img src={require("../../img/print.png")} alt="" style={{padding: "8px"}}/>
+                        <img src={require("../../img/partners/print.png")} alt="" style={{padding: "8px"}}/>
                     </a>
                     <button className="export">Экспорт</button>
                     <a href="/#" className="button_setting">
-                        <img src={require("../../img/bx-cog.svg")} alt="" style={{padding: "8px"}}/>
+                        <img src={require("../../img/partners/bx-cog.svg")} alt="" style={{padding: "8px"}}/>
                     </a>
                 </div>
             </div>

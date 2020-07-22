@@ -1,0 +1,1 @@
+const cities = [    {        value: 'Алматы',    },    {        value: 'Атырау',    },    {        value: 'Актау',    },    {        value: 'Семей',    },];export default cities

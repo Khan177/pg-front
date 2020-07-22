@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import './assets/fonts/sf-ui-display-cufonfonts-webfont/style.css'
-import Content from "./containers/PartnerTable/Content";
+import Partners from "./containers/Base/Partners/Partners";
 import {BrowserRouter} from "react-router-dom";
 import {Route, Switch} from "react-router";
 import PartnerEdit from "./containers/PartnerEdit/PartnerEdit";
@@ -16,7 +16,7 @@ function App() {
                     <Header/>
                 </header>
                 <Switch>
-                    <Route path="/base/partners" exact component={Content}/>
+                    <Route path="/base/partners" exact component={Partners}/>
                     {/*<Route path="" exact component={newFilter}/>*/}
                     <Route path="/base/partner/info" exact component={PartnerEdit}/>
                     <Route path="/outdoor_furniture" exact component={OutdoorFurniture}/>

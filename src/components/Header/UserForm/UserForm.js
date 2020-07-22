@@ -26,7 +26,7 @@ const UserForm = () => {
          </span>
             <span className="img_profile" onClick={toggle}>
                     <img className="img_profile_photo"
-                         src={require("../../../img/bx-anchor.svg")} alt=""/>
+                         src={require("../../../img/partners/bx-anchor.svg")} alt=""/>
                     <span className="arrowDown" style={{transform: valueArrow}}/>
                 {isOpen && infoUser}
         </span>
