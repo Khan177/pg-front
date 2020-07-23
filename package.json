@@ -26,6 +26,7 @@
     "react-table": "^7.2.2",
     "react-table-sticky": "^1.1.3",
     "react-virtualized": "^9.21.2",
+    "react-yandex-maps": "^4.4.0",
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
@@ -56,6 +57,7 @@
     "@linways/table-to-excel": "^1.0.4",
     "@material-ui/icons": "^4.9.1",
     "match-sorter": "^4.2.0",
-    "react-tabs": "^3.1.1"
+    "react-tabs": "^3.1.1",
+    "yandex-map-react": "^1.1.1"
   }
 }
