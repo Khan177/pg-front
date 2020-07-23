@@ -16,7 +16,12 @@ const Header = () => {
                 <HeaderMenu/>
             </div>
             <div className="profile">
-                    <UserForm/>
+                <UserForm
+                    name="Алексей"
+                    surname="Иванов"
+                    position="Администратор"
+                    avatar="https://www.shareicon.net/data/512x512/2016/08/05/806962_user_512x512.png"
+                />
             </div>
         </header>
     )
