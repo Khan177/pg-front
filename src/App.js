@@ -20,7 +20,7 @@ function App() {
                     <Route path="/base/partners" exact component={Partners}/>
                     {/*<Route path="" exact component={newFilter}/>*/}
                     <Route path="/base/partner/info" exact component={PartnerSearchBlock}/>
-                    <Route path="/outdoor_furniture" exact component={OutdoorFurniture}/>
+                    <Route path="/base/outdoor_furniture" exact component={OutdoorFurniture}/>
                     <Route path="/base/outdoor_furniture/new" exact component={CreateNew}/>
                 </Switch>
             </BrowserRouter>

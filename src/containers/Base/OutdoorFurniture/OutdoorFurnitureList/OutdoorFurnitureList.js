@@ -2,7 +2,7 @@ import React from "react";
 import "./../../../../assets/fonts/sf-ui-display-cufonfonts-webfont/style.css"
 import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 import {Link} from "react-router-dom";
-import {BreadCrumbs, ListHeader, ListTitle, Section, StyledButton, Title, TitleLogo} from "./OutdootFurnitureStyles"
+import {BreadCrumbs, ListHeader, ListTitle, Section, StyledButton, Title, TitleLogo} from "../OutdootFurnitureStyles"
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../../../../components/Table/Table";
@@ -62,7 +62,7 @@ export default function OutdoorFurnitureList() {
             <Table
                 columns={columns}
                 data={data}
-            />;
+            />
 
         </Section>
     )

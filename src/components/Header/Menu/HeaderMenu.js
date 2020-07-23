@@ -7,7 +7,7 @@ const  HeaderMenu =()=>{
             <a href="/#" className="menu_link">Монтажи</a>
             <NavLink to={"/base"} className="menu_link  base_hover ">Базы
                 <div className="base_hover_info">
-                    <NavLink to="/outdoor_furniture" className="base_hover_info_text">Конструкции</NavLink>
+                    <NavLink to="/base/outdoor_furniture" className="base_hover_info_text">Конструкции</NavLink>
                     <NavLink to="/base/partners" className="base_hover_info_text">Контрагенты</NavLink>
                 </div>
             </NavLink>

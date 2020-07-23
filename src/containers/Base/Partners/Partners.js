@@ -1,6 +1,6 @@
 import React from "react";
 import FilterBar from "./SidebarPartners/Filters/FilterBar";
-import SearchBar from "../OutdoorFurniture/Sidebar/Search/SearchBar";
+// import SearchBar from "../OutdoorFurniture/SideBar/Search/SearchBar";
 import styled from "styled-components";
 import PartnersList from "./PartnersList/PartnersList";
 
@@ -19,7 +19,7 @@ const Partners = () => {
     return (
         <PageWrap>
             <SideBar>
-                <SearchBar/>
+                {/*<SearchBar/>*/}
                 <FilterBar/>
             </SideBar>
 
