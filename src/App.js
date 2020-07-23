@@ -12,7 +12,6 @@ import PartnerSearchBlock from "./containers/Base/Partners/PartnersSearchBlock/P
 function App() {
     return (
         <>
-
             <BrowserRouter>
                 <header>
                     <Header/>
