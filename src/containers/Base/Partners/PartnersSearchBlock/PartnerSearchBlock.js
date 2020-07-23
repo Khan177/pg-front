@@ -1,14 +1,8 @@
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
 import NewAndAllBlockInput from "./NewAndAllBlockInput/NewAndAllBlockInput";
 import TableContent from "./TableContent/TableContent";
 import RelatedBrands from "./RelatedBrands/RelatedBrands";
 import RelatedAdvertisers from "./relatedAdvertisers/relatedAdvertisers";
-import {PostInfoInput} from "../../../../store/action";
-import {connect} from "react-redux";
 import "./PartnerEdit.css"
-import SearchBar from "../../OutdoorFurniture/Sidebar/Search/SearchBar";
 
 import React from "react";
 import {
@@ -23,6 +17,9 @@ import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
 import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";
 import export_icon from "../../../../img/outdoor_furniture/table_icons/export_icon.svg";
 import settings_icon from "../../../../img/outdoor_furniture/table_icons/setting.svg";
+import {BreadCrumbs, ListTitle, Section, TitleLogo} from "../PartnersList/PartnersStyles";
+import {Link} from "react-router-dom";
+import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg";
 
 const Container = styled.div`
 margin: 20px;
@@ -153,16 +150,44 @@ const JobTitle = styled.h1`
         font-size: 24px;
         line-height: 28px;
         color: #003360;
+        display:flex;
 `
 
 export default function CreateNew() {
 
     return (
         <Container>
+            <BreadCrumbs aria-label="breadcrumb"
+                         style={{color: '#8aa1c1', fontSize: 13}}
+            >
+                <Link
+                    to="/"
+                >
+                    <img src={breadcrumbs} alt=""/>
+                </Link>
+                <Link to="/"
+                      style={{color: '#8aa1c1', fontSize: 13}}
+                >
+                    Главная
+                </Link>
+                <Link to="/installation/"
+                      style={{color: '#8aa1c1', fontSize: 13}}
+                >
+                    Базы
+                </Link>
+
+                <Link to="/outdoor_furniture"
+                      style={{color: '#8aa1c1', fontSize: 13}}
+                >
+                    Контрагенты
+                </Link>
+            </BreadCrumbs>
             <form>
                 <Controls>
+
                     <JobTitle>
-                        Конструкция номер
+                        <TitleLogo/>
+                        Контрагент Юниверсал ТОО
                     </JobTitle>
                     <ButtonGroup>
                         <GreenButton>
