@@ -2,10 +2,10 @@ import React from "react";
 import {ArrowDropDown, ArrowDropUp} from "@material-ui/icons";
 import {Collapse, TextField} from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import {FilterSectionTitle, FilterSection, FilterSectionTitleText} from "../../../../OutdoorFurniture/Sidebar/Filters/Styles/StyledFilters"
+import {FilterSectionTitle, FilterSection, FilterSectionTitleText} from "../../../../OutdoorFurniture/OutdoorFurnitureList/Filters/Styles/StyledFilters"
 import clsx from "clsx";
 import icon_hash from "../../../../../../img/partners/bx-hash.svg";
-import useStyles from "../../../../OutdoorFurniture/Sidebar/Filters/Styles/UseMaterialStyles"
+import useStyles from "../../../../OutdoorFurniture/OutdoorFurnitureList/Filters/Styles/UseMaterialStyles"
 
 
 export default function FilterByBIN() {
