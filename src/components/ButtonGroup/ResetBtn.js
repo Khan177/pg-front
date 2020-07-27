@@ -1,0 +1,1 @@
+import { ResetButton, } from "../StyledFilters"import React from "react";export default function ResetBtn () {    return (        <ResetButton>            Очистить        </ResetButton>    )}

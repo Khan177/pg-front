@@ -1,0 +1,1 @@
+import {SubmitButton,} from "../StyledFilters"import React from "react";export default function ResetBtn () {    return (        <SubmitButton>            Искать        </SubmitButton>    )}

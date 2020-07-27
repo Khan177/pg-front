@@ -1,0 +1,1 @@
+import {BlockTitle, BlockTitleText} from "../StyledBlocks";import React from "react";export default function TitleBlock(props) {    return (        <BlockTitle>            <BlockTitleText>                {props.children}            </BlockTitleText>        </BlockTitle>    )}

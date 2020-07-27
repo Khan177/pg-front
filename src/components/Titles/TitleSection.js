@@ -1,0 +1,1 @@
+import React from "react";import {JobTitle} from "../TitleStyles"export default function TitleSection(props) {    return (        <JobTitle>            {props.children}        </JobTitle>    )}

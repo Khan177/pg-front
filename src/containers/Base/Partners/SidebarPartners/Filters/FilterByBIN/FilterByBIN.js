@@ -2,7 +2,7 @@ import React from "react";
 import {ArrowDropDown, ArrowDropUp} from "@material-ui/icons";
 import {Collapse, TextField} from "@material-ui/core";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import {FilterSectionTitle, FilterSection, FilterSectionTitleText} from "../../../../OutdoorFurniture/OutdoorFurnitureList/Filters/Styles/StyledFilters"
+import {FilterSectionTitle, FilterSection, FilterSectionTitleText} from "../../../../../../components/StyledFilters"
 import clsx from "clsx";
 import icon_hash from "../../../../../../img/partners/bx-hash.svg";
 import useStyles from "../../../../Partners/SidebarPartners/Filters/Styles/UseMaterialStyles"

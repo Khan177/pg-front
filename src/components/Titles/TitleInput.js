@@ -1,0 +1,1 @@
+import {InputTitle} from "../StyledBlocks";import React from "react";export default function TitleInput(props) {    return (        <InputTitle>            {props.children}        </InputTitle>    )}

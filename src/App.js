@@ -6,7 +6,7 @@ import {BrowserRouter} from "react-router-dom";
 import {Route, Switch} from "react-router";
 import OutdoorFurniture from "./containers/Base/OutdoorFurniture/OudoorFurniture";
 import Header from "./components/Header/Header";
-import CreateNew from "./containers/Base/OutdoorFurniture/CreateNew/CreateNew"
+import Construction from "./containers/Base/Construction/Construction"
 import CreateNewPartners from "./containers/Base/Partners/PartnersSearchBlock/CreateNew";
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
                 <Switch>
                     <Route path="/base/partners" exact component={Partners}/>
                     <Route path="/base/partner/info" exact component={CreateNewPartners}/>
+                    <Route path="/base/construction" exact component={Construction}/>
                     <Route path="/base/outdoor_furniture" exact component={OutdoorFurniture}/>
-                    <Route path="/base/outdoor_furniture/new" exact component={CreateNew}/>
                 </Switch>
             </BrowserRouter>
         </>

@@ -1,0 +1,1 @@
+import {BtnGroup} from "../StyledFilters";import ResetBtn from "./ResetBtn";import SubmitBtn from "./SubmitBtn";import React from "react";export default function ButtonGroup()  {    return (        <BtnGroup>            <ResetBtn/>            <SubmitBtn/>        </BtnGroup>    )}
