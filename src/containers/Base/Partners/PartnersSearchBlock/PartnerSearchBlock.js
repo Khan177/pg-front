@@ -202,7 +202,7 @@ export default function CreateNewParters(props) {
                             <STab>Связанные рекламодатели</STab>
                         </STabList>
                         <STabList>
-                            {(props.index === 1) ?
+                            {(props.index === 12) ?
                                 <InputWrapperPartnerTableContent style={{width: "auto", marginRight: "19px"}}>
                                     <StyledInput
                                         placeholder={`Быстрый поиск,   записей...`}
