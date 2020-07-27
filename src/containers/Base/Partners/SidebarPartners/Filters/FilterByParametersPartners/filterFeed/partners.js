@@ -1,0 +1,1 @@
+const partners = [    {        value: 'Мендолев',    },    {        value: 'Иванов',    },    {        value: 'Петров',    },    {        value: 'Серов',    },];export default partners

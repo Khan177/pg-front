@@ -1,6 +1,5 @@
 import React from "react";
 import "./../../../../assets/fonts/sf-ui-display-cufonfonts-webfont/style.css"
-import breadcrumbs from "../../../../img/outdoor_furniture/bx-breadcrumbs.svg"
 import {Link, NavLink} from "react-router-dom";
 import {
     BlockButton,
@@ -14,7 +13,8 @@ import {
 } from "./PartnersStyles"
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
-import Table from "../../../../components/Table/Table";
+import Table from "../Table/Table";
+import Location from "../PartnersSearchBlock/Components/Blocks/location";
 
 
 export default function PartnersList() {
@@ -23,33 +23,9 @@ export default function PartnersList() {
     const data = React.useMemo(() => makeData, []);
     return (
         <Section>
-            <BreadCrumbs aria-label="breadcrumb"
-                         style={{color: '#8aa1c1', fontSize: 13}}
-            >
-                <Link
-                    to="/"
-                >
-                    <img src={breadcrumbs} alt=""/>
-                </Link>
-                <Link to="/"
-                      style={{color: '#8aa1c1', fontSize: 13}}
-                >
-                    Главная
-                </Link>
-                <Link to="/installation/"
-                      style={{color: '#8aa1c1', fontSize: 13}}
-                >
-                    Базы
-                </Link>
-
-                <Link to="/outdoor_furniture"
-                      style={{color: '#8aa1c1', fontSize: 13}}
-                >
-                    Контрагенты
-                </Link>
-            </BreadCrumbs>
+            <Location/>
             <ListHeader>
-                <ListTitle>
+                <ListTitle >
                     <TitleLogo/>
                     <Title>
                         Контрагенты
@@ -71,6 +47,7 @@ export default function PartnersList() {
             <Table
                 columns={columns}
                 data={data}
+                index={"2"}
             />
 
         </Section>

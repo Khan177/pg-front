@@ -1,29 +1,28 @@
 import React from "react";
-import "./header.css"
 import HeaderMenu from "./Menu/HeaderMenu";
 import UserForm from "./UserForm/UserForm";
+import {FormUser, HeaderLogo, HeaderMenus, HeaderStyle} from "./HeaderStyle";
 
 
 const Header = () => {
 
     return (
-
-        <header className="header">
-            <div className="logo">
-                <a href="/#" className="logo_img"><img src={require("../../img/partners/logo.svg")} alt=""/></a>
-            </div>
-            <div className="menu">
+        <HeaderStyle >
+            <HeaderLogo >
+                <logo href="/#" ><img src={require("../../img/partners/logo.svg")} alt=""/></logo>
+            </HeaderLogo>
+            <HeaderMenus>
                 <HeaderMenu/>
-            </div>
-            <div className="profile">
+            </HeaderMenus>
+            <FormUser>
                 <UserForm
                     name="Алексей"
                     surname="Иванов"
                     position="Администратор"
                     avatar="https://www.shareicon.net/data/512x512/2016/08/05/806962_user_512x512.png"
                 />
-            </div>
-        </header>
+            </FormUser>
+        </HeaderStyle>
     )
 };
 

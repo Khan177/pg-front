@@ -1,52 +1,22 @@
 import React, {useEffect} from "react";
 import {fetchTableInfo} from "../../../../../store/action";
 import {connect} from "react-redux";
+import makeColumns from "../../PartnersList/DataTable/columns";
+import makeData from "../../PartnersList/DataTable/data";
+import Table from "../../Table/Table";
 
 const RelatedBrands =(props) =>{
-    useEffect(() => {
-        props.takeAllInfoTable()
-    }, [ ])
-    let tableLink = Object.keys(props.tableInfo).map(infoTable => {
-        const info = props.tableInfo[infoTable];
-        return <tr className="table_record" key={infoTable}>
-            <td scope="row">{info.model}</td>
-            <td>{info.owner}</td>
-            <td>{info.family}</td>
-            <td>{info.nameSide}</td>
-        </tr>
-    })
+    const columns = React.useMemo(() => makeColumns, [])
+    const data = React.useMemo(() => makeData, []);
+
     return(
         <div className="table_records tables tabcontent table_link">
-
-            <table className="table">
-                <thead>
-                <tr className="header_table">
-                    <th scope="col" className="link_table">Код</th>
-                    <th scope="col" className="link_table">Бренд</th>
-                    <th scope="col" className="link_table">Сектор деятельности</th>
-                    <th scope="col" className="link_table">Привязано</th>
-                </tr>
-                </thead>
-                <tbody>
-                {tableLink}
-                </tbody>
-            </table>
-            <div className="footer_table_records">
-                <div className="show">
-                    <p className="show_text">Показано 10 из 205</p>
-                </div>
-                <div className="pages">
-                    <button className="pages_link"> <span className="arrow_left"> &#60;  </span> Назад</button>
-                    <button className="pages_link">1</button>
-                    <button className="pages_link">2</button>
-                    <button className="pages_link">3</button>
-                    <button className="pages_link">4</button>
-                    <button className="pages_link">5</button>
-                    <button className="pages_link">6</button>
-                    <button className="pages_link">7</button>
-                    <button className="pages_link">Вперед <span className="arrow_right"> &#62; </span> </button>
-                </div>
-            </div>
+            <Table
+                index={props.index}
+                columns={columns}
+                data={data}
+                display="none"
+            />
         </div>
 
 )

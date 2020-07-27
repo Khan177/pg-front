@@ -2,6 +2,7 @@ import React from "react";
 
 
 const TableContent = () => {
+
     return (
         <div className="tables tabcontent table_link table_records">
                 <table className="table">

@@ -1,18 +1,18 @@
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {BaseHoverBlock, BaseHoverBlockLink, HeaderMenuLink} from "../HeaderStyle";
 
-const  HeaderMenu =()=>{
-    return(<>
-            <a href="/#" className="menu_link">Продажи</a>
-            <a href="/#" className="menu_link">Монтажи</a>
-            <NavLink to={"/base"} className="menu_link  base_hover ">Базы
-                <div className="base_hover_info">
-                    <NavLink to="/base/outdoor_furniture" className="base_hover_info_text">Конструкции</NavLink>
-                    <NavLink to="/base/partners" className="base_hover_info_text">Контрагенты</NavLink>
-                </div>
-            </NavLink>
-            <a href="/#" className="menu_link">Отчеты</a>
-            <a href="/#" className="menu_link">Администрация</a>
+const HeaderMenu = () => {
+    return (<>
+            <HeaderMenuLink to={"/"}>Продажи</HeaderMenuLink>
+            <HeaderMenuLink to={"/"}>Монтажи</HeaderMenuLink>
+            <HeaderMenuLink to={"/base"} >Базы
+                <BaseHoverBlock>
+                    <BaseHoverBlockLink to="/base/outdoor_furniture" >Конструкции</BaseHoverBlockLink>
+                    <BaseHoverBlockLink to="/base/partners" >Контрагенты</BaseHoverBlockLink>
+                </BaseHoverBlock>
+            </HeaderMenuLink>
+            <HeaderMenuLink to={"/"}>Отчеты</HeaderMenuLink>
+            <HeaderMenuLink to={"/"}>Администрация</HeaderMenuLink>
         </>
     )
 }
