@@ -1,1 +1,1 @@
-import {SubmitButton,} from "../StyledFilters"import React from "react";export default function ResetBtn () {    return (        <SubmitButton>            Искать        </SubmitButton>    )}
+import React from "react";import ButtonGroup from "./ButtonGroup";export default function ResetBtn () {    return (        <ButtonGroup/>    )}

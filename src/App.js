@@ -17,8 +17,8 @@ function App() {
                     <Header/>
                 </header>
                 <Switch>
-                    <Route path="/base/partners" exact component={Partners}/>
-                    <Route path="/base/partner/info" exact component={CreateNewPartners}/>
+                    {/*<Route path="/base/partners" exact component={Partners}/>*/}
+                    {/*<Route path="/base/partner/info" exact component={CreateNewPartners}/>*/}
                     <Route path="/base/construction" exact component={Construction}/>
                     <Route path="/base/outdoor_furniture" exact component={OutdoorFurniture}/>
                 </Switch>

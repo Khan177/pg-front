@@ -11,7 +11,6 @@ import {
     BtnPrint,
     BtnSettings,
     TableControl,
-    TableToolbar
 } from "../../../../components/Table/TableStyles/TableStyles";
 import styled from 'styled-components';
 import {Tabs, TabList, Tab, TabPanel} from 'react-tabs';
@@ -26,6 +25,7 @@ import {
     SearchButtonTable, SearchButtonTableContent,
     StyledInput
 } from "../Table/TableStyles/TableStyles";
+import {ControlToolbar} from "../../../../components/CotrolToolbar/ControlToolbarStyle";
 
 const Container = styled.div`
 margin: 20px;
@@ -194,7 +194,7 @@ export default function CreateNewParters(props) {
                     selectedTabPanelClassName="is-selected"
                     onSelect={index => props.selectedTab(index)}
                 >
-                    <TableToolbar position="static">
+                    <ControlToolbar position="static">
                         <STabList>
                             <STab>Общая информация</STab>
                             <STab>Связанные проекты</STab>
@@ -226,7 +226,7 @@ export default function CreateNewParters(props) {
                                 <img src={settings_icon} alt=""/>
                             </BtnSettings>
                         </STabList>
-                    </TableToolbar>
+                    </ControlToolbar>
 
                     <STabPanel>
                         <NewAndAllBlockInput/>

@@ -13,7 +13,8 @@ import {
 } from "./PartnersStyles"
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
-import Table from "../Table/Table";
+
+import Table from "../../../../components/Table/Table";
 import Location from "../PartnersSearchBlock/Components/Blocks/location";
 
 
@@ -47,7 +48,7 @@ export default function PartnersList() {
             <Table
                 columns={columns}
                 data={data}
-                index={"2"}
+                // index={"2"}
             />
 
         </Section>

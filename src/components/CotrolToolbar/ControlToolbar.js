@@ -1,0 +1,1 @@
+import React from "react";import {ControlToolbar} from "./ControlToolbarStyle"export default function ToolbarControl() {return(    <ControlToolbar>    </ControlToolbar>)}

@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {fetchTableInfo} from "../../../../../store/action";
 import {connect} from "react-redux";
-import Table from "../../Table/Table";
+import Table from "../../../../../components/Table/Table";
 import makeColumns from "../../PartnersList/DataTable/columns";
 import makeData from "../../PartnersList/DataTable/data";
 

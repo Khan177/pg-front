@@ -1,15 +1,14 @@
-import React, {useEffect} from "react";
-import {fetchTableInfo} from "../../../../../store/action";
-import {connect} from "react-redux";
+import React from "react";
 import makeColumns from "../../PartnersList/DataTable/columns";
 import makeData from "../../PartnersList/DataTable/data";
-import Table from "../../Table/Table";
+import Table from "../../../../../components/Table/Table";
 
-const RelatedBrands =(props) =>{
+const RelatedBrands = (props) => {
+
     const columns = React.useMemo(() => makeColumns, [])
     const data = React.useMemo(() => makeData, []);
 
-    return(
+    return (
         <div className="table_records tables tabcontent table_link">
             <Table
                 index={props.index}
@@ -19,18 +18,8 @@ const RelatedBrands =(props) =>{
             />
         </div>
 
-)
+    )
 }
-const mapStateToProps = state => {
-    return {
-        tableInfo: state.table.tableInfo,
-        errorName: state.table.error
-    }
-}
-const mapDispatchToProps = dispatch => {
-    return {
-        takeAllInfoTable: () => dispatch(fetchTableInfo())
-    }
-}
-export default connect(mapStateToProps, mapDispatchToProps)(RelatedBrands)
+
+export default RelatedBrands
 
