@@ -2,7 +2,7 @@ import React from "react";
 import InputAnchor from "../../../../Inputs/InputAnchor";
 import Multiline from "../../../../Inputs/Multiline";
 import SelectAnchor from "../../../../Inputs/SelectAnchor";
-import {BlockBody, Medium, Row, Column, BlockTitle, InputTitle} from "../../../../StyledBlocks"
+import {BlockBody, Medium, Row, Column, BlockTitle, InputTitle} from "../../../../Styles/StyledBlocks"
 
 export default function GeneralInfo() {
     return (

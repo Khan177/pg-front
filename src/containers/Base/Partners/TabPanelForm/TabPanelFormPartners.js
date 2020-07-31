@@ -4,8 +4,8 @@ import TableContent from "../../../../components/Panels/Partners/RelatedProjects
 import RelatedBrands from "../../../../components/Panels/Partners/RelatedBrands/RelatedBrands";
 import RelatedAdvertisers from "../../../../components/Panels/Partners/RelatedAdvertisers/RelatedAdvertisers";
 import TabPanelFormHeaderPartners from "./TabPanelFormHeaderPartners";
-import {STab, STabList, STabPanel, STabs} from "../../../../components/TabPanelsStyles";
-import {ControlToolbar} from "../../../../components/ControlToolbarStyle";
+import {STab, STabList, STabPanel, STabs} from "../../../../components/Styles/TabPanelsStyles";
+import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
 import {
     BtnBrand,
     BtnExport,

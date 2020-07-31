@@ -1,5 +1,5 @@
 import React from "react";
-import {BlockBody, Quarter, BlockTitle, InputTitle} from "../../../../StyledBlocks"
+import {BlockBody, Quarter, BlockTitle, InputTitle} from "../../../../Styles/StyledBlocks"
 import InputAnchor from "../../../../Inputs/InputAnchor";
 
 export default function BankAccount() {

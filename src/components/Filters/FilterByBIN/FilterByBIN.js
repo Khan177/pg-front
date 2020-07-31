@@ -1,6 +1,6 @@
 import React from "react";
 import {Collapse} from "@material-ui/core";
-import {FilterSectionTitle, FilterSection, FilterSectionTitleText} from "../../StyledFilters"
+import {FilterSectionTitle, FilterSection, FilterSectionTitleText} from "../../Styles/StyledFilters"
 import ArrowDown from "../../CollapseArrows/CollapseArrowIcons/ArrowDown"
 import ArrowUp from "../../CollapseArrows/CollapseArrowIcons/ArrowUp"
 import InputAnchor from "../../Inputs/InputAnchor";
