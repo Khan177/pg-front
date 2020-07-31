@@ -4,7 +4,7 @@ import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import {useBlockLayout, useFilters, useGlobalFilter, usePagination, useResizeColumns, useTable} from "react-table";
 import {useSticky} from "react-table-sticky";
-import {ControlToolbar} from "../../../ControlToolbarStyle";
+import {ControlToolbar} from "../../../Styles/ControlToolbarStyle";
 import GlobalFilter from "../../../Table/FilterGlobal";
 import {BtnExport, BtnPrint, BtnSettings, ToolbarControl} from "../../../Table/TableStyles/TableStyles";
 import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";

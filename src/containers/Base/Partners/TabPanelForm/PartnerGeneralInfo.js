@@ -1,9 +1,9 @@
 import React from "react";
-import {PageWrap} from "../../../../components/ComponentsStyles";
+import {PageWrap} from "../../../../components/Styles/ComponentsStyles";
 import SearchBtn from "../LeftBar/SearchBtn";
 import LeftBar from "../../../../components/LeftBar/LeftBar";
 import TabPanelFormPartners from "./TabPanelFormPartners";
-import {ContentWrap} from "../../../../components/ComponentsStyles"
+import {ContentWrap} from "../../../../components/Styles/ComponentsStyles"
 
 
 export default function PartnerGeneralInfo() {

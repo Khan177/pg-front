@@ -1,11 +1,11 @@
 import React from "react";
 import "./../../../../assets/fonts/sf-ui-display-cufonfonts-webfont/style.css"
-import {Section} from "../../../../components/ComponentsStyles"
+import {Section} from "../../../../components/Styles/ComponentsStyles"
 import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../../../../components/Table/Table";
 import HeaderList from "./HeaderList";
-import {ControlToolbar} from "../../../../components/ControlToolbarStyle";
+import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
 import GlobalFilter from "../../../../components/Table/FilterGlobal";
 import {BtnExport, BtnPrint, BtnSettings, ToolbarControl} from "../../../../components/Table/TableStyles/TableStyles";
 import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";

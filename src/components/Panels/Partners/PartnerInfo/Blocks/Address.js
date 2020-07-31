@@ -1,5 +1,5 @@
 import React from "react";
-import {BlockBody, InputTitle, Quarter, Row, BlockTitle} from "../../../../StyledBlocks"
+import {BlockBody, InputTitle, Quarter, Row, BlockTitle} from "../../../../Styles/StyledBlocks"
 import InputGlobe from "../../../../Inputs/InputGlobe";
 import InputEnvelope from "../../../../Inputs/InputEnvelope";
 import InputDirections from "../../../../Inputs/InputDirections";

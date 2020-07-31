@@ -1,5 +1,5 @@
 import React from "react";
-import {Large, Row, BlockTitle, InputTitle} from "../../../../StyledBlocks";
+import {Large, Row, BlockTitle, InputTitle} from "../../../../Styles/StyledBlocks";
 import styled from "styled-components";
 import InputAnchor from "../../../../Inputs/InputAnchor";
 
