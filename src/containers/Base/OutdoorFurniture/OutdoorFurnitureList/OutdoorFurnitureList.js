@@ -11,8 +11,8 @@ import {BtnExport, BtnPrint, BtnSettings, ToolbarControl} from "../../../../comp
 import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";
 import export_icon from "../../../../img/outdoor_furniture/table_icons/export_icon.svg";
 import settings_icon from "../../../../img/outdoor_furniture/table_icons/setting.svg";
-import {useBlockLayout, useFilters, useGlobalFilter, usePagination, useResizeColumns, useTable} from "react-table";
-import {useSticky} from "react-table-sticky";
+import {useFilters, useGlobalFilter, useTable} from "react-table";
+
 
 export default function OutdoorFurnitureList() {
 
@@ -27,14 +27,9 @@ export default function OutdoorFurnitureList() {
         {
             columns,
             data,
-            initialState: {pageIndex: 0, pageSize: 10},
         },
         useFilters, // useFilters!
         useGlobalFilter, // useGlobalFilter!
-        usePagination,
-        useBlockLayout,
-        useSticky,
-        useResizeColumns
     );
 
     const toolbar =
