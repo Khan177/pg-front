@@ -1,1 +1,0 @@
-import React from "react";import {FilterMenu, FilterText, SearchTitle} from "../StyledFilters";export default function TitleSearch() {    return (        <SearchTitle>            <FilterText>                Поиск            </FilterText>        </SearchTitle>    )}

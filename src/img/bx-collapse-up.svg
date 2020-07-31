@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/bx-chevron-down</title>
+    <g id="CMS-/-Sales" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Sales-/-Batch-placement" transform="translate(-338.000000, -692.000000)" stroke="#CDCDCD">
+            <g id="block-/-filtr" transform="translate(80.000000, 80.000000)">
+                <g id="block-/-filtr-/-data-/-old" transform="translate(30.000000, 607.000000)">
+                    <g id="icons/bx-chevron-down" transform="translate(233.000000, 7.500000) scale(1, -1) translate(-233.000000, -7.500000) translate(228.000000, 4.000000)">
+                        <path d="M8.21974999,1.42685677 L5,5.35339323 L1.42685676,1.78025 L5,4.64660679 L8.21974999,1.42685677 Z" transform="translate(5.000000, 3.390125) scale(1, -1) translate(-5.000000, -3.390125) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,1 @@
+import SvgIcon from "@material-ui/core/SvgIcon";import React from "react";export default function ArrowUp(props) {    return (        <SvgIcon {...props}>            <path d="M8.21974999,1.42685677 L5,5.35339323 L1.42685676,1.78025 L5,4.64660679 L8.21974999,1.42685677 Z"/>        </SvgIcon>    );}

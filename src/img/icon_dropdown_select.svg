@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="6px" viewBox="0 0 8 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon</title>
+    <g id="guide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="filtr" transform="translate(-252.000000, -632.000000)" fill="#B2C1CF">
+            <g id="filtr--block" transform="translate(0.000000, 576.000000)">
+                <g id="filtr--block--inputs" transform="translate(30.000000, 38.000000)">
+                    <g id="icon" transform="translate(218.000000, 12.000000)">
+                        <polygon id="icons/bx-chevron-down" points="10.862 6.86199999 8 9.724 5.13799999 6.86199999 4.19533332 7.80466666 8 11.6093333 11.8046667 7.80466666"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

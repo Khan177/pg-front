@@ -1,0 +1,1 @@
+import SvgIcon from "@material-ui/core/SvgIcon";import React from "react";export default function ArrowDown(props) {    return (        <SvgIcon {...props}>            <path                d="M5.35356 2.70697L8.21976 5.57317L8.57315 5.21977L5.00001 1.64663L1.42686 5.21977L1.78026 5.57317L4.64645 2.70697L5.00001 2.35342L5.35356 2.70697Z"/>        </SvgIcon>    );}

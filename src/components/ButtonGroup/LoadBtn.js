@@ -1,1 +1,0 @@
-import {BtnStyledSecondary} from "../ButtonStyles";import React from "react";export default function LoadBtn(props){    return(        <BtnStyledSecondary>            {props.children}        </BtnStyledSecondary>    )}

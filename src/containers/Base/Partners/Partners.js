@@ -1,5 +1,5 @@
 import React from "react";
-import FilterBar from "./SidebarPartners/Filters/FilterBar";
+import FilterBar from "./FilterBar/FilterBar";
 import PartnersList from "./PartnersList/PartnersList";
 import SearchBtn from "./LeftBar/SearchBtn";
 import LeftBar from "../../../components/LeftBar/LeftBar";
