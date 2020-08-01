@@ -5,23 +5,11 @@ import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../../../../components/Table/Table";
 import HeaderList from "../HeaderList";
-import {Styles, ToolbarControl} from "../../../../components/Table/TableStyles/TableStyles";
+import {ToolbarControl} from "../../../../components/Styles/ControlToolbarStyle";
 import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
-
-
-
-
-import {
-    useAsyncDebounce,
-    useBlockLayout,
-    useFilters,
-    useGlobalFilter,
-    usePagination,
-    useResizeColumns,
-    useTable
-} from 'react-table'
+import {useBlockLayout, useFilters, useGlobalFilter, usePagination, useResizeColumns, useTable} from "react-table";
 import {useSticky} from "react-table-sticky";
-
+import GlobalFilter from "../../../../components/Table/FilterGlobal";
 
 
 export default function OutdoorFurnitureList() {
@@ -30,33 +18,44 @@ export default function OutdoorFurnitureList() {
     const data = React.useMemo(() => makeData, []);
 
 
+    const {
+        page, // Instead of using 'rows', we'll use page - It is used by GlobalFilter and Pagination
+        canPreviousPage, /*Pagination */
+        canNextPage, /*Pagination */
+        pageOptions, /*Pagination */
+        pageCount, /*Pagination */
+        gotoPage, /*Pagination */
+        nextPage, /*Pagination */
+        previousPage, /*Pagination */
+        setPageSize, /*Pagination - onChange*/
+        state, /*GlobalFilter*/
+        preGlobalFilteredRows, /*GlobalFilter*/
+        setGlobalFilter, /*GlobalFilter*/
+        state: {pageIndex, pageSize, globalFilter}, /*Pagination state*/
+        getTableProps,
+        getTableBodyProps,
+        headerGroups,
+        prepareRow,
+        // resetResizing,
+    } = useTable(
+        {
+            columns,
+            data,
+            initialState: {pageIndex: 0, pageSize: 20},
+        },
+        useFilters, // useFilters!
+        useGlobalFilter, // useGlobalFilter!
+        usePagination,
+        useBlockLayout,
+        useSticky,
+        useResizeColumns
+    );
 
+    React.useEffect(() => {
+        // props.dispatch({ type: actions.resetPage })
+        console.log(globalFilter);
+    }, [globalFilter]);
 
-
-    const toolbar =
-        <ControlToolbar>
-            {/*{console.log(globalFilter)}*/}
-            {/*<input*/}
-            {/*    type="text"*/}
-            {/*    value={globalFilter || ""}*/}
-            {/*    onChange={e => setGlobalFilter(e.target.value)}*/}
-            {/*/>*/}
-
-            <ToolbarControl>
-                {/*<BtnPrint>*/}
-                {/*    <img src={print_icon} alt=""/>*/}
-                {/*</BtnPrint>*/}
-                {/*<BtnExport*/}
-                {/*    // onClick={exportBtnHandler}*/}
-                {/*>*/}
-                {/*    <img src={export_icon} alt=""/>*/}
-                {/*    Экспорт*/}
-                {/*</BtnExport>*/}
-                {/*<BtnSettings>*/}
-                {/*    <img src={settings_icon} alt=""/>*/}
-                {/*</BtnSettings>*/}
-            </ToolbarControl>
-        </ControlToolbar>
 
     return (
         <Section>

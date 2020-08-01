@@ -10,7 +10,7 @@ import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import PersonIcon from "@material-ui/icons/Person";
 import SettingsIcon from "@material-ui/icons/Settings";
 import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import {AvatarImg, BlockUser, Law, User, UserAvatar, UserInfo, UserName} from "./UserMenuStyles";
+import {AvatarImg, BlockUser, Position, User, UserAvatar, UserInfo, UserName} from "./UserMenuStyles";
 
 
 export default function UserMenu({name, surname, position, avatar}) {
@@ -34,7 +34,7 @@ export default function UserMenu({name, surname, position, avatar}) {
                             {name}
                             {" " + surname}
                         </UserName>
-                        <Law>{position}</Law>
+                        <Position>{position}</Position>
                     </UserInfo>
                     <UserAvatar>
                         <AvatarImg src={avatar} alt=""/>

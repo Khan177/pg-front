@@ -1,1 +1,0 @@
-import styled from "styled-components";export const JobTitle = styled.h1`        font-family: "SF UI Display Medium", sans-serif;        font-size: 24px;        line-height: 28px;        color: #003360;`

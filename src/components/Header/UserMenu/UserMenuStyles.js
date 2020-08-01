@@ -23,6 +23,8 @@ export const UserInfo = styled.div`
     padding: 0 10%;
     justify-content: center;
     margin-right: 15px;
+    font-size: 16px;
+    font-family: "SF UI Display Medium", sans-serif;
 `;
 
 export const UserName = styled.h4`
@@ -31,12 +33,12 @@ export const UserName = styled.h4`
     white-space: nowrap;
     font-weight: 600;
     text-transform: capitalize;
-    font-family: "SF UI Display Light", sans-serif;
+    font-family: "SF UI Display Medium", sans-serif;
     font-size: 16px;
     line-height: 19px;
 `;
 
-export const Law = styled.p`
+export const Position = styled.p`
       margin: 0;
       color: #8AA1C1;
       text-transform: uppercase;
@@ -44,6 +46,7 @@ export const Law = styled.p`
       font-size: 10px;
       line-height: 12px;
       text-align: right;
+      font-family: "SF UI Display Medium", sans-serif;
       
 `;
 
