@@ -5,13 +5,23 @@ import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../../../../components/Table/Table";
 import HeaderList from "../HeaderList";
+import {Styles, ToolbarControl} from "../../../../components/Table/TableStyles/TableStyles";
 import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
-import GlobalFilter from "../../../../components/Table/FilterGlobal";
-import {BtnExport, BtnPrint, BtnSettings, ToolbarControl} from "../../../../components/Table/TableStyles/TableStyles";
-import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";
-import export_icon from "../../../../img/outdoor_furniture/table_icons/export_icon.svg";
-import settings_icon from "../../../../img/outdoor_furniture/table_icons/setting.svg";
-import {useFilters, useGlobalFilter, useTable} from "react-table";
+
+
+
+
+import {
+    useAsyncDebounce,
+    useBlockLayout,
+    useFilters,
+    useGlobalFilter,
+    usePagination,
+    useResizeColumns,
+    useTable
+} from 'react-table'
+import {useSticky} from "react-table-sticky";
+
 
 
 export default function OutdoorFurnitureList() {
@@ -19,50 +29,42 @@ export default function OutdoorFurnitureList() {
     const columns = React.useMemo(() => makeColumns, [])
     const data = React.useMemo(() => makeData, []);
 
-    const {
-        state, /*GlobalFilter*/
-        preGlobalFilteredRows, /*GlobalFilter*/
-        setGlobalFilter, /*GlobalFilter*/
-    } = useTable(
-        {
-            columns,
-            data,
-        },
-        useFilters, // useFilters!
-        useGlobalFilter, // useGlobalFilter!
-    );
+
+
+
 
     const toolbar =
         <ControlToolbar>
-        <GlobalFilter
-            preGlobalFilteredRows={preGlobalFilteredRows}
-            globalFilter={state.globalFilter}
-            setGlobalFilter={setGlobalFilter}
-        />
+            {/*{console.log(globalFilter)}*/}
+            {/*<input*/}
+            {/*    type="text"*/}
+            {/*    value={globalFilter || ""}*/}
+            {/*    onChange={e => setGlobalFilter(e.target.value)}*/}
+            {/*/>*/}
 
-        <ToolbarControl>
-            <BtnPrint>
-                <img src={print_icon} alt=""/>
-            </BtnPrint>
-            <BtnExport
-                // onClick={exportBtnHandler}
-            >
-                <img src={export_icon} alt=""/>
-                Экспорт
-            </BtnExport>
-            <BtnSettings>
-                <img src={settings_icon} alt=""/>
-            </BtnSettings>
-        </ToolbarControl>
-    </ControlToolbar>
+            <ToolbarControl>
+                {/*<BtnPrint>*/}
+                {/*    <img src={print_icon} alt=""/>*/}
+                {/*</BtnPrint>*/}
+                {/*<BtnExport*/}
+                {/*    // onClick={exportBtnHandler}*/}
+                {/*>*/}
+                {/*    <img src={export_icon} alt=""/>*/}
+                {/*    Экспорт*/}
+                {/*</BtnExport>*/}
+                {/*<BtnSettings>*/}
+                {/*    <img src={settings_icon} alt=""/>*/}
+                {/*</BtnSettings>*/}
+            </ToolbarControl>
+        </ControlToolbar>
 
     return (
         <Section>
             <HeaderList/>
+
             <Table
                 columns={columns}
                 data={data}
-                toolbar={toolbar}
             >
             </Table>
         </Section>

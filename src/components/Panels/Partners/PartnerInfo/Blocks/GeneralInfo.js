@@ -88,13 +88,8 @@ export default function GeneralInfo() {
                             <InputTitle>
                                 Тип клиента
                             </InputTitle>
-<<<<<<< HEAD
-                            <InputAnchor
-                                placeholder="Тип клиента"
-=======
                             <Multiline
                                 // inputProps={{maxLength: 450, rows: 186, cols: 10}}
->>>>>>> e8e97b93e72d5871cf7a21d595b44b7669959e03
                             />
                         </div>
                     </Column>
@@ -103,4 +98,4 @@ export default function GeneralInfo() {
             </BlockBody>
         </Medium>
     )
-}
+};

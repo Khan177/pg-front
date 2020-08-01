@@ -6,6 +6,7 @@
     "@date-io/date-fns": "^1.3.13",
     "@material-ui/core": "^4.11.0",
     "@material-ui/pickers": "^3.2.10",
+    "@syncfusion/ej2-react-dropdowns": "^18.2.47",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -24,6 +25,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "react-select": "^3.1.0",
+    "react-select-checked": "^0.1.12",
     "react-table": "^7.2.2",
     "react-table-sticky": "^1.1.3",
     "react-virtualized": "^9.21.2",
@@ -58,6 +60,7 @@
     "@linways/table-to-excel": "^1.0.4",
     "@material-ui/icons": "^4.9.1",
     "clsx": "^1.1.1",
+    "create-react-class": "^15.6.3",
     "match-sorter": "^4.2.0",
     "react-tabs": "^3.1.1",
     "yandex-map-react": "^1.1.1"
