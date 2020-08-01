@@ -30,6 +30,7 @@ export const BaseHoverBlock =styled.div`
     display: flex;
     flex-flow: column;
     border-radius: 4px;
+    z-index:99999;
 `
 export const HeaderMenuLink = styled(NavLink)`
     color: #003360;
