@@ -5,61 +5,83 @@ import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../../../../components/Table/Table";
 import HeaderList from "../HeaderList";
-import {ToolbarControl} from "../../../../components/Styles/ControlToolbarStyle";
-import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
-import {useBlockLayout, useFilters, useGlobalFilter, usePagination, useResizeColumns, useTable} from "react-table";
-import {useSticky} from "react-table-sticky";
-import GlobalFilter from "../../../../components/Table/FilterGlobal";
-
+import {useAsyncDebounce, useGlobalFilter, useTable} from "react-table";
+import {ControlToolbar, ToolbarControl} from "../../../../components/Styles/ControlToolbarStyle";
+import {BtnExport, BtnPrint, BtnSettings} from "../../../../components/Styles/ButtonStyles";
+import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";
+import export_icon from "../../../../img/outdoor_furniture/table_icons/export_icon.svg";
+import settings_icon from "../../../../img/outdoor_furniture/table_icons/setting.svg";
+import {Styles} from "../../../../components/Table/TableStyles/TableStyles";
+import GlobalFilter from "../../../../components/Panels/Partners/RelatedProjects/DataTable/FilterGlobal";
 
 export default function OutdoorFurnitureList() {
 
     const columns = React.useMemo(() => makeColumns, [])
     const data = React.useMemo(() => makeData, []);
 
+    const props = useTable(
+        {
+            columns,
+            data
+        },
+        useGlobalFilter, // useGlobalFilter!
 
+    );
     const {
-        page, // Instead of using 'rows', we'll use page - It is used by GlobalFilter and Pagination
-        canPreviousPage, /*Pagination */
-        canNextPage, /*Pagination */
-        pageOptions, /*Pagination */
-        pageCount, /*Pagination */
-        gotoPage, /*Pagination */
-        nextPage, /*Pagination */
-        previousPage, /*Pagination */
-        setPageSize, /*Pagination - onChange*/
-        state, /*GlobalFilter*/
-        preGlobalFilteredRows, /*GlobalFilter*/
-        setGlobalFilter, /*GlobalFilter*/
-        state: {pageIndex, pageSize, globalFilter}, /*Pagination state*/
         getTableProps,
         getTableBodyProps,
         headerGroups,
+        rows,
         prepareRow,
-        // resetResizing,
-    } = useTable(
-        {
-            columns,
-            data,
-            initialState: {pageIndex: 0, pageSize: 20},
-        },
-        useFilters, // useFilters!
-        useGlobalFilter, // useGlobalFilter!
-        usePagination,
-        useBlockLayout,
-        useSticky,
-        useResizeColumns
-    );
+        setGlobalFilter,
+        preGlobalFilteredRows,
+        state,
+        page, // Instead of using 'rows', we'll use page,
+        // which has only the rows for the active page
 
+        // The rest of these things are super handy, too ;)
+        canPreviousPage,
+        canNextPage,
+        pageOptions,
+        pageCount,
+        gotoPage,
+        nextPage,
+        previousPage,
+        setPageSize,
+        state: { pageIndex, pageSize, globalFilter }
+    } = props;
+    console.log(props);
     React.useEffect(() => {
         // props.dispatch({ type: actions.resetPage })
         console.log(globalFilter);
     }, [globalFilter]);
 
-
     return (
         <Section>
             <HeaderList/>
+            <ControlToolbar>
+
+                <GlobalFilter
+                    preGlobalFilteredRows={preGlobalFilteredRows}
+                    globalFilter={state.globalFilter}
+                    setGlobalFilter={setGlobalFilter}
+                />
+
+                <ToolbarControl>
+                    <BtnPrint>
+                        <img src={print_icon} alt=""/>
+                    </BtnPrint>
+                    <BtnExport
+                        // onClick={exportBtnHandler}
+                    >
+                        <img src={export_icon} alt=""/>
+                        Экспорт
+                    </BtnExport>
+                    <BtnSettings>
+                        <img src={settings_icon} alt=""/>
+                    </BtnSettings>
+                </ToolbarControl>
+            </ControlToolbar>
 
             <Table
                 columns={columns}
