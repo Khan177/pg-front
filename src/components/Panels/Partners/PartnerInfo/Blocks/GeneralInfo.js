@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     root: {
         "& .MuiOutlinedInput-multiline": {
-            height: 160
+            height: 123
         },
     },
 }));
@@ -74,27 +74,14 @@ export default function GeneralInfo() {
                                 placeholder="Сектор"
                             />
                         </div>
-                        <div style={{width: "100%"}}>
-                            <InputTitle>
-                                Тип контрагента
-                            </InputTitle>
-                            <InputAnchor
-                                placeholder="Тип"
-                            />
-                        </div>
                     </Column>
                     <Column style={{width: "45%", marginBottom: '21px'}}>
                         <div style={{width: "100%"}}>
                             <InputTitle>
                                 Тип клиента
                             </InputTitle>
-<<<<<<< HEAD
                             <InputAnchor
-                                placeholder="Тип клиента"
-=======
-                            <Multiline
-                                // inputProps={{maxLength: 450, rows: 186, cols: 10}}
->>>>>>> e8e97b93e72d5871cf7a21d595b44b7669959e03
+                                placeholder="Тип"
                             />
                         </div>
                     </Column>
