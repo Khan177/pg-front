@@ -1,25 +1,13 @@
 import React from "react";
 import PartnerInfo from "../../../../components/Panels/Partners/PartnerInfo/PartnerInfo";
-import TableContent from "../../../../components/Panels/Partners/RelatedProjects/RelatedProjects";
+import RelatedProjects from "../../../../components/Panels/Partners/RelatedProjects/RelatedProjects";
 import RelatedBrands from "../../../../components/Panels/Partners/RelatedBrands/RelatedBrands";
 import RelatedAdvertisers from "../../../../components/Panels/Partners/RelatedAdvertisers/RelatedAdvertisers";
 import TabPanelFormHeaderPartners from "./TabPanelFormHeaderPartners";
 import {STab, STabList, STabPanel, STabs} from "../../../../components/Styles/TabPanelsStyles";
 import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
-import {
-    BtnBrand,
-    BtnExport,
-    BtnPrint,
-    BtnSettings,
-} from "../../../../components/Table/TableStyles/TableStyles";
-import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";
-import export_icon from "../../../../img/outdoor_furniture/table_icons/export_icon.svg";
-import settings_icon from "../../../../img/outdoor_furniture/table_icons/setting.svg";
-import GlobalFilter from "../../../../components/Table/FilterGlobal";
-import {useBlockLayout, useFilters, useGlobalFilter, usePagination, useResizeColumns, useTable} from "react-table";
-import {useSticky} from "react-table-sticky";
-import makeColumns from "../../../../components/Panels/Partners/RelatedProjects/DataTable/columns";
-import makeData from "../../../../components/Panels/Partners/RelatedProjects/DataTable/data";
+import {BtnBrand} from "../../../../components/Styles/ButtonStyles";
+
 
 STabPanel.tabsRole = 'TabPanel';
 STabList.tabsRole = 'TabList';
@@ -34,52 +22,13 @@ const tabs = [
 ];
 
 const panel1 = <PartnerInfo/>;
-const panel2 = <TableContent/>;
+const panel2 = <RelatedProjects/>;
 const panel3 = <RelatedBrands/>;
 const panel4 = <RelatedAdvertisers/>;
 
 
 export default function TabPaneForm(props) {
 
-    const columns = React.useMemo(() => makeColumns, [])
-    const data = React.useMemo(() => makeData, []);
-
-    const {
-        state, /*GlobalFilter*/
-        preGlobalFilteredRows, /*GlobalFilter*/
-        setGlobalFilter, /*GlobalFilter*/
-    } = useTable(
-        {
-            columns,
-            data,
-            initialState: {pageIndex: 0, pageSize: 10},
-        },
-        useFilters, // useFilters!
-        useGlobalFilter, // useGlobalFilter!
-    );
-
-
-    const Ttoolbar = <>
-        <GlobalFilter
-            preGlobalFilteredRows={preGlobalFilteredRows}
-            globalFilter={state.globalFilter}
-            setGlobalFilter={setGlobalFilter}
-        />
-        <>
-            <BtnPrint>
-                <img src={print_icon} alt=""/>
-            </BtnPrint>
-            <BtnExport
-                // onClick={exportBtnHandler}
-            >
-                <img src={export_icon} alt=""/>
-                Экспорт
-            </BtnExport>
-            <BtnSettings>
-                <img src={settings_icon} alt=""/>
-            </BtnSettings>
-        </>
-    </>
 
     return (
         <form style={{width: "100%"}}>
@@ -99,20 +48,15 @@ export default function TabPaneForm(props) {
                                 >{tab.value}</STab>
                             })}
                         </STabList>
-
                         {(props.index === 2) ?
                             <BtnBrand>
                                 Привязать бренд
                             </BtnBrand> : null}
-                        {(props.index === 1)?Ttoolbar: null}
-
                     </ControlToolbar>
                     <STabPanel>
                         {panel1}
                     </STabPanel>
-                    <STabPanel
-                    toolbar={Ttoolbar}
-                    >
+                    <STabPanel>
                         {panel2}
                     </STabPanel>
                     <STabPanel>

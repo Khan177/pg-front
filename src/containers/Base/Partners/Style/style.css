@@ -1,0 +1,32 @@
+.contentInfo{
+    flex-basis: 4%;
+}
+.resetPadding{
+    padding: 0;
+}
+.Breadscrumbs {
+    height: 14px;
+    font-size: 11px;
+    line-height: 13px;
+    padding-top: 8px;
+}
+.ListTitle{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 203px;
+    height: auto;
+}
+.ListTitleInfo{
+    display: flex;
+    justify-content: space-between;
+    margin: 27px 0;
+}
+.ListTitleInfoButton{
+    display: flex;
+    justify-content: flex-end;
+}
+.ListTitleHeader{
+    display: flex;
+}

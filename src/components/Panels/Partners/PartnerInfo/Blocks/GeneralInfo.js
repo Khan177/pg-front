@@ -80,9 +80,6 @@ export default function GeneralInfo() {
                             <InputTitle>
                                 Тип клиента
                             </InputTitle>
-                            <InputAnchor
-                                placeholder="Тип"
-                            />
                         </div>
                     </Column>
                 </Row>
@@ -90,4 +87,4 @@ export default function GeneralInfo() {
             </BlockBody>
         </Medium>
     )
-}
+};

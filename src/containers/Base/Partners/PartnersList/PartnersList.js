@@ -5,68 +5,25 @@ import makeColumns from "./DataTable/columns";
 import makeData from "./DataTable/data";
 import Table from "../../../../components/Table/Table";
 import HeaderList from "./HeaderList";
-import {ControlToolbar} from "../../../../components/Styles/ControlToolbarStyle";
-import GlobalFilter from "../../../../components/Table/FilterGlobal";
-import {BtnExport, BtnPrint, BtnSettings, ToolbarControl} from "../../../../components/Table/TableStyles/TableStyles";
-import print_icon from "../../../../img/outdoor_furniture/table_icons/print.svg";
-import export_icon from "../../../../img/outdoor_furniture/table_icons/export_icon.svg";
-import settings_icon from "../../../../img/outdoor_furniture/table_icons/setting.svg";
-import {useBlockLayout, useFilters, useGlobalFilter, usePagination, useResizeColumns, useTable} from "react-table";
-import {useSticky} from "react-table-sticky";
+import {Col, Grid, Row} from "react-flexbox-grid";
 
-export default function OutdoorFurnitureList() {
+export default function PartnersList() {
 
     const columns = React.useMemo(() => makeColumns, [])
     const data = React.useMemo(() => makeData, []);
 
-    const {
-        state, /*GlobalFilter*/
-        preGlobalFilteredRows, /*GlobalFilter*/
-        setGlobalFilter, /*GlobalFilter*/
-    } = useTable(
-        {
-            columns,
-            data,
-            initialState: {pageIndex: 0, pageSize: 10},
-        },
-        useFilters, // useFilters!
-        useGlobalFilter, // useGlobalFilter!
-        usePagination,
-        useBlockLayout,
-        useSticky,
-        useResizeColumns
-    );
-
-    const toolbar = <ControlToolbar>
-        <GlobalFilter
-            preGlobalFilteredRows={preGlobalFilteredRows}
-            globalFilter={state.globalFilter}
-            setGlobalFilter={setGlobalFilter}
-        />
-        <ToolbarControl>
-            <BtnPrint>
-                <img src={print_icon} alt=""/>
-            </BtnPrint>
-            <BtnExport
-                // onClick={exportBtnHandler}
-            >
-                <img src={export_icon} alt=""/>
-                Экспорт
-            </BtnExport>
-            <BtnSettings>
-                <img src={settings_icon} alt=""/>
-            </BtnSettings>
-        </ToolbarControl>
-    </ControlToolbar>
     return (
-        <Section>
-          <HeaderList/>
-            <Table
-                columns={columns}
-                data={data}
-                toolbar={toolbar}
-            />
-        </Section>
+        <Grid fluid>
+            <Row>
+                <Col xs={12}>
+                    <HeaderList/>
+                    <Table
+                        columns={columns}
+                        data={data}
+                    />
+                </Col>
+            </Row>
+        </Grid>
     )
-}
+};
 

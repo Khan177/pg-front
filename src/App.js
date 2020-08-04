@@ -8,6 +8,7 @@ import OutdoorFurniture from "./containers/Base/OutdoorFurniture/OudoorFurniture
 import Header from "./components/Header/Header";
 import Construction from "./containers/Base/Construction/Construction"
 import PartnerGeneralInfo from "./containers/Base/Partners/TabPanelForm/PartnerGeneralInfo";
+import cool from "./containers/cpop";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 <Switch>
                     <Route path="/base/partners" exact component={Partners}/>
                     <Route path="/base/partners/info" exact component={PartnerGeneralInfo}/>
+                    <Route path="/cool" exact component={cool}/>
                     <Route path="/base/construction" exact component={Construction}/>
                     <Route path="/base/outdoor_furniture" exact component={OutdoorFurniture}/>
                 </Switch>
