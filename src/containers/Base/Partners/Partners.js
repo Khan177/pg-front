@@ -10,7 +10,7 @@ import "./Style/style.css"
 const Partners = () => {
     return (
         <Grid fluid className="resetPadding">
-            <Row>
+            <Row xs={12} className="resetPadding">
                 <Col xs={1} className="contentInfo resetPadding" >
                     <LeftBar>
                         <SearchBtn/>
