@@ -7,20 +7,29 @@ import {BlockWrapper} from "../../../Styles/StyledBlocks";
 import BankAccount from "./Blocks/BankAccount";
 import ContactPerson from "./Blocks/ContactPerson";
 import Commissions from "./Blocks/Commissions";
+import {Col, Grid, Row} from "react-flexbox-grid";
 
 
 const PartnerInfo = () => {
-    const classes = useStyles();
+    // const classes = useStyles();
     return (
-        <Container className={classes.root}>
-            <BlockWrapper>
-                <GeneralInfo/>
-                <Address/>
-                <BankAccount/>
-            </BlockWrapper>
+        <Grid fluid className=" resetPadding ">
+            <Row xs={12} className=" resetPadding">
+                {/*<Container className={classes.root}>*/}
+                <Col xs={6}>
+                    <GeneralInfo />
+                </Col>
+                <Col xs={3}>
+                    <Address />
+                </Col>
+                <Col xs={3}>
+                    <BankAccount />
+                </Col>
+            </Row>
             <ContactPerson/>
             <Commissions/>
-        </Container>
+            {/*</Container>*/}
+        </Grid>
     )
 }
 

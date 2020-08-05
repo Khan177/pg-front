@@ -9,7 +9,7 @@ import "./Style/style.css"
 
 const Partners = () => {
     return (
-        <Grid fluid style={{padding:"0"}}>
+        <Grid fluid className="resetPadding">
             <Row>
                 <Col xs={1} className="contentInfo resetPadding" >
                     <LeftBar>

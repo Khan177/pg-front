@@ -30,3 +30,14 @@
 .ListTitleHeader{
     display: flex;
 }
+.marginLeft10{
+    margin-left: 10px;
+}
+.BlockWrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fixedHeight{
+    height: 555px;
+}
