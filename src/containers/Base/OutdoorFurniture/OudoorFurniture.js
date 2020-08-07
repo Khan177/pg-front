@@ -1,1 +1,30 @@
-import React, {Component} from "react";import OutdoorFurnitureList from "./OutdoorFurnitureList/OutdoorFurnitureList";import LeftBar from "../../../components/LeftBar/LeftBar";import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";import SearchButton from "../../../components/ButtonGroup/SearchButton";import {PageWrap} from "../../../components/Styles/ComponentsStyles"import {Col, Grid, Row} from "react-flexbox-grid";class OutdoorFurniture extends Component {    render() {        return (            <Grid fluid className="resetPadding">                <Row className="resetPadding">                    <Col xs={1} className="contentInfo resetPadding">                        <LeftBar>                            <SearchButton/>                        </LeftBar>                    </Col>                    <Col xs={2} className="resetPadding">                        <FilterBar/>                    </Col>                    <Col xs={9} className="resetPadding">                        <OutdoorFurnitureList/>                    </Col>                </Row>            </Grid>        );    }}export default OutdoorFurniture;
+import React, { Component } from "react";
+import OutdoorFurnitureList from "./OutdoorFurnitureList/OutdoorFurnitureList";
+import LeftBar from "../../../components/LeftBar/LeftBar";
+import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";
+import SearchButton from "../../../components/ButtonGroup/SearchButton";
+import { PageWrap } from "../../../components/Styles/ComponentsStyles";
+import { Col, Grid, Row } from "react-flexbox-grid";
+
+class OutdoorFurniture extends Component {
+  render() {
+    return (
+      <div className="outdoor-furniture">
+        <style jsx>
+          {`
+            .outdoor-furniture {
+              display: flex;
+            }
+          `}
+        </style>
+        <LeftBar>
+          <SearchButton />
+        </LeftBar>
+        <FilterBar />
+        <OutdoorFurnitureList />
+      </div>
+    );
+  }
+}
+
+export default OutdoorFurniture;
