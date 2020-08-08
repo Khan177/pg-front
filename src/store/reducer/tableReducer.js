@@ -1,29 +1,36 @@
-import {
-    TAKE_INFO_INPUT_SUCCESS,
-    TAKE_INFO_TABLE_ERROR,
-    TAKE_INFO_TABLE_SUCCESS,
-    TAKE_VALUE_INPUT
-} from "../actionTypes";
+const rowKeys = [
+  "code",
+  "city",
+  "postalCode",
+  "marketingAddress",
+  "marketingAddress",
+  "format",
+  "coordinates",
+];
 
 const initialState = {
-    tableInfo: [],
-    error: [],
-    infoForm: []
-}
+  outdoorFurnitureTableData: [],
+  loading: false,
+  failure: false,
+  rowKeys: rowKeys,
+};
 
 const reducer = (state = initialState, action) => {
-    switch (action.type) {
-        case TAKE_INFO_TABLE_SUCCESS:
-            return {...state, tableInfo: action.allTableInfo}
-        case TAKE_INFO_INPUT_SUCCESS:
-            return {...state, infoForm:[]}
-        case TAKE_INFO_TABLE_ERROR:
-            console.log(action.error)
-            return {...state, error: action.error}
-        case TAKE_VALUE_INPUT:
-            return {...state, infoForm: {...state.infoForm, [action.name]: action.value}}
-        default:
-            return state
-    }
-}
-export default reducer
+  switch (action.type) {
+    case "GET_CONSTRUCTIONS_REQUEST":
+      return { ...state, loading: true };
+    case "GET_CONSTRUCTIONS_FAILURE":
+      alert(action.error);
+      return { ...state, failure: true, loading: false };
+    case "GET_CONSTRUCTIONS_SUCCESS":
+      console.log(action.payload);
+      return {
+        ...state,
+        outdoorFurnitureTableData: action.payload,
+        loading: false,
+      };
+    default:
+      return state;
+  }
+};
+export default reducer;
