@@ -215,7 +215,7 @@ export default function EnhancedTable({ columns }) {
                             key={(Math.random() * 100).toString()}
                             align="right"
                           >
-                            {row[rowKey]}
+                            {row[rowKey] ? row[rowKey].toString() : ""}
                           </TableCell>
                         );
                       })}
