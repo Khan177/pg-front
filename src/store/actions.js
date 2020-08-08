@@ -6,7 +6,6 @@ export const getOutdoorFurnitureData = () => {
     type: "GET_CONSTRUCTIONS_SUCCESS",
     payload: data,
   });
-  console.log("hey");
   const failure = (err) => ({ type: "GET_CONSTRUCTIONS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());

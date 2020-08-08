@@ -1,28 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import LeftBar from "../../../components/LeftBar/LeftBar";
-import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";
-import SearchButton from "../../../components/ButtonGroup/SearchButton";
-import HeaderList from "./HeaderList";
-import { getOutdoorFurnitureData } from "../../../store/actions";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import LeftBar from '../../../components/LeftBar/LeftBar';
+import FilterBar from './OutdoorFurnitureList/FilterBar/FilterBar';
+import SearchButton from '../../../components/ButtonGroup/SearchButton';
+import HeaderList from './HeaderList';
+import { getOutdoorFurnitureData } from '../../../store/actions';
 
-import Table from "../../../components/Table";
+import Table from '../../../components/Table';
 
 export default function OutdoorFurniture() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("hey2");
     return dispatch(getOutdoorFurnitureData());
   }, [dispatch]);
   const outdoorFurnitureColums = [
-    "Код",
-    "Город",
-    "Почтовый индекс",
-    "Маркетинговый адрес",
-    "Юридический адрес",
-    "Формат",
-    "Координаты",
-    "Горит",
+    'Код',
+    'Город',
+    'Почтовый индекс',
+    'Маркетинговый адрес',
+    'Юридический адрес',
+    'Формат',
+    'Координаты',
+    'Горит',
   ];
   return (
     <div className="outdoor-furniture">
