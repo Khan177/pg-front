@@ -22,7 +22,9 @@ import {
   Settings,
   ArrowDownward,
   ArrowUpward,
+  Edit,
 } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 import "./Table.css";
 
@@ -61,6 +63,7 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
+        <TableCell />
         {headCells.map((headCell) => (
           <TableCell
             key={headCell}
@@ -199,6 +202,13 @@ export default function EnhancedTable({ columns }) {
                       tabIndex={-1}
                       key={(Math.random() * 100).toString()}
                     >
+                      <TableCell>
+                        <Link to="/">
+                          <IconButton>
+                            <Edit />
+                          </IconButton>
+                        </Link>
+                      </TableCell>
                       {rowKeys.map((rowKey) => {
                         return (
                           <TableCell

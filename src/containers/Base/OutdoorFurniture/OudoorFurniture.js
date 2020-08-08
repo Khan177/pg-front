@@ -33,6 +33,7 @@ export default function OutdoorFurniture() {
           }
           .outdoor-table-bar {
             padding: 2% 3%;
+            width:60vw
           }
         `}
       </style>
