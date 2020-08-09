@@ -9,11 +9,21 @@ const rowKeys = [
   "isLightUp",
 ];
 
+const partnersRowKeys = [
+  "partnerType",
+  "partnerName",
+  "brand",
+  "sector",
+  "clientType",
+];
+
 const initialState = {
   outdoorFurnitureTableData: [],
+  partnersTableData: [],
   loading: false,
   failure: false,
   rowKeys: rowKeys,
+  partnersRowKeys: partnersRowKeys,
   filterCity: "",
   filterDistrict: "",
   filterPostalCode: "",
@@ -25,9 +35,16 @@ const initialState = {
   filterIsLightUp: "",
   filterCoordinates: "",
   fastSearch: "",
+  partnersFastSearch: "",
   formCities: [],
   formDistricts: [],
   formPostalCodes: [],
+  formContragents: [],
+  filterPartner: "",
+  filterBrand: "",
+  filterAdvertiser: "",
+  filterSector: "",
+  filterBIN: "",
 };
 
 const reducer = (state = initialState, action) => {
@@ -42,6 +59,24 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         outdoorFurnitureTableData: action.payload,
+        loading: false,
+      };
+    case "GET_PARTNERS_SUCCESS":
+      return {
+        ...state,
+        partnersTableData: action.payload,
+        loading: false,
+      };
+    case "GET_PARTNERS_REQUEST":
+      return {
+        ...state,
+        loading: true,
+      };
+    case "GET_PARTNERS_FAILURE":
+      alert(action.error);
+      return {
+        ...state,
+        failure: true,
         loading: false,
       };
     case "SET_FILTER_CITY":
@@ -110,6 +145,15 @@ const reducer = (state = initialState, action) => {
         filterIsLightUp: "",
         filterCoordinates: "",
       };
+    case "CLEAR_PARTNERS_FILTER":
+      return {
+        ...state,
+        filterPartner: "",
+        filterBrand: "",
+        filterAdvertiser: "",
+        filterSector: "",
+        filterBIN: "",
+      };
     case "FILTER_OUTDOOR_TABLE":
       console.log("YA USTAL");
       return {
@@ -174,6 +218,35 @@ const reducer = (state = initialState, action) => {
           }
         ),
       };
+    case "FILTER_PARTNERS_TABLE":
+      return {
+        ...state,
+        partnersTableData: state.partnersTableData.filter((row) => {
+          let boo = true;
+          if (
+            state.filterPartner &&
+            !row.partnerName.toLowerCase().includes(state.filterPartner)
+          )
+            boo = false;
+          if (
+            state.filterAdvertiser &&
+            !row.advertiser.toLowerCase().includes(state.filterAdvertiser)
+          )
+            boo = false;
+          if (
+            state.filterSector &&
+            !row.sector.toLowerCase().includes(state.filterSector)
+          )
+            boo = false;
+          if (
+            state.filterBIN &&
+            !row.bik.toLowerCase().includes(state.filterBIN)
+          )
+            boo = false;
+          return boo;
+        }),
+      };
+
     case "SET_FAST_SEARCH":
       return {
         ...state,
@@ -192,6 +265,23 @@ const reducer = (state = initialState, action) => {
           }
         ),
       };
+
+    case "SET_PARTNERS_FAST_SEARCH":
+      return {
+        ...state,
+        partnersTableData: state.partnersTableData.filter((row) => {
+          for (let key in row) {
+            if (
+              row[key]
+                .toString()
+                .toLowerCase()
+                .includes(action.payload.toLowerCase())
+            )
+              return true;
+          }
+          return false;
+        }),
+      };
     case "SET_CITIES":
       return {
         ...state,
@@ -206,6 +296,38 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         formPostalCodes: action.payload,
+      };
+    case "SET_CONTRAGENTS": {
+      return {
+        ...state,
+        formContragents: action.payload,
+      };
+    }
+    case "SET_FILTER_BIN":
+      return {
+        ...state,
+        filterBIN: action.payload,
+      };
+    case "SET_FILTER_PARTNER":
+      console.log(action.payload);
+      return {
+        ...state,
+        filterPartner: action.payload,
+      };
+    case "SET_FILTER_BRAND":
+      return {
+        ...state,
+        filterBrand: action.payload,
+      };
+    case "SET_FILTER_ADVERTISER":
+      return {
+        ...state,
+        filterAdvertiser: action.payload,
+      };
+    case "SET_FILTER_SECTOR":
+      return {
+        ...state,
+        filterSector: action.payload,
       };
     default:
       return state;

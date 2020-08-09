@@ -78,6 +78,7 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell ? order : "asc"}
               onClick={createSortHandler(rowKeys[headCells.indexOf(headCell)])}
               IconComponent={order === "asc" ? ArrowDownward : ArrowUpward}
+              style={{ whiteSpace: "nowrap" }}
             >
               {headCell}
               {orderBy === headCell ? (
@@ -118,14 +119,18 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EnhancedTable({ columns }) {
+export default function EnhancedTable({
+  columns,
+  rowKeys,
+  rows,
+  handleFastSearch,
+  handleChangeFastSearch,
+}) {
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("city");
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const rowKeys = useSelector((state) => state.table.rowKeys);
-  const rows = useSelector((state) => state.table.outdoorFurnitureTableData);
   console.log(rows);
 
   const handleRequestSort = (event, property) => {
@@ -160,14 +165,12 @@ export default function EnhancedTable({ columns }) {
           <TextField
             className={classes.input}
             placeholder="Быстрый поиск"
-            onChange={(e) => setFastSearch(e.target.value)}
+            onChange={(e) => handleChangeFastSearch(e)}
           />
           <Button
             color="primary"
             size="small"
-            onClick={() => {
-              dispatch(getOutdoorFurnitureFiltered(fastSearch));
-            }}
+            onClick={() => handleFastSearch()}
           >
             Найти
           </Button>

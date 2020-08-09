@@ -6,6 +6,7 @@ import SearchButton from "../../../components/ButtonGroup/SearchButton";
 import HeaderList from "./HeaderList";
 import {
   getOutdoorFurnitureData,
+  getOutdoorFurnitureFiltered,
   getCities,
   getDistricts,
   getPostalCodes,
@@ -21,6 +22,9 @@ export default function OutdoorFurniture() {
     dispatch(getDistricts());
     dispatch(getPostalCodes());
   }, [dispatch]);
+  const rowKeys = useSelector((state) => state.table.rowKeys);
+  const rows = useSelector((state) => state.table.outdoorFurnitureTableData);
+  const [fastSearch, setFastSearch] = useState();
   const outdoorFurnitureColums = [
     "Код",
     "Город",
@@ -50,7 +54,15 @@ export default function OutdoorFurniture() {
       <FilterBar />
       <div className="outdoor-table-bar">
         <HeaderList />
-        <Table columns={outdoorFurnitureColums} />
+        <Table
+          columns={outdoorFurnitureColums}
+          rows={rows}
+          rowKeys={rowKeys}
+          handleFastSearch={() => {
+            dispatch(getOutdoorFurnitureFiltered(fastSearch));
+          }}
+          handleChangeFastSearch={(e) => setFastSearch(e.target.value)}
+        />
       </div>
     </div>
   );
