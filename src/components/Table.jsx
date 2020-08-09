@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Paper,
@@ -25,6 +25,8 @@ import {
   Edit,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { getOutdoorFurnitureFiltered } from "../store/actions";
 
 import "./Table.css";
 
@@ -145,6 +147,9 @@ export default function EnhancedTable({ columns }) {
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
+  const dispatch = useDispatch();
+  const [fastSearch, setFastSearch] = useState();
+
   return (
     <div className={classes.root}>
       <div className="table-toolbar">
@@ -152,8 +157,18 @@ export default function EnhancedTable({ columns }) {
           <IconButton className={classes.iconButton} aria-label="menu">
             <Search />
           </IconButton>
-          <TextField className={classes.input} placeholder="Быстрый поиск" />
-          <Button color="primary" size="small">
+          <TextField
+            className={classes.input}
+            placeholder="Быстрый поиск"
+            onChange={(e) => setFastSearch(e.target.value)}
+          />
+          <Button
+            color="primary"
+            size="small"
+            onClick={() => {
+              dispatch(getOutdoorFurnitureFiltered(fastSearch));
+            }}
+          >
             Найти
           </Button>
         </div>

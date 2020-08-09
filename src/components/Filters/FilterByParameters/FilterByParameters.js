@@ -55,7 +55,7 @@ export default function FilterByParameters() {
           placeholder="Код конструкции"
           onChange={(e) => {
             setCode(e.target.value);
-            dispatch({ type: "SET_FILTER_CODE", payload: code });
+            dispatch({ type: "SET_FILTER_CODE", payload: code.toLowerCase() });
           }}
         />
 
@@ -63,7 +63,10 @@ export default function FilterByParameters() {
           placeholder="Инвентарный номер 1С"
           onChange={(e) => {
             setInventory(e.target.value);
-            dispatch({ type: "SET_FILTER_INVENTORY", payload: inventory });
+            dispatch({
+              type: "SET_FILTER_INVENTORY",
+              payload: inventory.toLowerCase(),
+            });
           }}
         />
 
@@ -71,7 +74,10 @@ export default function FilterByParameters() {
           placeholder="Формат"
           onChange={(e) => {
             setInventory(e.target.value);
-            dispatch({ type: "SET_FILTER_FORMAT", payload: format });
+            dispatch({
+              type: "SET_FILTER_FORMAT",
+              payload: format.toLowerCase(),
+            });
           }}
         />
 
@@ -80,7 +86,10 @@ export default function FilterByParameters() {
           placeholder="Горит/Не горит"
           onChange={(e) => {
             setInventory(e.target.value);
-            dispatch({ type: "SET_FILTER_ISBURNING", payload: burning });
+            dispatch({
+              type: "SET_FILTER_ISBURNING",
+              payload: burning.toLowerCase(),
+            });
           }}
         />
 
@@ -88,7 +97,10 @@ export default function FilterByParameters() {
           placeholder="Координаты"
           onChange={(e) => {
             setInventory(e.target.value);
-            dispatch({ type: "SET_FILTER_COORDINATES", payload: coord });
+            dispatch({
+              type: "SET_FILTER_COORDINATES",
+              payload: coord.toLowerCase(),
+            });
           }}
         />
 

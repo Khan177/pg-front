@@ -8,15 +8,30 @@ import {
 import SelectGlobe from "../../Inputs/SelectGlobe";
 import SelectDirections from "../../Inputs/SelectDirections";
 import SelectEnvelope from "../../Inputs/SelectEnvelope";
-import cities from "./filterFeed/cities";
-import districts from "./filterFeed/districts";
-import zips from "./filterFeed/zips";
 import ArrowDown from "../../CollapseArrows/CollapseArrowIcons/ArrowDown";
 import ArrowUp from "../../CollapseArrows/CollapseArrowIcons/ArrowUp";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function FilterLocation() {
   const dispatch = useDispatch();
+  const cities = useSelector((state) => [
+    { value: "", label: "Выберите город" },
+    ...state.table.formCities.map((city) => {
+      return { value: city, label: city };
+    }),
+  ]);
+  const districts = useSelector((state) => [
+    { value: "", label: "Выберите город" },
+    ...state.table.formDistricts.map((district) => {
+      return { value: district, label: district };
+    }),
+  ]);
+  const zips = useSelector((state) => [
+    { value: "", label: "Выберите город" },
+    ...state.table.formPostalCodes.map((zip) => {
+      return { value: zip, label: zip };
+    }),
+  ]);
 
   const [open, setOpen] = React.useState(true);
   const [city, setCity] = React.useState("");
@@ -27,7 +42,7 @@ export default function FilterLocation() {
     setCity(option.value);
     dispatch({
       type: "SET_FILTER_CITY",
-      payload: city,
+      payload: option.value.toLowerCase(),
     });
   };
 
@@ -36,7 +51,7 @@ export default function FilterLocation() {
     console.log(option.value);
     dispatch({
       type: "SET_FILTER_DISTRICT",
-      payload: district,
+      payload: option.value.toLowerCase(),
     });
   };
 
@@ -44,7 +59,7 @@ export default function FilterLocation() {
     setZip(option.value);
     dispatch({
       type: "SET_FILTER_POSTALCODE",
-      payload: zip,
+      payload: option.value.toLowerCase(),
     });
   };
 

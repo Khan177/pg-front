@@ -24,6 +24,10 @@ const initialState = {
   filterFormat: "",
   filterIsLightUp: "",
   filterCoordinates: "",
+  fastSearch: "",
+  formCities: [],
+  formDistricts: [],
+  formPostalCodes: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -46,6 +50,7 @@ const reducer = (state = initialState, action) => {
         filterCity: action.payload,
       };
     case "SET_FILTER_DISTRICT":
+      console.log(action.payload);
       return {
         ...state,
         filterDistrict: action.payload,
@@ -112,44 +117,95 @@ const reducer = (state = initialState, action) => {
         outdoorFurnitureTableData: state.outdoorFurnitureTableData.filter(
           (row) => {
             let boo = true;
-            console.log("YA USTAAAAL");
-            console.log(state.filterMarketingAddress, row.marketingAddress);
-            if (state.filterCity && row.city !== state.filterCity) boo = false;
-            if (state.filterDistrict && row.district !== state.filterDistrict)
+            console.log(state.filterDistrict, row.district);
+            if (
+              state.filterCity &&
+              !row.city.toLowerCase().includes(state.filterCity)
+            )
+              boo = false;
+            if (
+              state.filterDistrict &&
+              !row.district.toLowerCase().includes(state.filterDistrict)
+            )
               boo = false;
             if (
               state.filterPostalCode &&
-              row.postalCode !== state.filterPostalCode
+              !row.postalCode.toLowerCase().includes(state.filterPostalCode)
             )
               boo = false;
             if (
               state.filterMarketingAddress &&
-              row.marketingAddress !== state.filterMarketingAddress
+              !row.marketingAddress
+                .toLowerCase()
+                .includes(state.filterMarketingAddress)
             )
               boo = false;
             if (
               state.filterLegalAddress &&
-              row.legalAddress !== state.filterLegalAddress
+              !row.legalAddress.toLowerCase().includes(state.filterLegalAddress)
             )
               boo = false;
-            if (state.filterCode && row.code !== state.filterCode) boo = false;
+            if (
+              state.filterCode &&
+              !row.code.toLowerCase().includes(state.filterCode)
+            )
+              boo = false;
             if (
               state.filterInventory &&
-              row.inventory !== state.filterInventory
+              !row.inventory.toLowerCase().includes(state.filterInventory)
             )
               boo = false;
-            if (state.filterFormat && row.format !== state.filterFormat)
+            if (
+              state.filterFormat &&
+              !row.format.toLowerCase().includes(state.filterFormat)
+            )
               boo = false;
-            if (state.filterIsLightUp && row.isLighUp !== state.filterIsLightUp)
+            if (
+              state.filterIsLightUp &&
+              !row.isLighUp.toLowerCase().includes(state.filterIsLightUp)
+            )
               boo = false;
             if (
               state.filterCoordinates &&
-              row.coordinates !== state.filterCoordinates
+              !row.coordinates.toLowerCase().includes(state.filterCoordinates)
             )
               boo = false;
             return boo;
           }
         ),
+      };
+    case "SET_FAST_SEARCH":
+      return {
+        ...state,
+        outdoorFurnitureTableData: state.outdoorFurnitureTableData.filter(
+          (row) => {
+            for (let key in row) {
+              if (
+                row[key]
+                  .toString()
+                  .toLowerCase()
+                  .includes(action.payload.toLowerCase())
+              )
+                return true;
+            }
+            return false;
+          }
+        ),
+      };
+    case "SET_CITIES":
+      return {
+        ...state,
+        formCities: action.payload,
+      };
+    case "SET_DISTRICTS":
+      return {
+        ...state,
+        formDistricts: action.payload,
+      };
+    case "SET_POSTALCODES":
+      return {
+        ...state,
+        formPostalCodes: action.payload,
       };
     default:
       return state;

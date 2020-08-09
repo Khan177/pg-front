@@ -4,15 +4,22 @@ import LeftBar from "../../../components/LeftBar/LeftBar";
 import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";
 import SearchButton from "../../../components/ButtonGroup/SearchButton";
 import HeaderList from "./HeaderList";
-import { getOutdoorFurnitureData } from "../../../store/actions";
+import {
+  getOutdoorFurnitureData,
+  getCities,
+  getDistricts,
+  getPostalCodes,
+} from "../../../store/actions";
 
 import Table from "../../../components/Table";
 
 export default function OutdoorFurniture() {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log("hey2");
-    return dispatch(getOutdoorFurnitureData());
+    dispatch(getOutdoorFurnitureData());
+    dispatch(getCities());
+    dispatch(getDistricts());
+    dispatch(getPostalCodes());
   }, [dispatch]);
   const outdoorFurnitureColums = [
     "Код",

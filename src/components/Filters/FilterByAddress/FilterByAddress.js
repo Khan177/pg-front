@@ -34,7 +34,10 @@ export default function FilterByAddress() {
           placeholder="Адрес маркетинговый"
           onChange={(e) => {
             setMarkAddress(e);
-            dispatch({ type: "SET_FILTER_ADDRESSMARK", payload: e });
+            dispatch({
+              type: "SET_FILTER_ADDRESSMARK",
+              payload: e.toLowerCase(),
+            });
           }}
         />
         <InputAnchor
@@ -43,7 +46,7 @@ export default function FilterByAddress() {
             setLegalAddress(e);
             dispatch({
               type: "SET_FILTER_ADDRESSLEGAL",
-              payload: e,
+              payload: e.toLowerCase(),
             });
           }}
         />
