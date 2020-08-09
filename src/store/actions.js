@@ -15,6 +15,22 @@ export const getOutdoorFurnitureData = () => {
       .catch((err) => dispatch(failure(err)));
   };
 };
+export const filterOutdoorTable = () => {
+  const request = () => ({ type: "GET_CONSTRUCTIONS_REQUEST" });
+  const success = (data) => ({
+    type: "GET_CONSTRUCTIONS_SUCCESS",
+    payload: data,
+  });
+  console.log("hey");
+  const failure = (err) => ({ type: "GET_CONSTRUCTIONS_FAILURE", error: err });
+  return (dispatch) => {
+    dispatch(request());
+    ConstructionsService.get()
+      .then((res) => dispatch(success(res.data)))
+      .then((res) => dispatch({ type: "FILTER_OUTDOOR_TABLE" }))
+      .catch((err) => dispatch(failure(err)));
+  };
+};
 
 export const getOutdoorFurnitureFiltered = (fastSearch) => {
   const request = () => ({ type: "GET_CONSTRUCTIONS_REQUEST" });
@@ -29,8 +45,8 @@ export const getOutdoorFurnitureFiltered = (fastSearch) => {
     ConstructionsService.get()
       .then((res) => {
         dispatch(success(res.data));
-        dispatch({ type: "SET_FAST_SEARCH", payload: fastSearch });
       })
+      .then((res) => dispatch({ type: "SET_FAST_SEARCH", payload: fastSearch }))
       .catch((err) => dispatch(failure(err)));
   };
 };

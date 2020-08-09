@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { BtnGroup, ResetButton, SubmitButton } from "../Styles/ButtonStyles";
-import { getOutdoorFurnitureData } from "../../store/actions";
+import {
+  getOutdoorFurnitureData,
+  filterOutdoorTable,
+} from "../../store/actions";
 
 export default function ButtonGroup() {
   const dispatch = useDispatch();
@@ -15,7 +18,7 @@ export default function ButtonGroup() {
       >
         Очистить
       </ResetButton>
-      <SubmitButton onClick={() => dispatch({ type: "FILTER_OUTDOOR_TABLE" })}>
+      <SubmitButton onClick={() => dispatch(filterOutdoorTable())}>
         Искать
       </SubmitButton>
     </BtnGroup>
