@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import {
   Paper,
@@ -25,6 +25,7 @@ import {
   Edit,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { getOutdoorFurnitureFiltered } from "../store/actions";
 
 import "./Table.css";
 import Construction from "../containers/Base/Construction/Construction";
@@ -77,6 +78,7 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell ? order : "asc"}
               onClick={createSortHandler(rowKeys[headCells.indexOf(headCell)])}
               IconComponent={order === "asc" ? ArrowDownward : ArrowUpward}
+              style={{ whiteSpace: "nowrap" }}
             >
               {headCell}
               {orderBy === headCell ? (
@@ -117,14 +119,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function EnhancedTable({ columns }) {
+export default function EnhancedTable({
+  columns,
+  rowKeys,
+  rows,
+  handleFastSearch,
+  handleChangeFastSearch,
+}) {
   const classes = useStyles();
   const [order, setOrder] = React.useState("asc");
   const [orderBy, setOrderBy] = React.useState("city");
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const rowKeys = useSelector((state) => state.table.rowKeys);
-  const rows = useSelector((state) => state.table.outdoorFurnitureTableData);
+  console.log(rows);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -145,6 +152,9 @@ export default function EnhancedTable({ columns }) {
   const emptyRows =
     rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
 
+  const dispatch = useDispatch();
+  const [fastSearch, setFastSearch] = useState();
+
   return (
     <div className={classes.root}>
       <div className="table-toolbar">
@@ -152,8 +162,16 @@ export default function EnhancedTable({ columns }) {
           <IconButton className={classes.iconButton} aria-label="menu">
             <Search />
           </IconButton>
-          <TextField className={classes.input} placeholder="Быстрый поиск" />
-          <Button color="primary" size="small">
+          <TextField
+            className={classes.input}
+            placeholder="Быстрый поиск"
+            onChange={(e) => handleChangeFastSearch(e)}
+          />
+          <Button
+            color="primary"
+            size="small"
+            onClick={() => handleFastSearch()}
+          >
             Найти
           </Button>
         </div>
@@ -215,7 +233,7 @@ export default function EnhancedTable({ columns }) {
                             key={(Math.random() * 100).toString()}
                             align="right"
                           >
-                            {row[rowKey]}
+                            {row[rowKey] ? row[rowKey].toString() : ""}
                           </TableCell>
                         );
                       })}

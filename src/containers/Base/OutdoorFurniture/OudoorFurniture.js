@@ -1,18 +1,30 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import LeftBar from '../../../components/LeftBar/LeftBar';
-import FilterBar from './OutdoorFurnitureList/FilterBar/FilterBar';
-import SearchButton from '../../../components/ButtonGroup/SearchButton';
-import HeaderList from './HeaderList';
-import { getOutdoorFurnitureData } from '../../../store/actions';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import LeftBar from "../../../components/LeftBar/LeftBar";
+import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";
+import SearchButton from "../../../components/ButtonGroup/SearchButton";
+import HeaderList from "./HeaderList";
+import {
+  getOutdoorFurnitureData,
+  getOutdoorFurnitureFiltered,
+  getCities,
+  getDistricts,
+  getPostalCodes,
+} from "../../../store/actions";
 
 import Table from '../../../components/Table';
 
 export default function OutdoorFurniture() {
   const dispatch = useDispatch();
   useEffect(() => {
-    return dispatch(getOutdoorFurnitureData());
+    dispatch(getOutdoorFurnitureData());
+    dispatch(getCities());
+    dispatch(getDistricts());
+    dispatch(getPostalCodes());
   }, [dispatch]);
+  const rowKeys = useSelector((state) => state.table.rowKeys);
+  const rows = useSelector((state) => state.table.outdoorFurnitureTableData);
+  const [fastSearch, setFastSearch] = useState();
   const outdoorFurnitureColums = [
     'Код',
     'Город',
@@ -42,7 +54,15 @@ export default function OutdoorFurniture() {
       <FilterBar />
       <div className="outdoor-table-bar">
         <HeaderList />
-        <Table columns={outdoorFurnitureColums} />
+        <Table
+          columns={outdoorFurnitureColums}
+          rows={rows}
+          rowKeys={rowKeys}
+          handleFastSearch={() => {
+            dispatch(getOutdoorFurnitureFiltered(fastSearch));
+          }}
+          handleChangeFastSearch={(e) => setFastSearch(e.target.value)}
+        />
       </div>
     </div>
   );

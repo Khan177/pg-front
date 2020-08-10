@@ -1,20 +1,22 @@
-import { TextField } from '@material-ui/core';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import icon_anchor from '../../img/outdoor_furniture/filter_icons/bx-ancor.svg';
-import React from 'react';
+import { TextField } from "@material-ui/core";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import icon_anchor from "../../img/outdoor_furniture/filter_icons/bx-ancor.svg";
+import React from "react";
 
 export default function InputAnchor(props) {
   return (
     <TextField
-      style={{ width: '100%', marginBottom: 20, background: 'white' }}
+      style={{ width: "100%", marginBottom: 20, background: "white" }}
       fullWidth
       id={props.id}
       type={props.type}
       placeholder={props.placeholder}
       value={props.value}
-      name={props.name}
-      onChange={props.onChange}
       variant="outlined"
+      onChange={(e) => {
+        props.onChange(e.target.value);
+        console.log(e.target.value);
+      }}
       InputProps={{
         style: { fontSize: 14 },
         startAdornment: (
@@ -23,6 +25,6 @@ export default function InputAnchor(props) {
           </InputAdornment>
         ),
       }}
-    ></TextField>
+    />
   );
 }

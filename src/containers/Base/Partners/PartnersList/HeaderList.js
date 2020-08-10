@@ -1,16 +1,16 @@
-import BreadCrumbs from '../../../../components/BreadCrumbs/BreadCrumbs';
+import BreadCrumbs from "../../../../components/BreadCrumbs/BreadCrumbs";
 import {
   ListHeader,
   ListTitle,
   StyledButton,
   Title,
   TitleLogo,
-} from '../../../../components/Styles/ComponentsStyles';
-import React from 'react';
-import { useHistory } from 'react-router';
-import { Col, Grid, Row } from 'react-flexbox-grid';
-import '../Style/style.css';
-import { SecondaryBtnStyled } from '../../../../components/Styles/ButtonStyles';
+} from "../../../../components/Styles/ComponentsStyles";
+import React from "react";
+import { useHistory } from "react-router";
+import { Col, Grid, Row } from "react-flexbox-grid";
+import "../Style/style.css";
+import { SecondaryBtnStyled } from "../../../../components/Styles/ButtonStyles";
 
 export default function HeaderList() {
   const history = useHistory();
@@ -21,9 +21,9 @@ export default function HeaderList() {
   };
 
   const links = [
-    { id: 'home', value: 'Главная' },
-    { id: 'installation', value: 'Базы' },
-    { id: 'constructions', value: 'Контрагенты' },
+    { id: "home", value: "Главная" },
+    { id: "installation", value: "Базы" },
+    { id: "constructions", value: "Контрагенты" },
   ];
 
   return (
@@ -38,10 +38,12 @@ export default function HeaderList() {
         <Row className="ListTitleInfo">
           <Col xs className="ListTitleHeader">
             <TitleLogo />
-            <Title>Конструкции</Title>
+            <Title>Контрагенты</Title>
           </Col>
           <Col xs className="ListTitleInfoButton">
-            <StyledButton onClick={routeChange}>Создать контрагента</StyledButton>
+            <StyledButton onClick={routeChange}>
+              Создать контрагента
+            </StyledButton>
           </Col>
         </Row>
       </Grid>

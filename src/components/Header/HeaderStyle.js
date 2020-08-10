@@ -64,7 +64,7 @@ export const HeaderMenuLink = styled(Link)`
     text-decoration: none;
     padding-bottom: 32px;
   }
-  :hover ${BaseHoverBlock} {
+  :hover > ${BaseHoverBlock} {
     opacity: 1;
   }
 `;
