@@ -14,7 +14,7 @@ import {
   TableBody,
   Table,
 } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Search,
   Print,
@@ -25,10 +25,10 @@ import {
   Edit,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import { getOutdoorFurnitureFiltered } from "../store/actions";
 
 import "./Table.css";
+import Construction from "../containers/Base/Construction/Construction";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -61,7 +61,7 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-
+  console.log(headCells)
   return (
     <TableHead>
       <TableRow>
@@ -154,6 +154,8 @@ export default function EnhancedTable({
 
   const dispatch = useDispatch();
   const [fastSearch, setFastSearch] = useState();
+  const tableType = useSelector((state) => state.table.tableType);
+
 
   return (
     <div className={classes.root}>
@@ -213,6 +215,12 @@ export default function EnhancedTable({
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
+                  let obj;
+                  if (tableType === 'outdoorTable') {
+                    obj = { pathname: '/base/construction/', row }
+                  } else if (tableType === 'partnerTable') {
+                    obj = { pathname: '/base/partners/info', rowID: row._id }
+                  }
                   return (
                     <TableRow
                       hover
@@ -221,7 +229,7 @@ export default function EnhancedTable({
                       key={(Math.random() * 100).toString()}
                     >
                       <TableCell>
-                        <Link to="/">
+                        <Link to={obj}>
                           <IconButton>
                             <Edit />
                           </IconButton>

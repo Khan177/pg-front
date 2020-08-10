@@ -13,10 +13,7 @@ export default function InputAnchor(props) {
       placeholder={props.placeholder}
       value={props.value}
       variant="outlined"
-      onChange={(e) => {
-        props.onChange(e.target.value);
-        console.log(e.target.value);
-      }}
+      onChange={props.onChange}
       InputProps={{
         style: { fontSize: 14 },
         startAdornment: (

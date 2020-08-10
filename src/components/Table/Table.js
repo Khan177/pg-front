@@ -23,7 +23,7 @@ import { BtnExport, BtnPrint, BtnSettings } from "../Styles/ButtonStyles";
 
 import {
   ControlToolbar,
-  StyledInput,
+  StyleddInput,
   ToolbarControl,
   InputWrapper,
 } from "../Styles/ControlToolbarStyle";
