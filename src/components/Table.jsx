@@ -14,7 +14,7 @@ import {
   TableBody,
   Table,
 } from "@material-ui/core";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Search,
   Print,
@@ -27,6 +27,7 @@ import {
 import { Link } from "react-router-dom";
 
 import "./Table.css";
+import Construction from "../containers/Base/Construction/Construction";
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -59,7 +60,7 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-
+  console.log(headCells)
   return (
     <TableHead>
       <TableRow>
@@ -124,7 +125,6 @@ export default function EnhancedTable({ columns }) {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const rowKeys = useSelector((state) => state.table.rowKeys);
   const rows = useSelector((state) => state.table.outdoorFurnitureTableData);
-  console.log(rows);
 
   const handleRequestSort = (event, property) => {
     const isAsc = orderBy === property && order === "asc";
@@ -203,7 +203,7 @@ export default function EnhancedTable({ columns }) {
                       key={(Math.random() * 100).toString()}
                     >
                       <TableCell>
-                        <Link to="/">
+                        <Link to={{ pathname: '/base/construction/', row }}>
                           <IconButton>
                             <Edit />
                           </IconButton>
