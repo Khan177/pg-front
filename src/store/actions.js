@@ -169,3 +169,7 @@ export const getPostalCodes = () => {
     );
   };
 };
+
+export const setTable = (table) => {
+  return { type: 'SET_TABLE_TYPE', payload: table }
+}

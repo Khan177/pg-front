@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import LeftBar from "../../../components/LeftBar/LeftBar";
-import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";
-import SearchButton from "../../../components/ButtonGroup/SearchButton";
-import HeaderList from "./HeaderList";
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import LeftBar from '../../../components/LeftBar/LeftBar';
+import FilterBar from './OutdoorFurnitureList/FilterBar/FilterBar';
+import SearchButton from '../../../components/ButtonGroup/SearchButton';
+import HeaderList from './HeaderList';
 import {
   getOutdoorFurnitureData,
   getOutdoorFurnitureFiltered,
   getCities,
   getDistricts,
   getPostalCodes,
-} from "../../../store/actions";
+  setTable
+} from '../../../store/actions';
 
 import Table from '../../../components/Table';
 
@@ -55,6 +56,7 @@ export default function OutdoorFurniture() {
       <div className="outdoor-table-bar">
         <HeaderList />
         <Table
+          params={dispatch(setTable('outdoorTable'))}
           columns={outdoorFurnitureColums}
           rows={rows}
           rowKeys={rowKeys}

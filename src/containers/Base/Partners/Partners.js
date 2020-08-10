@@ -8,6 +8,7 @@ import {
   getPartnersData,
   getPartnersFiltered,
   getPartners,
+  setTable
 } from "../../../store/actions";
 import "./Style/style.css";
 
@@ -29,6 +30,7 @@ const Partners = () => {
     "Сектор деятельности",
     "Тип клиента",
   ];
+
   return (
     <div className="partners">
       <style>
@@ -48,6 +50,7 @@ const Partners = () => {
       <FilterBar />
       <div className="partners-table-bar">
         <Table
+          params={dispatch(setTable('partnerTable'))}
           columns={partnersColumns}
           rows={rows}
           rowKeys={rowKeys}

@@ -154,6 +154,8 @@ export default function EnhancedTable({
 
   const dispatch = useDispatch();
   const [fastSearch, setFastSearch] = useState();
+  const tableType = useSelector((state) => state.table.tableType);
+
 
   return (
     <div className={classes.root}>
@@ -213,6 +215,12 @@ export default function EnhancedTable({
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
+                  let obj;
+                  if (tableType === 'outdoorTable') {
+                    obj = { pathname: '/base/construction/', row }
+                  } else if (tableType === 'partnerTable') {
+                    obj = { pathname: '/base/partners/info', rowID: row._id }
+                  }
                   return (
                     <TableRow
                       hover
@@ -221,7 +229,7 @@ export default function EnhancedTable({
                       key={(Math.random() * 100).toString()}
                     >
                       <TableCell>
-                        <Link to={{ pathname: '/base/construction/', row }}>
+                        <Link to={obj}>
                           <IconButton>
                             <Edit />
                           </IconButton>
