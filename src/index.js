@@ -1,30 +1,35 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
-import {Provider} from 'react-redux';
-import thunkMiddleware from 'redux-thunk';
-import * as serviceWorker from './serviceWorker';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './App';
-import reducerTable from './store/reducer/tableReducer';
-import constructionReducer from './store/reducer/constructionReducer';
-import contragentsReducer from './store/reducer/contragentsReducer';
+import React from "react";
+import ReactDOM from "react-dom";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
+import { Provider } from "react-redux";
+import thunkMiddleware from "redux-thunk";
+import * as serviceWorker from "./serviceWorker";
+import "bootstrap/dist/css/bootstrap.min.css";
+import App from "./App";
+import reducerTable from "./store/reducer/tableReducer";
+import constructionReducer from "./store/reducer/constructionReducer";
+import contragentsReducer from "./store/reducer/contragentsReducer";
+import locationsReducer from "./store/reducer/locationsReducer";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
-    table: reducerTable,
-    construction: constructionReducer,
-    contragents: contragentsReducer
+  table: reducerTable,
+  construction: constructionReducer,
+  contragents: contragentsReducer,
+  locations: locationsReducer,
 });
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
-
-const app = (
-    <Provider store={store}>
-        <App/>
-    </Provider>
+const store = createStore(
+  rootReducer,
+  composeEnhancers(applyMiddleware(thunkMiddleware))
 );
 
-ReactDOM.render(app, document.getElementById('root'));
+const app = (
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+
+ReactDOM.render(app, document.getElementById("root"));
 serviceWorker.unregister();

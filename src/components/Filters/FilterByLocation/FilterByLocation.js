@@ -34,12 +34,8 @@ export default function FilterLocation() {
   ]);
 
   const [open, setOpen] = React.useState(true);
-  const [city, setCity] = React.useState("");
-  const [district, setDistrict] = React.useState("");
-  const [zip, setZip] = React.useState("");
 
   const cityChangeHandler = (option) => {
-    setCity(option.value);
     dispatch({
       type: "SET_FILTER_CITY",
       payload: option.value.toLowerCase(),
@@ -47,7 +43,6 @@ export default function FilterLocation() {
   };
 
   const districtChangeHandler = (option) => {
-    setDistrict(option.value);
     console.log(option.value);
     dispatch({
       type: "SET_FILTER_DISTRICT",
@@ -56,7 +51,6 @@ export default function FilterLocation() {
   };
 
   const zipChangeHandler = (option) => {
-    setZip(option.value);
     dispatch({
       type: "SET_FILTER_POSTALCODE",
       payload: option.value.toLowerCase(),

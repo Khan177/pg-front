@@ -14,7 +14,10 @@ import {
   ResetButton,
   SubmitButton,
 } from "../../../../components/Styles/ButtonStyles";
-import { getPartnersData, filterPartners } from "../../../../store/actions";
+import {
+  getPartnersData,
+  filterPartners,
+} from "../../../../store/actions/actions";
 
 const FilterBar = () => {
   const classes = useStyles();

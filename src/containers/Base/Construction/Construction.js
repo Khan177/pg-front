@@ -1,18 +1,21 @@
-import React, { useEffect } from 'react';
-import { PageWrap, ContentWrap } from '../../../components/Styles/ComponentsStyles';
-import InnerForm from './TabPanelForm/TabPanelFormConstruction';
-import SearchButton from '../../../components/ButtonGroup/SearchButton';
-import LeftBar from '../../../components/LeftBar/LeftBar';
-import { Col, Grid, Row } from 'react-flexbox-grid';
-import SearchBtn from '../Partners/LeftBar/SearchBtn';
-import { getCurrentConstruction } from '../../../store/actions';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from "react";
+import {
+  PageWrap,
+  ContentWrap,
+} from "../../../components/Styles/ComponentsStyles";
+import InnerForm from "./TabPanelForm/TabPanelFormConstruction";
+import SearchButton from "../../../components/ButtonGroup/SearchButton";
+import LeftBar from "../../../components/LeftBar/LeftBar";
+import { Col, Grid, Row } from "react-flexbox-grid";
+import SearchBtn from "../Partners/LeftBar/SearchBtn";
+import { getCurrentConstruction } from "../../../store/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Construction(props) {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getCurrentConstruction(props.location.row));
-  }, []);
+  }, [dispatch, props.location.row]);
 
   const [showSearchBtn, setSearchBtn] = React.useState(false);
 

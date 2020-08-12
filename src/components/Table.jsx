@@ -25,7 +25,7 @@ import {
   Edit,
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
-import { getOutdoorFurnitureFiltered } from "../store/actions";
+import { getOutdoorFurnitureFiltered } from "../store/actions/actions";
 
 import "./Table.css";
 import Construction from "../containers/Base/Construction/Construction";
@@ -61,7 +61,7 @@ function EnhancedTableHead(props) {
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
-  console.log(headCells)
+  console.log(headCells);
   return (
     <TableHead>
       <TableRow>
@@ -156,7 +156,6 @@ export default function EnhancedTable({
   const [fastSearch, setFastSearch] = useState();
   const tableType = useSelector((state) => state.table.tableType);
 
-
   return (
     <div className={classes.root}>
       <div className="table-toolbar">
@@ -216,10 +215,10 @@ export default function EnhancedTable({
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
                   let obj;
-                  if (tableType === 'outdoorTable') {
-                    obj = { pathname: '/base/construction/', row }
-                  } else if (tableType === 'partnerTable') {
-                    obj = { pathname: '/base/partners/info', rowID: row._id }
+                  if (tableType === "outdoorTable") {
+                    obj = { pathname: "/base/construction/", row };
+                  } else if (tableType === "partnerTable") {
+                    obj = { pathname: "/base/partners/info", rowID: row._id };
                   }
                   return (
                     <TableRow
