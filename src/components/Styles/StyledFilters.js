@@ -46,7 +46,7 @@ export const FilterText = styled.h6`
 
 export const SearchTitle = styled.div`
   width: 100%;
-  height: 51px;
+  height: 57px;
 `;
 
 export const Form = styled.form`

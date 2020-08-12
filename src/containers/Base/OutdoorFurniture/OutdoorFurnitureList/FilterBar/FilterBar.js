@@ -12,7 +12,6 @@ import useStyles from "../../../../../components/Styles/UseInputMaterialStyles";
 import ButtonGroup from "../../../../../components/ButtonGroup/ButtonGroup";
 
 const FilterBar = () => {
-  const classes = useStyles();
   return (
     <FilterMenu>
       <SearchTitle>
