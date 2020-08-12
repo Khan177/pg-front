@@ -86,9 +86,10 @@ export const LeftBarStyled = styled.div`
   font-family: "SF UI Display Light", sans-serif;
   border-right: 1px solid #d3dff0;
   background-color: #f5f7fa;
-  padding-top: 4px;
-  height: 100%;
-  padding-left: 4px;
+  padding: 4%;
+  display: flex;
+  justify-content: center;
   margin-top: 2px;
-  width: 7vw;
+  width: 5vw;
+  height: calc(100vh - 82px);
 `;
