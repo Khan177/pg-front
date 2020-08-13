@@ -1,12 +1,19 @@
-import React, { useState } from 'react';
-import { BlockBody, BlockTitle, BlockTitleText, Large } from '../../../../Styles/StyledBlocks';
-import { BtnSuccess } from '../../../../Styles/ButtonStyles';
-import ExtraRow from './Extras/ExtraRow';
-import { sendValues } from '../../../../../store/actions';
-import { useSelector } from 'react-redux';
+import React, { useState } from "react";
+import {
+  BlockBody,
+  BlockTitle,
+  BlockTitleText,
+  Large,
+} from "../../../../Styles/StyledBlocks";
+import { BtnSuccess } from "../../../../Styles/ButtonStyles";
+import ExtraRow from "./Extras/ExtraRow";
+import { sendValues } from "../../../../../store/actions/actions";
+import { useSelector } from "react-redux";
 
 export default function Sides() {
-  const current = useSelector((state) => state.construction.currentConstruction);
+  const current = useSelector(
+    (state) => state.construction.currentConstruction
+  );
   const initialList = [ExtraRow];
   const [theList, setTheList] = useState(initialList);
   const removeClickHandler = (e, index) => {
@@ -25,7 +32,7 @@ export default function Sides() {
   };
   return (
     <Large>
-      <BlockTitle style={{ padding: '20px 26px 10px 24px' }}>
+      <BlockTitle style={{ padding: "20px 26px 10px 24px" }}>
         <BlockTitleText>Стороны конструкции</BlockTitleText>
         <BtnSuccess onClick={addClickHandler}>Добавить еще</BtnSuccess>
       </BlockTitle>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   BlockBody,
   Large,
@@ -6,13 +6,15 @@ import {
   BlockTitleText,
   BlockTitle,
   InputTitle,
-} from '../../../../Styles/StyledBlocks';
-import InputAnchor from '../../../../Inputs/InputAnchor';
-import { sendValues } from '../../../../../store/actions';
-import { useSelector, useDispatch } from 'react-redux';
+} from "../../../../Styles/StyledBlocks";
+import InputAnchor from "../../../../Inputs/InputAnchor";
+import { sendValues } from "../../../../../store/actions/actions";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Accounting() {
-  const current = useSelector((state) => state.construction.currentConstruction);
+  const current = useSelector(
+    (state) => state.construction.currentConstruction
+  );
   const dispatch = useDispatch();
 
   return (
@@ -20,12 +22,14 @@ export default function Accounting() {
       <BlockTitle>Парамметры - 1С</BlockTitle>
       <BlockBody>
         <Row>
-          <div style={{ width: '49%' }}>
+          <div style={{ width: "49%" }}>
             <InputTitle>Инвентарный номер</InputTitle>
             <InputAnchor
-              value={current ? current.bookkeepInventoryNumber : ''}
+              value={current ? current.bookkeepInventoryNumber : ""}
               placeholder="Инвентарный номер"
-              onChange={(e) => dispatch(sendValues('bookkeepInventoryNumber', e.target.value))}
+              onChange={(e) =>
+                dispatch(sendValues("bookkeepInventoryNumber", e.target.value))
+              }
             />
           </div>
         </Row>

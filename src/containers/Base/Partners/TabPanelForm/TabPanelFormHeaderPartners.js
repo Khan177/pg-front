@@ -25,20 +25,20 @@
 //     )
 //
 // }
-import BreadCrumbs from '../../../../components/BreadCrumbs/BreadCrumbs';
+import BreadCrumbs from "../../../../components/BreadCrumbs/BreadCrumbs";
 import {
   ListHeader,
   ListTitle,
   StyledButton,
   Title,
   TitleLogo,
-} from '../../../../components/Styles/ComponentsStyles';
-import React from 'react';
-import { useHistory } from 'react-router';
-import { SecondaryBtnStyled } from '../../../../components/Styles/ButtonStyles';
-import { Col, Grid, Row } from 'react-flexbox-grid';
-import { updateContragent } from '../../../../store/actions';
-import { useDispatch, useSelector } from 'react-redux';
+} from "../../../../components/Styles/ComponentsStyles";
+import React from "react";
+import { useHistory } from "react-router";
+import { SecondaryBtnStyled } from "../../../../components/Styles/ButtonStyles";
+import { Col, Grid, Row } from "react-flexbox-grid";
+import { updateContragent } from "../../../../store/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function HeaderList() {
   const history = useHistory();
@@ -47,16 +47,16 @@ export default function HeaderList() {
 
   const routeChange = (e) => {
     dispatch(updateContragent(state));
-    alert('Обновлено');
+    alert("Обновлено");
     e.preventDefault();
     // let path = `/base/partners/`;
     // history.push(path);
   };
 
   const links = [
-    { id: 'home', value: 'Главная' },
-    { id: 'installation', value: 'Базы' },
-    { id: 'constructions', value: 'Контрагенты' },
+    { id: "home", value: "Главная" },
+    { id: "installation", value: "Базы" },
+    { id: "constructions", value: "Контрагенты" },
   ];
 
   return (
@@ -73,8 +73,12 @@ export default function HeaderList() {
             <Title>Конструкции</Title>
           </Col>
           <Col xs className="ListTitleInfoButton">
-            <StyledButton onClick={routeChange}>Создать конструкцию</StyledButton>
-            <SecondaryBtnStyled onClick={routeChange}>Создать договор</SecondaryBtnStyled>
+            <StyledButton onClick={routeChange}>
+              Создать конструкцию
+            </StyledButton>
+            <SecondaryBtnStyled onClick={routeChange}>
+              Создать договор
+            </SecondaryBtnStyled>
           </Col>
         </Row>
       </Grid>

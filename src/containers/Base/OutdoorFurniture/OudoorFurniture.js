@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import LeftBar from '../../../components/LeftBar/LeftBar';
-import FilterBar from './OutdoorFurnitureList/FilterBar/FilterBar';
-import SearchButton from '../../../components/ButtonGroup/SearchButton';
-import HeaderList from './HeaderList';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import LeftBar from "../../../components/LeftBar/LeftBar";
+import FilterBar from "./OutdoorFurnitureList/FilterBar/FilterBar";
+import SearchButton from "../../../components/ButtonGroup/SearchButton";
+import HeaderList from "./HeaderList";
 import {
   getOutdoorFurnitureData,
   getOutdoorFurnitureFiltered,
   getCities,
   getDistricts,
   getPostalCodes,
-  setTable
-} from '../../../store/actions';
+  setTable,
+} from "../../../store/actions/actions";
 
-import Table from '../../../components/Table';
+import Table from "../../../components/Table";
 
 export default function OutdoorFurniture() {
   const dispatch = useDispatch();
@@ -27,14 +27,14 @@ export default function OutdoorFurniture() {
   const rows = useSelector((state) => state.table.outdoorFurnitureTableData);
   const [fastSearch, setFastSearch] = useState();
   const outdoorFurnitureColums = [
-    'Код',
-    'Город',
-    'Почтовый индекс',
-    'Маркетинговый адрес',
-    'Юридический адрес',
-    'Формат',
-    'Координаты',
-    'Горит',
+    "Код",
+    "Город",
+    "Почтовый индекс",
+    "Маркетинговый адрес",
+    "Юридический адрес",
+    "Формат",
+    "Координаты",
+    "Горит",
   ];
   return (
     <div className="outdoor-furniture">
@@ -56,7 +56,7 @@ export default function OutdoorFurniture() {
       <div className="outdoor-table-bar">
         <HeaderList />
         <Table
-          params={dispatch(setTable('outdoorTable'))}
+          params={dispatch(setTable("outdoorTable"))}
           columns={outdoorFurnitureColums}
           rows={rows}
           rowKeys={rowKeys}

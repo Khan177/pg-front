@@ -1,13 +1,13 @@
-import { ConstructionsService } from '../service/constructions.service';
-import { PartnersService } from '../service/partners.service';
+import { ConstructionsService } from "../../service/constructions.service";
+import { PartnersService } from "../../service/partners.service";
 
 export const getOutdoorFurnitureData = () => {
-  const request = () => ({ type: 'GET_CONSTRUCTIONS_REQUEST' });
+  const request = () => ({ type: "GET_CONSTRUCTIONS_REQUEST" });
   const success = (data) => ({
-    type: 'GET_CONSTRUCTIONS_SUCCESS',
+    type: "GET_CONSTRUCTIONS_SUCCESS",
     payload: data,
   });
-  const failure = (err) => ({ type: 'GET_CONSTRUCTIONS_FAILURE', error: err });
+  const failure = (err) => ({ type: "GET_CONSTRUCTIONS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());
     ConstructionsService.get()
@@ -17,12 +17,12 @@ export const getOutdoorFurnitureData = () => {
 };
 
 export const getPartnersData = () => {
-  const request = () => ({ type: 'GET_PARTNERS_REQUEST' });
+  const request = () => ({ type: "GET_PARTNERS_REQUEST" });
   const success = (data) => ({
-    type: 'GET_PARTNERS_SUCCESS',
+    type: "GET_PARTNERS_SUCCESS",
     payload: data,
   });
-  const failure = (err) => ({ type: 'GET_PARTNERS_FAILURE', error: err });
+  const failure = (err) => ({ type: "GET_PARTNERS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());
     PartnersService.get()
@@ -32,8 +32,8 @@ export const getPartnersData = () => {
 };
 
 export const getContragentData = (id) => {
-  const contragent = (data) => ({ type: 'GET_PARTNER_SUCCESS', payload: data });
-  const failure = (err) => ({ type: 'GET_PARTNER_FAILURE', error: err });
+  const contragent = (data) => ({ type: "GET_PARTNER_SUCCESS", payload: data });
+  const failure = (err) => ({ type: "GET_PARTNER_FAILURE", error: err });
   return (dispatch) => {
     PartnersService.getByID(id)
       .then((res) => dispatch(contragent(res.data)))
@@ -42,98 +42,100 @@ export const getContragentData = (id) => {
 };
 
 export const filterOutdoorTable = () => {
-  const request = () => ({ type: 'GET_CONSTRUCTIONS_REQUEST' });
+  const request = () => ({ type: "GET_CONSTRUCTIONS_REQUEST" });
   const success = (data) => ({
-    type: 'GET_CONSTRUCTIONS_SUCCESS',
+    type: "GET_CONSTRUCTIONS_SUCCESS",
     payload: data,
   });
-  console.log('hey');
-  const failure = (err) => ({ type: 'GET_CONSTRUCTIONS_FAILURE', error: err });
+  console.log("hey");
+  const failure = (err) => ({ type: "GET_CONSTRUCTIONS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());
     ConstructionsService.get()
       .then((res) => dispatch(success(res.data)))
-      .then((res) => dispatch({ type: 'FILTER_OUTDOOR_TABLE' }))
+      .then((res) => dispatch({ type: "FILTER_OUTDOOR_TABLE" }))
       .catch((err) => dispatch(failure(err)));
   };
 };
 
 export const sendContragentValues = (key, value) => {
   console.log({ [key]: value });
-  return { type: 'GET_PARTNER_PROPS', payload: { [key]: value } };
+  return { type: "GET_PARTNER_PROPS", payload: { [key]: value } };
 };
 
 export const updateContragent = (values) => {
   PartnersService.put(values).then((res) => console.log(res));
-  return { type: 'UPDATE_PARTNER_PROPS' };
+  return { type: "UPDATE_PARTNER_PROPS" };
 };
 
 export const resetContragentValues = () => {
-  return { type: 'RESET_PARTNER_PROPS' };
+  return { type: "RESET_PARTNER_PROPS" };
 };
 
 export const getCurrentConstruction = (data) => {
-  return { type: 'GET_CURRENT_CONSTRUCTION', payload: data };
+  return { type: "GET_CURRENT_CONSTRUCTION", payload: data };
 };
 
 export const sendValues = (key, value) => {
-  return { type: 'GET_CONSTRUCTION_PROPS', payload: { [key]: value } };
+  return { type: "GET_CONSTRUCTION_PROPS", payload: { [key]: value } };
 };
 
 export const updateConstruction = (values) => {
   ConstructionsService.put(values).then((res) => console.log(res));
-  return { type: 'UPDATE_CONSTRUCTION_PROPS' };
+  return { type: "UPDATE_CONSTRUCTION_PROPS" };
 };
 
 export const filterPartners = () => {
-  const request = () => ({ type: 'GET_PARTNERS_REQUEST' });
+  const request = () => ({ type: "GET_PARTNERS_REQUEST" });
   const success = (data) => ({
-    type: 'GET_PARTNERS_SUCCESS',
+    type: "GET_PARTNERS_SUCCESS",
     payload: data,
   });
-  console.log('hey');
-  const failure = (err) => ({ type: 'GET_PARTNERS_FAILURE', error: err });
+  console.log("hey");
+  const failure = (err) => ({ type: "GET_PARTNERS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());
     PartnersService.get()
       .then((res) => dispatch(success(res.data)))
-      .then((res) => dispatch({ type: 'FILTER_PARTNERS_TABLE' }))
+      .then((res) => dispatch({ type: "FILTER_PARTNERS_TABLE" }))
       .catch((err) => dispatch(failure(err)));
   };
 };
 
 export const getOutdoorFurnitureFiltered = (fastSearch) => {
-  const request = () => ({ type: 'GET_CONSTRUCTIONS_REQUEST' });
+  const request = () => ({ type: "GET_CONSTRUCTIONS_REQUEST" });
   const success = (data) => ({
-    type: 'GET_CONSTRUCTIONS_SUCCESS',
+    type: "GET_CONSTRUCTIONS_SUCCESS",
     payload: data,
   });
-  const failure = (err) => ({ type: 'GET_CONSTRUCTIONS_FAILURE', error: err });
+  const failure = (err) => ({ type: "GET_CONSTRUCTIONS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());
     ConstructionsService.get()
       .then((res) => {
         dispatch(success(res.data));
       })
-      .then((res) => dispatch({ type: 'SET_FAST_SEARCH', payload: fastSearch }))
+      .then((res) => dispatch({ type: "SET_FAST_SEARCH", payload: fastSearch }))
       .catch((err) => dispatch(failure(err)));
   };
 };
 
 export const getPartnersFiltered = (fastSearch) => {
-  const request = () => ({ type: 'GET_PARTNERS_REQUEST' });
+  const request = () => ({ type: "GET_PARTNERS_REQUEST" });
   const success = (data) => ({
-    type: 'GET_PARTNERS_SUCCESS',
+    type: "GET_PARTNERS_SUCCESS",
     payload: data,
   });
-  const failure = (err) => ({ type: 'GET_PARTNERS_FAILURE', error: err });
+  const failure = (err) => ({ type: "GET_PARTNERS_FAILURE", error: err });
   return (dispatch) => {
     dispatch(request());
     PartnersService.get()
       .then((res) => {
         dispatch(success(res.data));
       })
-      .then((res) => dispatch({ type: 'SET_PARTNERS_FAST_SEARCH', payload: fastSearch }))
+      .then((res) =>
+        dispatch({ type: "SET_PARTNERS_FAST_SEARCH", payload: fastSearch })
+      )
       .catch((err) => dispatch(failure(err)));
   };
 };
@@ -141,7 +143,7 @@ export const getPartnersFiltered = (fastSearch) => {
 export const getPartners = () => {
   return (dispatch) => {
     PartnersService.getPartners().then((res) =>
-      dispatch({ type: 'SET_CONTRAGENTS', payload: res.data })
+      dispatch({ type: "SET_CONTRAGENTS", payload: res.data })
     );
   };
 };
@@ -149,7 +151,7 @@ export const getPartners = () => {
 export const getCities = () => {
   return (dispatch) => {
     ConstructionsService.getCities().then((res) =>
-      dispatch({ type: 'SET_CITIES', payload: res.data })
+      dispatch({ type: "SET_CITIES", payload: res.data })
     );
   };
 };
@@ -157,7 +159,7 @@ export const getCities = () => {
 export const getDistricts = () => {
   return (dispatch) => {
     ConstructionsService.getDistricts().then((res) =>
-      dispatch({ type: 'SET_DISTRICTS', payload: res.data })
+      dispatch({ type: "SET_DISTRICTS", payload: res.data })
     );
   };
 };
@@ -165,11 +167,11 @@ export const getDistricts = () => {
 export const getPostalCodes = () => {
   return (dispatch) => {
     ConstructionsService.getPostalCodes().then((res) =>
-      dispatch({ type: 'SET_POSTALCODES', payload: res.data })
+      dispatch({ type: "SET_POSTALCODES", payload: res.data })
     );
   };
 };
 
 export const setTable = (table) => {
-  return { type: 'SET_TABLE_TYPE', payload: table }
-}
+  return { type: "SET_TABLE_TYPE", payload: table };
+};
