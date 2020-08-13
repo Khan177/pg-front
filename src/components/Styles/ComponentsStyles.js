@@ -91,5 +91,5 @@ export const LeftBarStyled = styled.div`
   justify-content: center;
   margin-top: 2px;
   width: 5vw;
-  height: calc(100vh - 82px);
+  height: 100%;
 `;

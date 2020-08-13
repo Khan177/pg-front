@@ -1,16 +1,17 @@
 import React from 'react';
 import { STab, STabList, STabPanel, STabs } from '../../../../components/Styles/TabPanelsStyles';
 import { ControlToolbar } from '../../../../components/Styles/ControlToolbarStyle';
+import GeneralInformation from '../../../../components/Panels/Location/GeneralInformation/GeneralInfomation';
 import TabPanelHeaderLocation from './TabPanelHeaderLocation';
+import HistoryTable from '../../../../components/Panels/Location/HistoryTable/HistoryTable';
 
 STabPanel.tabsRole = 'TabPanel';
 STabList.tabsRole = 'TabList';
 STab.tabsRole = 'Tab';
 
-const tabs = [
-  { value: 'Общая информация' },
-  { value: 'История' }
-];
+const tabs = [{ value: 'Общая информация' }, { value: 'История' }];
+const panel1 = <GeneralInformation />
+const panel2 = <HistoryTable />
 
 export default function InnerForm(props) {
   return (
@@ -30,8 +31,8 @@ export default function InnerForm(props) {
               })}
             </STabList>
           </ControlToolbar>
-          {/* <STabPanel>{panel1}</STabPanel>
-          <STabPanel>{panel2}</STabPanel> */}
+          <STabPanel>{panel1}</STabPanel>
+          <STabPanel>{panel2}</STabPanel>
         </STabs>
       </div>
     </form>

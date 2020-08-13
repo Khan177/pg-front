@@ -1,5 +1,4 @@
 import React from 'react';
-import 'date-fns';
 import Details from './Blocks/Details';
 import Intro from './Blocks/Intro';
 import Sides from './Blocks/Sides';

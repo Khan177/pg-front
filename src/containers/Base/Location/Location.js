@@ -9,6 +9,14 @@ import ButtonGroup from '../../../components/ButtonGroup/ButtonGroup';
 import InnerForm from './TabPanel/TabPanelLocation';
 
 const Location = (props) => {
+  const [showSearchBtn, setSearchBtn] = React.useState(false);
+
+  const handleTabSelected = (index) => {
+    if (index === 4) {
+      setSearchBtn(true);
+    } else setSearchBtn(false);
+  };
+  
   return (
     <Grid fluid className="resetPadding">
       <Row className="resetPadding">
@@ -16,8 +24,8 @@ const Location = (props) => {
           <LeftBar>
           </LeftBar>
         </Col>
-        <Col xs={11} className="resetPadding">
-          <InnerForm />
+        <Col xs={11} className="resetPadding ml-20">
+          <InnerForm selectedTab={handleTabSelected} />
         </Col>
       </Row>
     </Grid>

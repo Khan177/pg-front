@@ -9,13 +9,15 @@ import App from './App';
 import reducerTable from './store/reducer/tableReducer';
 import constructionReducer from './store/reducer/constructionReducer';
 import contragentsReducer from './store/reducer/contragentsReducer';
+import locationReducer from './store/reducer/locationReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const rootReducer = combineReducers({
     table: reducerTable,
     construction: constructionReducer,
-    contragents: contragentsReducer
+    contragents: contragentsReducer,
+    projects: locationReducer
 });
 
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware)));
