@@ -7,16 +7,10 @@ import Contract from './Blocks/Contract';
 import AkimatResolution from './Blocks/AkimatResolution';
 import GroundAct from './Blocks/GroundAct';
 import Construction from './Blocks/Construction';
-import { getProjectsData } from '../../../../store/actions/locationActions';
+import { getCurrentLocation } from '../../../../store/actions/locationActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 const GeneralInformation = () => {
-  const state = useSelector((state) => state.projects);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getProjectsData());
-  }, []);
-  console.log(state);
   let newCoords;
 
   return (
@@ -49,9 +43,6 @@ const GeneralInformation = () => {
                     });
                   }
                 }}
-              />
-              <ListBox 
-                state={{a: newCoords}}
               />
             </Map>
           </YMaps>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BlockBody, Medium, Row, BlockTitle, InputTitle } from '../../../../Styles/StyledBlocks';
 import InputAnchor from '../../../../Inputs/InputAnchor';
-import Multiline from '../../../../Inputs/Multiline';
+import { getLocationProps } from '../../../../../store/actions/locationActions';
 import { useSelector, useDispatch } from 'react-redux';
 
 export const Address = (props) => {
-  const current = useSelector((state) => state.construction.currentConstruction);
+  const state = useSelector((state) => state.location.currentLocation);
   const dispatch = useDispatch();
   return (
     <Medium>
@@ -14,25 +14,41 @@ export const Address = (props) => {
         <Row>
           <div style={{ width: '100%' }}>
             <InputTitle>Город</InputTitle>
-            <InputAnchor placeholder="Алматы" />
+            <InputAnchor
+              value={Object.keys(state).length !== 0 ? state.city : ''}
+              onChange={(e) => dispatch(getLocationProps('city', e.target.value))}
+              placeholder="Алматы"
+            />
           </div>
         </Row>
         <Row>
           <div style={{ width: '100%' }}>
             <InputTitle>Район</InputTitle>
-            <InputAnchor placeholder="Медеуский р-н." />
+            <InputAnchor
+              value={Object.keys(state).length !== 0 ? state.district : ''}
+              onChange={(e) => dispatch(getLocationProps('district', e.target.value))}
+              placeholder="Медеуский р-н."
+            />
           </div>
         </Row>
         <Row>
           <div style={{ width: '100%' }}>
             <InputTitle>Почтовый индекс</InputTitle>
-            <InputAnchor placeholder="1012034" />
+            <InputAnchor
+              value={Object.keys(state).length !== 0 ? state.postalCode : ''}
+              onChange={(e) => dispatch(getLocationProps('postalCode', e.target.value))}
+              placeholder="1012034"
+            />
           </div>
         </Row>
         <Row>
           <div style={{ width: '100%' }}>
             <InputTitle>Юридический адрес</InputTitle>
-            <InputAnchor placeholder="Абая - ост. ГорВодоКанал" />
+            <InputAnchor
+              value={Object.keys(state).length !== 0 ? state.legalAddress : ''}
+              onChange={(e) => dispatch(getLocationProps('legalAddress', e.target.value))}
+              placeholder="Абая - ост. ГорВодоКанал"
+            />
           </div>
         </Row>
       </BlockBody>

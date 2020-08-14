@@ -120,6 +120,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function EnhancedTable({
+  linkProps,
   columns,
   rowKeys,
   rows,
@@ -228,7 +229,7 @@ export default function EnhancedTable({
                       key={(Math.random() * 100).toString()}
                     >
                       <TableCell>
-                        <Link to={obj}>
+                        <Link to={{ ...linkProps, row }}>
                           <IconButton>
                             <Edit />
                           </IconButton>
