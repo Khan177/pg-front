@@ -11,7 +11,7 @@ import {
 import { BtnStyledSecondary } from "../../../../Styles/ButtonStyles";
 import photo from "../../../../../img/outdoor_furniture/photo_load.png";
 import InputAnchor from "../../../../Inputs/InputAnchor";
-import { sendValues } from "../../../../../store/actions/actions";
+import { getConstructionProps } from "../../../../../store/actions/constructionActions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Others() {
@@ -36,14 +36,14 @@ export default function Others() {
             <InputAnchor
               value={current ? current.link : ""}
               placeholder="Ссылка"
-              onChange={(e) => dispatch(sendValues("link", e.target.value))}
+              onChange={(e) => dispatch(getConstructionProps("link", e.target.value))}
             />
             <InputTitle>Координаты</InputTitle>
             <InputAnchor
               value={current ? current.coordinates : ""}
               placeholder="Координаты"
               onChange={(e) =>
-                dispatch(sendValues("coordinates", e.target.value))
+                dispatch(getConstructionProps("coordinates", e.target.value))
               }
             />
           </div>

@@ -29,7 +29,7 @@ const panel5 = <ConstructionHist />;
 export default function InnerForm(props) {
   return (
     <form style={{ width: '100%' }}>
-      <TPFormConstructionHeader />
+      <TPFormConstructionHeader constructionID={props.constructionID} />
       <div>
         <STabs
           selectedTabClassName="is-selected"

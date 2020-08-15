@@ -70,7 +70,7 @@ const Locations = (props) => {
       <div className="locations-table-bar">
         <HeaderList />
         <Table
-          linkProps={{ pathname: '/base/locations/location' }}
+          linkProps={'/base/locations/location/'}
           rows={rows}
           columns={columns}
           rowKeys={rowKeys}

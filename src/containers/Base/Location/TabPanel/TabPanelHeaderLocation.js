@@ -6,18 +6,20 @@ import {
   SecondaryBtnStyled,
 } from '../../../../components/Styles/ButtonStyles';
 import { JobTitle } from '../../../../components/Styles/StyledBlocks';
-import { updateLocationProps } from '../../../../store/actions/locationActions';
+import { updateLocationProps, addLocation } from '../../../../store/actions/locationActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 
-const TabPanelHeaderLocation = () => {
+const TabPanelHeaderLocation = (props) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const state = useSelector((state) => state.location.currentLocation);
+
   const routeChange = () => {
     let path = `/base/locations`;
     history.push(path);
   };
+
   console.log(state);
   return (
     <Controls>
@@ -25,7 +27,11 @@ const TabPanelHeaderLocation = () => {
       <ButtonGroup>
         <GreenButton
           onClick={() => {
-            dispatch(updateLocationProps(state));
+            if (props.locationID) {
+              dispatch(updateLocationProps(state));
+            } else {
+              dispatch(addLocation(state));
+            }
             routeChange();
           }}
         >

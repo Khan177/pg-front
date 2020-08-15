@@ -1,22 +1,25 @@
-import React, { useEffect } from "react";
-import {
-  PageWrap,
-  ContentWrap,
-} from "../../../components/Styles/ComponentsStyles";
-import InnerForm from "./TabPanelForm/TabPanelFormConstruction";
-import SearchButton from "../../../components/ButtonGroup/SearchButton";
-import LeftBar from "../../../components/LeftBar/LeftBar";
-import { Col, Grid, Row } from "react-flexbox-grid";
-import SearchBtn from "../Partners/LeftBar/SearchBtn";
-import { getCurrentConstruction } from "../../../store/actions/actions";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { PageWrap, ContentWrap } from '../../../components/Styles/ComponentsStyles';
+import InnerForm from './TabPanelForm/TabPanelFormConstruction';
+import SearchButton from '../../../components/ButtonGroup/SearchButton';
+import LeftBar from '../../../components/LeftBar/LeftBar';
+import { Col, Grid, Row } from 'react-flexbox-grid';
+import SearchBtn from '../Partners/LeftBar/SearchBtn';
+import { getCurrentConstruction, resetCurrentConstruction } from '../../../store/actions/constructionActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function Construction(props) {
+  const current = useSelector((state) => state.construction.currentConstruction);
+  console.log(current);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getCurrentConstruction(props.location.row));
-  }, [dispatch, props.location.row]);
-
+    if (typeof props.match.params.id != 'undefined') {
+      dispatch(getCurrentConstruction(props.match.params.id));
+    } else {
+      dispatch(resetCurrentConstruction());
+    }
+  }, [props.match]);
+  
   const [showSearchBtn, setSearchBtn] = React.useState(false);
 
   const handleTabSelected = (index) => {
@@ -37,10 +40,8 @@ export default function Construction(props) {
             ) : null}
           </LeftBar>
         </Col>
-        <Col xs={11} className="resetPadding  marginLeft10">
-          {/*<ContentWrap>*/}
-          <InnerForm selectedTab={handleTabSelected} />
-          {/*</ContentWrap>*/}
+        <Col xs={11} className="resetPadding marginLeft10">
+          <InnerForm selectedTab={handleTabSelected} constructionID={props.match.params.id} />
         </Col>
       </Row>
     </Grid>

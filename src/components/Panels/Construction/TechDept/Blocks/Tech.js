@@ -7,7 +7,7 @@ import {
   InputTitle,
 } from "../../../../Styles/StyledBlocks";
 import InputAnchor from "../../../../Inputs/InputAnchor";
-import { sendValues } from "../../../../../store/actions/actions";
+import { getConstructionProps } from "../../../../../store/actions/constructionActions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Tech() {
@@ -25,7 +25,7 @@ export default function Tech() {
             <InputAnchor
               value={current ? current.crew : ""}
               placeholder="Экипаж"
-              onChange={(e) => dispatch(sendValues("crew", e.target.value))}
+              onChange={(e) => dispatch(getConstructionProps("crew", e.target.value))}
             />
           </div>
           <div style={{ width: "49%" }}>
@@ -34,7 +34,7 @@ export default function Tech() {
               value={current ? current.generalInventoryNumber : ""}
               placeholder="Инвентарный"
               onChange={(e) =>
-                dispatch(sendValues("generalInventoryNumber", e.target.value))
+                dispatch(getConstructionProps("generalInventoryNumber", e.target.value))
               }
             />
           </div>
@@ -46,7 +46,7 @@ export default function Tech() {
               value={current ? current.constructionPhoneNumber : ""}
               placeholder="Номер телефона"
               onChange={(e) =>
-                dispatch(sendValues("constructionPhoneNumber", e.target.value))
+                dispatch(getConstructionProps("constructionPhoneNumber", e.target.value))
               }
             />
           </div>

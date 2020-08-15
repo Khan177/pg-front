@@ -56,7 +56,7 @@ export default function OutdoorFurniture() {
       <div className="outdoor-table-bar">
         <HeaderList />
         <Table
-          params={dispatch(setTable("outdoorTable"))}
+          linkProps={'/base/construction/'}
           columns={outdoorFurnitureColums}
           rows={rows}
           rowKeys={rowKeys}

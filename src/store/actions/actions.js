@@ -58,31 +58,33 @@ export const filterOutdoorTable = () => {
   };
 };
 
+export const getCurrentPartner = (id) => {
+  const request = () => ({ type: 'GET_CONTRAGENT_REQUEST' });
+  const success = (data) => ({
+    type: 'GET_CONTRAGENT_SUCCESS',
+    payload: data,
+  });
+  const failure = (err) => ({ type: 'GET_CONTRAGENT_FAILURE', payload: err });
+  return (dispatch) => {
+    dispatch(request());
+    PartnersService.getByID(id)
+      .then((res) => dispatch(success(res.data)))
+      .catch((err) => dispatch(failure(err)));
+  };
+};
+
 export const sendContragentValues = (key, value) => {
   console.log({ [key]: value });
-  return { type: "GET_PARTNER_PROPS", payload: { [key]: value } };
+  return { type: "GET_CONTRAGENT_PROPS", payload: { [key]: value } };
 };
 
 export const updateContragent = (values) => {
   PartnersService.put(values).then((res) => console.log(res));
-  return { type: "UPDATE_PARTNER_PROPS" };
+  return { type: "UPDATE_CONTRAGENT_PROPS" };
 };
 
-export const resetContragentValues = () => {
-  return { type: "RESET_PARTNER_PROPS" };
-};
-
-export const getCurrentConstruction = (data) => {
-  return { type: "GET_CURRENT_CONSTRUCTION", payload: data };
-};
-
-export const sendValues = (key, value) => {
-  return { type: "GET_CONSTRUCTION_PROPS", payload: { [key]: value } };
-};
-
-export const updateConstruction = (values) => {
-  ConstructionsService.put(values).then((res) => console.log(res));
-  return { type: "UPDATE_CONSTRUCTION_PROPS" };
+export const resetCurrentPartner = () => {
+  return { type: "RESET_CONTRAGENT_PROPS" };
 };
 
 export const filterPartners = () => {

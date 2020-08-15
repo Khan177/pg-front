@@ -50,6 +50,7 @@ const Partners = () => {
       <FilterBar />
       <div className="partners-table-bar">
         <Table
+          linkProps={'/base/partners/info/'}
           params={dispatch(setTable("partnerTable"))}
           columns={partnersColumns}
           rows={rows}
