@@ -13,16 +13,17 @@ const InputWrapper = styled.div`
 export default function ExtraRow(props) {
   const current = useSelector((state) => state.construction.currentConstruction);
   const dispatch = useDispatch();
+  console.log(current)
   return (
     <Row style={{ justifyContent: 'spaceBetween', padding: '0 7px 0 0' }}>
       <InputWrapper>
         <InputTitle>Формат</InputTitle>
         <InputAnchor
-          value={props.current ? props.current.format : ''}
+          value={props.current.format || ''}
           placeholder="Формат"
           onChange={(e) => {
             dispatch(
-              props.sendValues('sides', [
+              props.getConstructionProps('sides', [
                 ...current.sides.map((side) => {
                   if (side._id === props.current._id) {
                     let obj = {
@@ -42,11 +43,11 @@ export default function ExtraRow(props) {
       <InputWrapper>
         <InputTitle>Сторона</InputTitle>
         <InputAnchor
-          value={props.current ? props.current.side : ''}
+          value={props.current.side || ''}
           placeholder="Сторона"
           onChange={(e) => {
             dispatch(
-              props.sendValues('sides', [
+              props.getConstructionProps('sides', [
                 ...current.sides.map((side) => {
                   if (side._id === props.current._id) {
                     let obj = {
@@ -66,11 +67,11 @@ export default function ExtraRow(props) {
       <InputWrapper>
         <InputTitle>Рекламная сторона</InputTitle>
         <InputAnchor
-          value={props.current ? props.current.advertisingSide : ''}
+          value={props.current.advertisingSide || ''}
           placeholder="Рекламная сторона"
           onChange={(e) => {
             dispatch(
-              props.sendValues('sides', [
+              props.getConstructionProps('sides', [
                 ...current.sides.map((side) => {
                   if (side._id === props.current._id) {
                     let obj = {
@@ -90,11 +91,11 @@ export default function ExtraRow(props) {
       <InputWrapper>
         <InputTitle>Назначение стороны</InputTitle>
         <InputAnchor
-          value={props.current ? props.current.purposeSide : ''}
+          value={props.current.purposeSide || ''}
           placeholder="Назначение"
           onChange={(e) => {
             dispatch(
-              props.sendValues('sides', [
+              props.getConstructionProps('sides', [
                 ...current.sides.map((side) => {
                   if (side._id === props.current._id) {
                     let obj = {
@@ -114,11 +115,11 @@ export default function ExtraRow(props) {
       <InputWrapper>
         <InputTitle>Размеры(см)</InputTitle>
         <InputAnchor
-          value={props.current ? props.current.sizes : ''}
+          value={props.current.sizes || ''}
           placeholder="Размеры"
           onChange={(e) => {
             dispatch(
-              props.sendValues('sides', [
+              props.getConstructionProps('sides', [
                 ...current.sides.map((side) => {
                   if (side._id === props.current._id) {
                     let obj = {
@@ -138,11 +139,11 @@ export default function ExtraRow(props) {
       <InputWrapper>
         <InputTitle>Доступность стороны</InputTitle>
         <InputAnchor
-          value={props.current ? props.current.availabilitySide : ''}
+          value={props.current.availabilitySide || ''}
           placeholder="Доступность"
           onChange={(e) => {
             dispatch(
-              props.sendValues('sides', [
+              props.getConstructionProps('sides', [
                 ...current.sides.map((side) => {
                   if (side._id === props.current._id) {
                     let obj = {

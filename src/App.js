@@ -22,19 +22,19 @@ function App() {
         <Switch>
           <Route path="/base/partners" exact component={Partners} />
           <Route
-            path="/base/partners/info"
+            path="/base/partners/info/:id?"
             exact
             component={PartnerGeneralInfo}
           />
           <Route path="/cool" exact component={cool} />
-          <Route path="/base/construction" exact component={Construction} />
+          <Route path="/base/construction/:id?" exact component={Construction} />
           <Route
             path="/base/outdoor_furniture"
             exact
             component={OutdoorFurniture}
           />
           <Route path="/base/locations" exact component={Locations} />
-          <Route path="/base/locations/location" exact component={Location} />
+          <Route path="/base/locations/location/:id?" exact component={Location} />
         </Switch>
       </BrowserRouter>
     </>

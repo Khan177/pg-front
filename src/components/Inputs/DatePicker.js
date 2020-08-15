@@ -16,11 +16,11 @@ export default function DatePicker(props) {
       <KeyboardDatePicker
         style={{ width: '100%', marginBottom: 20 }}
         inputVariant="outlined"
-        format="MM/dd/yyyy"
+        format="dd/MM/yyyy"
         KeyboardButtonProps={{
           'aria-label': 'change date',
         }}
-        onChange={(date) => handleDateChange(date)}
+        onChange={props.onChange}
         value={props.value}
         InputAdornmentProps={{ position: 'start' }}
         keyboardIcon={

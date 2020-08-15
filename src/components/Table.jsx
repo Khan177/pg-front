@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import React, { useState } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
 import {
   Paper,
   IconButton,
@@ -13,8 +13,8 @@ import {
   TableCell,
   TableBody,
   Table,
-} from "@material-ui/core";
-import { useSelector, useDispatch } from "react-redux";
+} from '@material-ui/core';
+import { useSelector, useDispatch } from 'react-redux';
 import {
   Search,
   Print,
@@ -23,12 +23,12 @@ import {
   ArrowDownward,
   ArrowUpward,
   Edit,
-} from "@material-ui/icons";
-import { Link } from "react-router-dom";
-import { getOutdoorFurnitureFiltered } from "../store/actions/actions";
+} from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+import { getOutdoorFurnitureFiltered } from '../store/actions/actions';
 
-import "./Table.css";
-import Construction from "../containers/Base/Construction/Construction";
+import './Table.css';
+import Construction from '../containers/Base/Construction/Construction';
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -41,7 +41,7 @@ function descendingComparator(a, b, orderBy) {
 }
 
 function getComparator(order, orderBy) {
-  return order === "desc"
+  return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -69,21 +69,21 @@ function EnhancedTableHead(props) {
         {headCells.map((headCell) => (
           <TableCell
             key={headCell}
-            align={"right"}
-            padding={"default"}
+            align={'right'}
+            padding={'default'}
             sortDirection={orderBy === headCell ? order : false}
           >
             <TableSortLabel
               active={orderBy === headCell}
-              direction={orderBy === headCell ? order : "asc"}
+              direction={orderBy === headCell ? order : 'asc'}
               onClick={createSortHandler(rowKeys[headCells.indexOf(headCell)])}
-              IconComponent={order === "asc" ? ArrowDownward : ArrowUpward}
-              style={{ whiteSpace: "nowrap" }}
+              IconComponent={order === 'asc' ? ArrowDownward : ArrowUpward}
+              style={{ whiteSpace: 'nowrap' }}
             >
               {headCell}
               {orderBy === headCell ? (
                 <span className={classes.visuallyHidden}>
-                  {order === "desc" ? "sorted descending" : "sorted ascending"}
+                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
                 </span>
               ) : null}
             </TableSortLabel>
@@ -96,24 +96,24 @@ function EnhancedTableHead(props) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: "100%",
+    width: '100%',
   },
   paper: {
-    width: "100%",
+    width: '100%',
     marginBottom: theme.spacing(2),
-    padding: "1% 2%",
+    padding: '1% 2%',
   },
   table: {
-    width: "100%",
+    width: '100%',
   },
   visuallyHidden: {
     border: 0,
-    clip: "rect(0 0 0 0)",
+    clip: 'rect(0 0 0 0)',
     height: 1,
     margin: -1,
-    overflow: "hidden",
+    overflow: 'hidden',
     padding: 0,
-    position: "absolute",
+    position: 'absolute',
     top: 20,
     width: 1,
   },
@@ -128,15 +128,15 @@ export default function EnhancedTable({
   handleChangeFastSearch,
 }) {
   const classes = useStyles();
-  const [order, setOrder] = React.useState("asc");
-  const [orderBy, setOrderBy] = React.useState("city");
+  const [order, setOrder] = React.useState('asc');
+  const [orderBy, setOrderBy] = React.useState('city');
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   console.log(rows);
 
   const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === "asc";
-    setOrder(isAsc ? "desc" : "asc");
+    const isAsc = orderBy === property && order === 'asc';
+    setOrder(isAsc ? 'desc' : 'asc');
     console.log(order);
     setOrderBy(property);
   };
@@ -150,13 +150,8 @@ export default function EnhancedTable({
     setPage(0);
   };
 
-  const emptyRows =
-    rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
-
-  const dispatch = useDispatch();
+  const emptyRows = rowsPerPage - Math.min(rowsPerPage, rows.length - page * rowsPerPage);
   const [fastSearch, setFastSearch] = useState();
-  const tableType = useSelector((state) => state.table.tableType);
-
   return (
     <div className={classes.root}>
       <div className="table-toolbar">
@@ -169,27 +164,23 @@ export default function EnhancedTable({
             placeholder="Быстрый поиск"
             onChange={(e) => handleChangeFastSearch(e)}
           />
-          <Button
-            color="primary"
-            size="small"
-            onClick={() => handleFastSearch()}
-          >
+          <Button color="primary" size="small" onClick={() => handleFastSearch()}>
             Найти
           </Button>
         </div>
         <div className="export-print">
-          <IconButton style={{ backgroundColor: "white", borderRadius: "5px" }}>
+          <IconButton style={{ backgroundColor: 'white', borderRadius: '5px' }}>
             <Print />
           </IconButton>
           <Button
             variant="contained"
             color="default"
             startIcon={<ImportExport />}
-            style={{ backgroundColor: "white", margin: "0 4px" }}
+            style={{ backgroundColor: 'white', margin: '0 4px' }}
           >
             Экспорт
           </Button>
-          <IconButton style={{ backgroundColor: "white", borderRadius: "5px" }}>
+          <IconButton style={{ backgroundColor: 'white', borderRadius: '5px' }}>
             <Settings />
           </IconButton>
         </div>
@@ -199,7 +190,7 @@ export default function EnhancedTable({
           <Table
             className={classes.table}
             aria-labelledby="tableTitle"
-            size={"medium"}
+            size={'medium'}
             aria-label="enhanced table"
           >
             <EnhancedTableHead
@@ -215,12 +206,6 @@ export default function EnhancedTable({
               {stableSort(rows, getComparator(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  let obj;
-                  if (tableType === "outdoorTable") {
-                    obj = { pathname: "/base/construction/", row };
-                  } else if (tableType === "partnerTable") {
-                    obj = { pathname: "/base/partners/info", rowID: row._id };
-                  }
                   return (
                     <TableRow
                       hover
@@ -229,7 +214,7 @@ export default function EnhancedTable({
                       key={(Math.random() * 100).toString()}
                     >
                       <TableCell>
-                        <Link to={{ ...linkProps, row }}>
+                        <Link to={`${linkProps}${row._id}`}>
                           <IconButton>
                             <Edit />
                           </IconButton>
@@ -237,11 +222,8 @@ export default function EnhancedTable({
                       </TableCell>
                       {rowKeys.map((rowKey) => {
                         return (
-                          <TableCell
-                            key={(Math.random() * 100).toString()}
-                            align="right"
-                          >
-                            {row[rowKey] ? row[rowKey].toString() : ""}
+                          <TableCell key={(Math.random() * 100).toString()} align="right">
+                            {row[rowKey] ? row[rowKey].toString() : ''}
                           </TableCell>
                         );
                       })}

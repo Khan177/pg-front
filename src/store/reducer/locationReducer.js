@@ -1,7 +1,6 @@
 const initialState = {
   locationsData: [],
   loading: false,
-  failure: null,
   currentLocation: {},
   currentLocationFailure: null,
 };
@@ -18,6 +17,10 @@ const reducer = (state = initialState, action) => {
       return { ...state, currentLocation: { ...state.currentLocation, ...action.payload } };
     case 'PUT_LOCATION_FAILURE':
       return { ...state, currentLocationFailure: action.payload };
+    case 'POST_LOCATION_FAILURE':
+      return { ...state, currentLocationFailure: action.payload };
+    case 'RESET_CURRENT_LOCATION':
+      return (state = initialState);
     default:
       return state;
   }

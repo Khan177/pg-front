@@ -16,7 +16,7 @@ const panel2 = <HistoryTable />
 export default function InnerForm(props) {
   return (
     <form style={{ width: '100%' }}>
-      <TabPanelHeaderLocation />
+      <TabPanelHeaderLocation locationID={props.locationID} />
       <div>
         <STabs
           selectedTabClassName="is-selected"

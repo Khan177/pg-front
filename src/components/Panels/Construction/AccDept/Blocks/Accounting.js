@@ -8,7 +8,7 @@ import {
   InputTitle,
 } from "../../../../Styles/StyledBlocks";
 import InputAnchor from "../../../../Inputs/InputAnchor";
-import { sendValues } from "../../../../../store/actions/actions";
+import { getConstructionProps } from "../../../../../store/actions/constructionActions";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Accounting() {
@@ -28,7 +28,7 @@ export default function Accounting() {
               value={current ? current.bookkeepInventoryNumber : ""}
               placeholder="Инвентарный номер"
               onChange={(e) =>
-                dispatch(sendValues("bookkeepInventoryNumber", e.target.value))
+                dispatch(getConstructionProps("bookkeepInventoryNumber", e.target.value))
               }
             />
           </div>

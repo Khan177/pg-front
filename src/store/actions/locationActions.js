@@ -39,3 +39,13 @@ export const updateLocationProps = (values) => (dispatch) => {
     .then(() => dispatch(getLocationsData()))
     .catch((err) => ({ type: 'PUT_LOCATION_FAILURE', payload: err }));
 };
+
+export const addLocation = (values) => (dispatch) => {
+  LocationsService.post(values)
+    .then(() => dispatch(getLocationsData()))
+    .catch((err) => ({ type: 'POST_LOCATION_FAILURE', payload: err }));
+};
+
+export const resetCurrentLocation = () => {
+  return { type: 'RESET_CURRENT_LOCATION' };
+};

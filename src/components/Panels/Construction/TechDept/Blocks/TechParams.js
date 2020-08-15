@@ -7,7 +7,7 @@ import {
   Medium,
   Row,
 } from "../../../../Styles/StyledBlocks";
-import { sendValues } from "../../../../../store/actions/actions";
+import { getConstructionProps } from "../../../../../store/actions/constructionActions";
 import InputAnchor from "../../../../Inputs/InputAnchor";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -26,7 +26,7 @@ export default function TechParams() {
             <InputAnchor
               value={current ? current.techProblem : ""}
               onChange={(e) =>
-                dispatch(sendValues("techProblem", e.target.value))
+                dispatch(getConstructionProps("techProblem", e.target.value))
               }
             />
           </div>
@@ -35,7 +35,7 @@ export default function TechParams() {
             <InputAnchor
               value={current ? current.techComment : ""}
               onChange={(e) =>
-                dispatch(sendValues("techComment", e.target.value))
+                dispatch(getConstructionProps("techComment", e.target.value))
               }
             />
           </div>
@@ -46,7 +46,7 @@ export default function TechParams() {
             <InputAnchor
               value={current ? current.connectionStatus : ""}
               onChange={(e) =>
-                dispatch(sendValues("connectionStatus", e.target.value))
+                dispatch(getConstructionProps("connectionStatus", e.target.value))
               }
             />
           </div>
@@ -54,7 +54,7 @@ export default function TechParams() {
             <InputTitle>Пометка</InputTitle>
             <InputAnchor
               value={current ? current.markup : ""}
-              onChange={(e) => dispatch(sendValues("markup", e.target.value))}
+              onChange={(e) => dispatch(getConstructionProps("markup", e.target.value))}
             />
           </div>
         </Row>

@@ -45,7 +45,6 @@ const initialState = {
   filterAdvertiser: "",
   filterSector: "",
   filterBIN: "",
-  tableType: ''
 };
 
 const reducer = (state = initialState, action) => {
@@ -330,11 +329,6 @@ const reducer = (state = initialState, action) => {
         ...state,
         filterSector: action.payload,
       };
-    case 'SET_TABLE_TYPE':
-      return {
-        ...state,
-        tableType: action.payload
-      }  
     default:
       return state;
   }

@@ -1,28 +1,25 @@
-import React from "react";
-import { PageWrap } from "../../../../components/Styles/ComponentsStyles";
-import SearchBtn from "../LeftBar/SearchBtn";
-import LeftBar from "../../../../components/LeftBar/LeftBar";
-import TabPanelFormPartners from "./TabPanelFormPartners";
-import { ContentWrap } from "../../../../components/Styles/ComponentsStyles";
-import { Col, Grid, Row } from "react-flexbox-grid";
-import {
-  getContragentData,
-  resetContragentValues,
-} from "../../../../store/actions/actions";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect, useState } from 'react';
+import { PageWrap } from '../../../../components/Styles/ComponentsStyles';
+import SearchBtn from '../LeftBar/SearchBtn';
+import LeftBar from '../../../../components/LeftBar/LeftBar';
+import TabPanelFormPartners from './TabPanelFormPartners';
+import { ContentWrap } from '../../../../components/Styles/ComponentsStyles';
+import { Col, Grid, Row } from 'react-flexbox-grid';
+import { getCurrentPartner, resetCurrentPartner } from '../../../../store/actions/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 export default function PartnerGeneralInfo(props) {
-  const [showSearchBtn, setSearchBtn] = React.useState(false);
-  const [index, setIndex] = React.useState("");
+  const [showSearchBtn, setSearchBtn] = useState(false);
+  const [index, setIndex] = useState('');
   const dispatch = useDispatch();
-  React.useEffect(() => {
-    if (props.location.rowID) {
-      dispatch(getContragentData(props.location.rowID));
+  useEffect(() => {
+    if (typeof props.match.params.id != 'undefined') {
+      dispatch(getCurrentPartner(props.match.params.id));
     } else {
-      dispatch(resetContragentValues());
+      dispatch(resetCurrentPartner());
     }
-  }, [dispatch, props.location.rowID]);
-  console.log(props.location);
+  }, [props.match]);
+
   const handleTasSelected = (index) => {
     setIndex(index);
     if (index === 0) {
