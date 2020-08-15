@@ -7,17 +7,30 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FilterMenu, SearchTitle, FilterText } from '../../../components/Styles/StyledFilters';
 import ButtonGroup from '../../../components/ButtonGroup/ButtonGroup';
 import InnerForm from './TabPanel/TabPanelLocation';
+import { getCurrentLocation } from '../../../store/actions/locationActions';
 
 const Location = (props) => {
+  const [showSearchBtn, setSearchBtn] = React.useState(false);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    if (props.location.row) dispatch(getCurrentLocation(props.location.row._id));
+  }, []);
+
+  const handleTabSelected = (index) => {
+    if (index === 4) {
+      setSearchBtn(true);
+    } else setSearchBtn(false);
+  };
+
   return (
     <Grid fluid className="resetPadding">
       <Row className="resetPadding">
         <Col>
-          <LeftBar>
-          </LeftBar>
+          <LeftBar></LeftBar>
         </Col>
-        <Col xs={11} className="resetPadding">
-          <InnerForm />
+        <Col xs={11} className="resetPadding ml-20">
+          <InnerForm selectedTab={handleTabSelected} />
         </Col>
       </Row>
     </Grid>

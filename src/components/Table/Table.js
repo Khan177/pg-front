@@ -78,6 +78,7 @@ export default function Table({ columns, data }) {
     let table = document.getElementById("table1");
     TableToExcel.convert(table);
   };
+  console.log(page);
 
   return (
     <>
@@ -158,7 +159,6 @@ export default function Table({ columns, data }) {
                   disabled={!canNextPage}
                 />
               </PaginationItem>
-
               <PaginationItem>
                 <PaginationLink
                   last

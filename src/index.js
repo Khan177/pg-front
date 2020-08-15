@@ -10,6 +10,7 @@ import reducerTable from "./store/reducer/tableReducer";
 import constructionReducer from "./store/reducer/constructionReducer";
 import contragentsReducer from "./store/reducer/contragentsReducer";
 import locationsReducer from "./store/reducer/locationsReducer";
+import locationReducer from './store/reducer/locationReducer';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
   construction: constructionReducer,
   contragents: contragentsReducer,
   locations: locationsReducer,
+  location: locationReducer
 });
 
 const store = createStore(

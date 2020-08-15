@@ -1,31 +1,23 @@
-import React, { useEffect, useState } from "react";
-import SearchButton from "../../../components/ButtonGroup/SearchButton";
-import LeftBar from "../../../components/LeftBar/LeftBar";
-import FilterByLocations from "./FilterByLocations";
-import FilterByOrders from "./FilterByOrders";
-import FilterByParameters from "./FilterByParameters";
-import FilterByOther from "./FilterByOther";
-import FilterByStatus from "./FilterByStatus";
-import HeaderList from "./HeaderList";
-import {
-  BtnGroup,
-  ResetButton,
-  SubmitButton,
-} from "../../../components/Styles/ButtonStyles";
+import React, { useEffect, useState } from 'react';
+import SearchButton from '../../../components/ButtonGroup/SearchButton';
+import LeftBar from '../../../components/LeftBar/LeftBar';
+import FilterByLocations from './FilterByLocations';
+import FilterByOrders from './FilterByOrders';
+import FilterByParameters from './FilterByParameters';
+import FilterByOther from './FilterByOther';
+import FilterByStatus from './FilterByStatus';
+import HeaderList from './HeaderList';
+import { BtnGroup, ResetButton, SubmitButton } from '../../../components/Styles/ButtonStyles';
 
-import Table from "../../../components/Table";
+import Table from '../../../components/Table';
 import {
   getLocationsData,
   filterLocationsFastSearch,
   filterLocationsTable,
-} from "../../../store/actions/locationsActions";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  FilterMenu,
-  SearchTitle,
-  FilterText,
-} from "../../../components/Styles/StyledFilters";
-import ButtonGroup from "../../../components/ButtonGroup/ButtonGroup";
+} from '../../../store/actions/locationsActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { FilterMenu, SearchTitle, FilterText } from '../../../components/Styles/StyledFilters';
+import ButtonGroup from '../../../components/ButtonGroup/ButtonGroup';
 
 const Locations = (props) => {
   const dispatch = useDispatch();
@@ -66,27 +58,24 @@ const Locations = (props) => {
         <BtnGroup>
           <ResetButton
             onClick={() => {
-              dispatch({ type: "CLEAR_FILTER" });
+              dispatch({ type: 'CLEAR_FILTER' });
               dispatch(getLocationsData());
             }}
           >
             Очистить
           </ResetButton>
-          <SubmitButton onClick={() => dispatch(filterLocationsTable())}>
-            Искать
-          </SubmitButton>
+          <SubmitButton onClick={() => dispatch(filterLocationsTable())}>Искать</SubmitButton>
         </BtnGroup>
       </FilterMenu>
       <div className="locations-table-bar">
         <HeaderList />
         <Table
+          linkProps={{ pathname: '/base/locations/location' }}
           rows={rows}
           columns={columns}
           rowKeys={rowKeys}
           handleChangeFastSearch={(e) => setFastSearch(e.target.value)}
-          handleFastSearch={() =>
-            dispatch(filterLocationsFastSearch(fastSearch))
-          }
+          handleFastSearch={() => dispatch(filterLocationsFastSearch(fastSearch))}
         />
       </div>
     </div>
