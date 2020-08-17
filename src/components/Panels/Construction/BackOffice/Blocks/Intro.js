@@ -10,7 +10,7 @@ export default function Intro() {
   const current = useSelector((state) => state.construction.currentConstruction);
   const dispatch = useDispatch();
   return (
-    <Medium style={{ height: '403px' }}>
+    <Medium>
       <BlockTitle>Общая информация</BlockTitle>
       <BlockBody>
         <Row>

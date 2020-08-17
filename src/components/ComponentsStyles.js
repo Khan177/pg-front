@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import Breadcrumbs from '@material-ui/core/Breadcrumbs';
 import icon_book from '../img/outdoor_furniture/bx-book.svg';
 
-//Styles for OutdoorFurniture & Outdoor furniture container
-
 export const PageWrap = styled.div`
   font-family: 'SF UI Display Light', sans-serif;
   display: flex;
@@ -18,12 +16,9 @@ export const Title = styled.h1`
   padding-top: 7px;
 `;
 
-export const Breadscrumbs = styled(Breadcrumbs)`
-  width: 250px;
-  height: 14px;
-  font-size: 11px;
-  line-height: 13px;
-  padding-top: 8px;
+export const Breadscrumbs = styled.div`
+  margin: 2vw 0 2vw 0;
+  font-size: 13px;
 `;
 
 export const TitleLogo = styled.div`

@@ -28,16 +28,16 @@ export const Large = styled.div`
 `;
 
 export const BlockTitle = styled.div`
-  padding: 0 20px;
-  min-height: 46px;
-  width: 100%;
+  text-transform: uppercase;
+  font-family: 'SF UI Display Medium', sans-serif;
+  padding: 2vw;
   border-bottom: 1px solid #d3dff0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   color: #003360;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const BlockTitleText = styled.h4`
@@ -47,8 +47,7 @@ export const BlockTitleText = styled.h4`
   font-size: 14px;
 `;
 export const BlockBody = styled.div`
-  min-height: 30px;
-  padding: 10px 20px;
+  padding: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -59,7 +58,6 @@ export const Row = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5px 5px 0 5px;
 `;
 
 export const Column = styled.div`
@@ -99,7 +97,8 @@ export const ImageBody = styled.div`
 
 export const JobTitle = styled.h1`
   font-family: 'SF UI Display Medium', sans-serif;
+  font-weight: 600;
   font-size: 24px;
-  line-height: 28px;
+  margin: 0 0 0 1vw;
   color: #003360;
 `;

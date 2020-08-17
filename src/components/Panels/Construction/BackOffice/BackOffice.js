@@ -2,28 +2,21 @@ import React from 'react';
 import Details from './Blocks/Details';
 import Intro from './Blocks/Intro';
 import Sides from './Blocks/Sides';
-import useStyles from '../../../Styles/UseInputMaterialStyles';
-import { BlockWrapper, Container } from '../../../Styles/StyledBlocks';
-import { Col, Grid, Row } from 'react-flexbox-grid';
 
-export default function BackOffice(props) {
-  const classes = useStyles();
+const BackOffice = (props) => {
   return (
-    <Grid fluid className=" resetPadding ">
-      <Row xs={12} className=" resetPadding">
-        {/*<Container className={classes.root}>*/}
-        <Col xs={6}>
-          {/*<BlockWrapper>*/}
-          <Intro />
-        </Col>
-        <Col xs={6}>
-          <Details />
-        </Col>
-        {/*</BlockWrapper>*/}
-        <Col xs style={{ marginTop: 10 }}>
-          <Sides />
-        </Col>
-      </Row>
-    </Grid>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ flex: '1 1 45%', margin: '1vw 1vw 1vw 0' }}>
+        <Intro />
+      </div>
+      <div style={{ flex: '1 1 45%', margin: '1vw 0 1vw 1vw' }}>
+        <Details />
+      </div>
+      <div style={{ flex: '0 1 100%', margin: '1vw 0 1vw 0' }}>
+        <Sides />
+      </div>
+    </div>
   );
-}
+};
+
+export default BackOffice;
