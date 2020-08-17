@@ -45,7 +45,7 @@ export default function OutdoorFurniture() {
           }
           .outdoor-table-bar {
             padding: 2% 3%;
-            width:60vw
+            width:70vw
           }
         `}
       </style>
@@ -56,7 +56,7 @@ export default function OutdoorFurniture() {
       <div className="outdoor-table-bar">
         <HeaderList />
         <Table
-          linkProps={'/base/construction/'}
+          linkProps={"/base/construction/"}
           columns={outdoorFurnitureColums}
           rows={rows}
           rowKeys={rowKeys}
