@@ -13,7 +13,7 @@ export default function GroupRadio(props) {
 
   return (
     <FormControl>
-      <RadioGroup aria-label="land" name="land1" value={`${props.value}`} onChange={props.onChange}>
+      <RadioGroup style={{ display: 'flex', flexDirection: 'row' }} aria-label="land" name="land1" value={`${props.value}`} onChange={props.onChange}>
         <FormControlLabel
           value='true'
           control={<Radio style={{ color: '#2C5DE5', marginBottom: 0 }} />}

@@ -26,7 +26,7 @@ const panel3 = <AccDept />;
 const panel4 = <Other />;
 const panel5 = <ConstructionHist />;
 
-export default function InnerForm(props) {
+const InnerForm = (props) => {
   return (
     <form style={{ width: '100%' }}>
       <TPFormConstructionHeader constructionID={props.constructionID} />
@@ -39,7 +39,6 @@ export default function InnerForm(props) {
           <ControlToolbar position="static">
             <STabList>
               {tabs.map((tab, index) => {
-                console.log(tab.value);
                 return <STab key={index}>{tab.value}</STab>;
               })}
             </STabList>
@@ -54,3 +53,5 @@ export default function InnerForm(props) {
     </form>
   );
 }
+
+export default InnerForm;

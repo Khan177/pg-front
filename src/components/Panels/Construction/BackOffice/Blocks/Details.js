@@ -3,7 +3,6 @@ import {
   BlockBody,
   Row,
   Medium,
-  BlockTitleText,
   BlockTitle,
   InputTitle,
 } from '../../../../Styles/StyledBlocks';
@@ -17,7 +16,7 @@ export default function Details() {
   const current = useSelector((state) => state.construction.currentConstruction);
   const dispatch = useDispatch();
   return (
-    <Medium style={{ height: '403px' }}>
+    <Medium>
       <BlockTitle>Детали конструкции</BlockTitle>
       <BlockBody>
         <Row>
@@ -54,7 +53,7 @@ export default function Details() {
           <div style={{ width: '47%' }}>
             <InputTitle>Модель</InputTitle>
             <InputAnchor
-              value={current || current.model || ''}
+              value={current.model || ''}
               placeholder="Модель"
               onChange={(e) => dispatch(getConstructionProps('model', e.target.value))}
             />
