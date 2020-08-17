@@ -49,14 +49,16 @@ export default function OutdoorFurniture() {
           }
         `}
       </style>
-      <LeftBar>
-        <SearchButton />
-      </LeftBar>
+      <div style={{ flex: '0 1 5vw', margin: '0 0 0 0' }}>
+        <LeftBar>
+          <SearchButton />
+        </LeftBar>
+      </div>
       <FilterBar />
       <div className="outdoor-table-bar">
         <HeaderList />
         <Table
-          linkProps={"/base/construction/"}
+          linkProps={'/base/construction/'}
           columns={outdoorFurnitureColums}
           rows={rows}
           rowKeys={rowKeys}

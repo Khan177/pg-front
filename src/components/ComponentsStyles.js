@@ -77,7 +77,6 @@ export const ContentWrap = styled.div`
 
 export const LeftBarStyled = styled.div`
   font-family: 'SF UI Display Light', sans-serif;
-  width: 4%;
   border-right: 1px solid #d3dff0;
   background-color: #f5f7fa;
 `;
