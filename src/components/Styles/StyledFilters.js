@@ -28,14 +28,14 @@ export const Checks = styled.div`
 
 export const FilterMenu = styled.div`
   font-family: "SF UI Display Light", sans-serif;
-  width: 33vw;
+  width: 25vw;
   border-right: 1px solid #d3dff0;
   background-color: #f5f7fa;
   margin-top: 2px;
 `;
 
 export const FilterText = styled.h6`
-  font-family: "SF UI Display Light", sans-serif;
+  font-family: "SF UI Display Bold", sans-serif;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
