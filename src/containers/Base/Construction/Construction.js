@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import InnerForm from './TabPanelForm/TabPanelFormConstruction';
 import SearchBtn from '../Partners/LeftBar/SearchBtn';
-import LeftBar from '../../../components/LeftBar/LeftBar';
+// import LeftBar from '../../../components/LeftBar/LeftBar';
+import { LeftBar } from '../../../styles/styles';
 import {
   getCurrentConstruction,
   resetCurrentConstruction,
@@ -33,7 +34,8 @@ const Construction = (props) => {
   return (
     <div style={{ display: 'flex' }}>
       <div style={{ flex: '0 1 5vw', margin: '0 2vw 0 0' }}>
-        <LeftBar>{showSearchBtn ? <SearchBtn /> : null}</LeftBar>
+        <LeftBar />
+        {/* <LeftBar>{showSearchBtn ? <SearchBtn /> : null}</LeftBar> */}
       </div>
       <div style={{ flex: '0 1 100vw', margin: '0 2vw 0 0' }}>
         <InnerForm selectedTab={handleTabSelected} constructionID={props.match.params.id} />
