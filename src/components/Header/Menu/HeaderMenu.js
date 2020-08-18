@@ -5,7 +5,7 @@ const HeaderMenu = () => {
   return (
     <>
       <HeaderMenuLink to={'/'}>Продажи</HeaderMenuLink>
-      <HeaderMenuLink to={'/'}>Монтажи</HeaderMenuLink>
+      <HeaderMenuLink to={'/installations/design'}>Монтажи</HeaderMenuLink>
       <DropdownMenu>
         <HeaderMenuLink to={'/base'}>Базы</HeaderMenuLink>
         <DropdownContent>

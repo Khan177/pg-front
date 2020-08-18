@@ -5,8 +5,10 @@ import { Link } from 'react-router-dom';
 export const HeaderStyle = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 12vh;
   box-shadow: 0 1px 2px 0 #92b6e8, inset 0 -3px 0 0 #e7eef8;
+  z-index: 1;
+  position: relative;
   background: #fff;
   font-size: 14px;
   font-family: 'SF UI Display Medium', sans-serif;
