@@ -32,14 +32,19 @@ const Construction = (props) => {
   };
 
   return (
-    <div style={{ display: 'flex' }}>
-      <div style={{ flex: '0 1 5vw', margin: '0 2vw 0 0' }}>
-        <LeftBar />
+    <div style={{ display: 'flex', height: '100%' }}>
+      {/* <div style={{ flex: '0 1 5vw', margin: '0 2vw 0 0' }}> */}
+      <LeftBar className="left-bar" />
         {/* <LeftBar>{showSearchBtn ? <SearchBtn /> : null}</LeftBar> */}
-      </div>
+      {/* </div> */}
       <div style={{ flex: '0 1 100vw', margin: '0 2vw 0 0' }}>
         <InnerForm selectedTab={handleTabSelected} constructionID={props.match.params.id} />
       </div>
+      <style>{`
+        .left-bar {
+          margin: 0 2vw 0 0;
+        }
+      `}</style>
     </div>
   );
 };

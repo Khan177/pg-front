@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { LeftBar, StyledButton } from '../../../styles/styles';
 import PanelDesign from './PanelDesign';
 import BreadCrumbs from '../../../components/BreadCrumbs/BreadCrumbs';
 import { TitleLogo } from '../../../components/Styles/ComponentsStyles';
 import { JobTitle } from '../../../components/Styles/StyledBlocks';
 import { ButtonGroup } from '../../../components/Styles/ButtonStyles';
+import SearchBtn from '../../Base/Partners/LeftBar/SearchBtn';
+import FilterBar from '../../Base/OutdoorFurniture/OutdoorFurnitureList/FilterBar/FilterBar';
 
 const Design = () => {
+  const [block, setBlock] = useState(0);
+
   const links = [
     { id: 'home', value: 'Главная' },
     { id: 'installation', value: 'Базы' },
     { id: 'constructions', value: 'Конструкции' },
   ];
+
   return (
-    <div style={{ display: 'flex' }}>
-      <LeftBar className="left-bar" />
+    <div style={{ display: 'flex', height: '100%' }}>
+      <LeftBar className="left-bar">
+        <SearchBtn />
+      </LeftBar>
       <div style={{ width: '100%' }}>
         <BreadCrumbs links={links} />
         <div
@@ -35,9 +42,17 @@ const Design = () => {
             <JobTitle>Проект - FF5800</JobTitle>
           </div>
           <ButtonGroup>
-            <StyledButton backgroundColor="#D42D11">Повторное размещение</StyledButton>
-            <StyledButton backgroundColor="#2C5DE5">Выгрузка снарядки</StyledButton>
-            <StyledButton backgroundColor="#FF5800">Смета</StyledButton>
+            {block === 0 ? (
+              <>
+                <StyledButton backgroundColor="#D42D11">Повторное размещение</StyledButton>
+                <StyledButton backgroundColor="#2C5DE5">Выгрузка снарядки</StyledButton>
+                <StyledButton backgroundColor="#FF5800">Смета</StyledButton>
+              </>
+            ) : (
+              <>
+                <StyledButton backgroundColor="#2C5DE5">Создать дизайн</StyledButton>
+              </>
+            )}
           </ButtonGroup>
         </div>
         <div style={{ display: 'flex', margin: '0 2vw 0 0' }}>
@@ -63,7 +78,9 @@ const Design = () => {
                 </div>
                 <div style={{ margin: '4% 0', display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ fontSize: '14px' }}>Ответственный менеджер</span>
-                  <span style={{ fontSize: '14px', fontWeight: '600' }}>Иванов Иван</span>
+                  <span style={{ fontSize: '14px', fontWeight: '600', textAlign: 'right' }}>
+                    Иванов Иван
+                  </span>
                 </div>
               </div>
             </div>
@@ -78,7 +95,9 @@ const Design = () => {
                 </div>
                 <div style={{ margin: '4% 0', display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ fontSize: '14px' }}>Сектор деятельности</span>
-                  <span style={{ fontSize: '14px', fontWeight: '600', textAlign: 'right' }}>Безалкогольные напитки</span>
+                  <span style={{ fontSize: '14px', fontWeight: '600', textAlign: 'right' }}>
+                    Безалкогольные напитки
+                  </span>
                 </div>
               </div>
             </div>
@@ -98,9 +117,10 @@ const Design = () => {
               </div>
             </div>
           </div>
-          <PanelDesign style={{ flex: '0 1 50vw' }} />
+          <PanelDesign style={{ flex: '0 1 50vw' }} setBlock={setBlock} />
         </div>
       </div>
+      {block === 0 ? null : <FilterBar />}
       <style>
         {`
           .left-bar {
