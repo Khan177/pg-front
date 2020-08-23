@@ -31,7 +31,6 @@ export const FilterMenu = styled.div`
   width: 25vw;
   border-right: 1px solid #d3dff0;
   background-color: #f5f7fa;
-  margin-top: 2px;
 `;
 
 export const FilterText = styled.h6`
@@ -46,7 +45,8 @@ export const FilterText = styled.h6`
 
 export const SearchTitle = styled.div`
   width: 100%;
-  height: 57px;
+  height: 60px;
+  margin: 1vw 0 0 0;
 `;
 
 export const Form = styled.form`

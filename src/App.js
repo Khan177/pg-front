@@ -13,6 +13,7 @@ import Location from "./containers/Base/Location/Location";
 import PartnerGeneralInfo from "./containers/Base/Partners/TabPanelForm/PartnerGeneralInfo";
 
 import Design from './containers/Installations/Design/Design';
+import BatchPlacement from "./containers/Sales/BatchPlacement/BatchPlacement";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Header />
         </header>
         <Switch>
+          <Route path='/sales/batch_placement' component={BatchPlacement} />
           <Route path='/installations/design' component={Design} />
           <Route path="/base/partners" exact component={Partners} />
           <Route

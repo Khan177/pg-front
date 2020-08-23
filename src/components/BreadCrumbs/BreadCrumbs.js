@@ -12,7 +12,7 @@ export default function BreadCrumbs({ links }) {
       </Link>
       {links.map((link, i) => {
         return (
-          <Link style={{ color: '#8AA1C1', padding: '0 5px' }} to={`/${link.id}`} key={i}>
+          <Link style={{ color: '#8AA1C1', padding: '0 2px' }} to={`/${link.id}`} key={i}>
             {link.value} {i === 2 ? null : <span>/</span>}
           </Link>
         );

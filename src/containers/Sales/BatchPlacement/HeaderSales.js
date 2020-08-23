@@ -6,7 +6,7 @@ import { HeaderWrapper, HeaderTitleWrapper, StyledButton } from '../../../styles
 import { ButtonGroup } from '../../../components/Styles/ButtonStyles';
 import { JobTitle } from '../../../components/Styles/StyledBlocks';
 
-export default function HeaderList() {
+const HeaderSales = () => {
   const history = useHistory();
 
   const routeChange = () => {
@@ -15,9 +15,9 @@ export default function HeaderList() {
   };
 
   const links = [
-    { id: 'home', value: 'Главная' },
-    { id: 'installation', value: 'Базы' },
-    { id: 'constructions', value: 'Конструкции' },
+    { id: '', value: 'Главная' },
+    { id: 'sales', value: 'Продажи' },
+    { id: 'sales/batch_placement', value: 'Пакетное размещение' },
   ];
 
   return (
@@ -26,14 +26,16 @@ export default function HeaderList() {
       <HeaderWrapper>
         <HeaderTitleWrapper>
           <TitleLogo />
-          <JobTitle>Конструкции</JobTitle>
+          <JobTitle>Пакетное размещение</JobTitle>
         </HeaderTitleWrapper>
         <ButtonGroup>
-          <StyledButton backgroundColor="#008556" onClick={routeChange}>
-            Создать конструкцию
+          <StyledButton backgroundColor="#FF5800" onClick={routeChange}>
+            Создать отчет
           </StyledButton>
         </ButtonGroup>
       </HeaderWrapper>
     </>
   );
 }
+
+export default HeaderSales;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputTitle, Row } from '../../../../../Styles/StyledBlocks';
+import { InputTitle, Row, BlockBody } from '../../../../../Styles/StyledBlocks';
 import { RedDeleteBtn } from '../../../../../Styles/ButtonStyles';
 import red_can from '../../../../../../img/outdoor_furniture/red_can.svg';
 import styled from 'styled-components';
@@ -13,9 +13,9 @@ const InputWrapper = styled.div`
 export default function ExtraRow(props) {
   const current = useSelector((state) => state.construction.currentConstruction);
   const dispatch = useDispatch();
-  console.log(current)
+  console.log(current);
   return (
-    <Row style={{ justifyContent: 'spaceBetween', padding: '0 7px 0 0' }}>
+    <Row>
       <InputWrapper>
         <InputTitle>Формат</InputTitle>
         <InputAnchor

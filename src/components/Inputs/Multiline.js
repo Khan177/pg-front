@@ -11,7 +11,7 @@ export default function Multiline(props) {
       value={props.value}
       onChange={props.onChange}
       variant="outlined"
-      style={{ marginBottom: 20, width: '100%', background: ' white' }}
+      style={{ width: '100%', background: ' white' }}
     />
   );
 }

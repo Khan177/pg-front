@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import FilterBar from "./FilterBar/FilterBar";
 import Table from "../../../components/Table";
 import SearchBtn from "./LeftBar/SearchBtn";
-import LeftBar from "../../../components/LeftBar/LeftBar";
+import { LeftBar } from '../../../styles/styles';
 import {
   getPartnersData,
   getPartnersFiltered,
@@ -37,6 +37,7 @@ const Partners = () => {
         {`
           .partners {
             display: flex;
+            height: 100%;
           }
           .partners-table-bar {
             padding: 2% 3%;

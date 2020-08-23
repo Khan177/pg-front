@@ -14,7 +14,7 @@ export default function Intro() {
       <BlockTitle>Общая информация</BlockTitle>
       <BlockBody>
         <Row>
-          <div style={{ width: '36%' }}>
+          <div style={{ width: '35%' }}>
             <InputTitle>Город</InputTitle>
             <InputAnchor
               value={current.city || ''}
@@ -22,7 +22,7 @@ export default function Intro() {
               onChange={(e) => dispatch(getConstructionProps('city', e.target.value))}
             />
           </div>
-          <div style={{ width: '36%' }}>
+          <div style={{ width: '35%' }}>
             <InputTitle>Район</InputTitle>
             <InputAnchor
               value={current.district || ''}
@@ -30,7 +30,7 @@ export default function Intro() {
               onChange={(e) => dispatch(getConstructionProps('district', e.target.value))}
             />
           </div>
-          <div style={{ width: '20%' }}>
+          <div style={{ width: '22%' }}>
             <InputTitle>Почтовый индекс</InputTitle>
             <InputAnchor
               value={current.postalCode || ''}
@@ -40,7 +40,7 @@ export default function Intro() {
           </div>
         </Row>
         <Row>
-          <div style={{ width: '36%' }}>
+          <div style={{ width: '35%' }}>
             <InputTitle>Владелец</InputTitle>
             <InputAnchor
               value={current.owner || ''}
@@ -48,7 +48,7 @@ export default function Intro() {
               onChange={(e) => dispatch(getConstructionProps('owner', e.target.value))}
             />
           </div>
-          <div style={{ width: '60%' }}>
+          <div style={{ width: '61%' }}>
             <InputTitle>Маркетинговый адрес</InputTitle>
             <InputAnchor
               value={current.marketingAddress || ''}
@@ -58,7 +58,7 @@ export default function Intro() {
           </div>
         </Row>
         <Row>
-          <div style={{ width: '30%' }}>
+          <div style={{ width: '35%' }}>
             <InputTitle>Дата создания</InputTitle>
             <DatePicker
               value={current.dateOfCreation || new Date()}
@@ -67,7 +67,7 @@ export default function Intro() {
               }}
             />
           </div>
-          <div style={{ width: '66%' }}>
+          <div style={{ width: '61%' }}>
             <InputTitle>Комментарий</InputTitle>
             <Multiline
               value={current.generalComment || ''}

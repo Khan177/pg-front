@@ -6,7 +6,7 @@ import React from 'react';
 
 export default function DatePicker(props) {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
-  
+
   const handleDateChange = (date) => {
     setSelectedDate(date);
   };
@@ -14,7 +14,7 @@ export default function DatePicker(props) {
   return (
     <MuiPickersUtilsProvider utils={DateFnsUtils}>
       <KeyboardDatePicker
-        style={{ width: '100%', marginBottom: 20 }}
+        style={{ width: '100%', background: 'white' }}
         inputVariant="outlined"
         format="dd/MM/yyyy"
         KeyboardButtonProps={{

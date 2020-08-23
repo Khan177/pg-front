@@ -27,7 +27,7 @@ export default function Sides() {
 
   return (
     <Large>
-      <BlockTitle style={{ padding: '20px 26px 10px 24px' }}>
+      <BlockTitle>
         <BlockTitleText>Стороны конструкции</BlockTitleText>
         <BtnSuccess onClick={addClickHandler}>Добавить еще</BtnSuccess>
       </BlockTitle>

@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-  ButtonGroup,
-  GreenButton,
-  RedButton,
-  SecondaryBtnStyled,
-} from '../../../../components/Styles/ButtonStyles';
+import { ButtonGroup } from '../../../../components/Styles/ButtonStyles';
 import { JobTitle } from '../../../../components/Styles/StyledBlocks';
 import {
   updateConstructionProps,
@@ -14,6 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
 import { TitleLogo } from '../../../../components/Styles/ComponentsStyles';
 import BreadCrumbs from '../../../../components/BreadCrumbs/BreadCrumbs';
+import { StyledButton, HeaderWrapper, HeaderTitleWrapper } from '../../../../styles/styles';
 
 export default function TabPanelHeader(props) {
   const history = useHistory();
@@ -34,25 +30,14 @@ export default function TabPanelHeader(props) {
   return (
     <>
       <BreadCrumbs links={links} />
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          margin: '2vh 0 2vh 0',
-        }}
-      >
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'space-between',
-          }}
-        >
+      <HeaderWrapper>
+        <HeaderTitleWrapper>
           <TitleLogo />
           <JobTitle>Конструкция номер</JobTitle>
-        </div>
+        </HeaderTitleWrapper>
         <ButtonGroup>
-          <GreenButton
+          <StyledButton
+            backgroundColor="#008556"
             onClick={() => {
               if (props.constructionID) {
                 dispatch(updateConstructionProps(state));
@@ -63,11 +48,11 @@ export default function TabPanelHeader(props) {
             }}
           >
             Сохранить
-          </GreenButton>
-          <SecondaryBtnStyled>Создать сторону</SecondaryBtnStyled>
-          <RedButton>Демонтировать</RedButton>
+          </StyledButton>
+          <StyledButton backgroundColor="#2c5de5">Создать сторону</StyledButton>
+          <StyledButton backgroundColor="#d42d11">Демонтировать</StyledButton>
         </ButtonGroup>
-      </div>
+      </HeaderWrapper>
     </>
   );
 }

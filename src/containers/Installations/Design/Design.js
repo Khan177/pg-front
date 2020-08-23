@@ -22,14 +22,14 @@ const Design = () => {
       <LeftBar className="left-bar">
         <SearchBtn />
       </LeftBar>
-      <div style={{ width: '100%' }}>
+      <div style={{ width: '100%', margin: '0 2vw 0 0' }}>
         <BreadCrumbs links={links} />
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            margin: '2vw 2vw 2vw 0',
+            margin: '2vw 0',
           }}
         >
           <div
@@ -55,7 +55,7 @@ const Design = () => {
             )}
           </ButtonGroup>
         </div>
-        <div style={{ display: 'flex', margin: '0 2vw 0 0' }}>
+        <div style={{ display: 'flex' }}>
           <div className="project-info">
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div>
@@ -117,10 +117,12 @@ const Design = () => {
               </div>
             </div>
           </div>
-          <PanelDesign style={{ flex: '0 1 50vw' }} setBlock={setBlock} />
+          <PanelDesign style={{ flex: '0 1 auto' }} setBlock={setBlock} />
+          
+        {block === 0 ? null : <FilterBar />}
         </div>
       </div>
-      {block === 0 ? null : <FilterBar />}
+      {/* {block === 0 ? null : <FilterBar />} */}
       <style>
         {`
           .left-bar {
@@ -131,7 +133,7 @@ const Design = () => {
             border: 1px solid #d3dff0;
             height: 100%;
             padding: 1.5%;
-            flex: 0 1 30vw;
+            flex: 0 1 auto;
             margin: 0 2vw 0 0;
           }
           .project-info p {
