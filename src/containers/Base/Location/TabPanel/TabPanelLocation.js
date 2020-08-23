@@ -15,7 +15,7 @@ const panel2 = <HistoryTable />
 
 export default function InnerForm(props) {
   return (
-    <form style={{ width: '100%' }}>
+    <form style={{ width: '100%', margin: '0 2vw 0 0' }}>
       <TabPanelHeaderLocation locationID={props.locationID} />
       <div>
         <STabs
