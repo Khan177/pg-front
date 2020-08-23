@@ -10,7 +10,7 @@ export default function HeaderList() {
   const history = useHistory();
 
   const routeChange = () => {
-    let path = `/base/construction`;
+    let path = `/base/locations/location`;
     history.push(path);
   };
 

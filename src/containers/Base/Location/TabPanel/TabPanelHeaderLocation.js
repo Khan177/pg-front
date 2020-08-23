@@ -1,14 +1,12 @@
 import React from 'react';
-import {
-  ButtonGroup,
-  Controls,
-  GreenButton,
-  SecondaryBtnStyled,
-} from '../../../../components/Styles/ButtonStyles';
+import { ButtonGroup } from '../../../../components/Styles/ButtonStyles';
 import { JobTitle } from '../../../../components/Styles/StyledBlocks';
 import { updateLocationProps, addLocation } from '../../../../store/actions/locationActions';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import BreadCrumbs from '../../../../components/BreadCrumbs/BreadCrumbs';
+import { HeaderWrapper, HeaderTitleWrapper, StyledButton } from '../../../../styles/styles';
+import { TitleLogo } from '../../../../components/Styles/ComponentsStyles';
 
 const TabPanelHeaderLocation = (props) => {
   const history = useHistory();
@@ -20,26 +18,38 @@ const TabPanelHeaderLocation = (props) => {
     history.push(path);
   };
 
-  console.log(state);
+  const links = [
+    { id: '', value: 'Главная' },
+    { id: 'base', value: 'Базы' },
+    { id: 'base/locations', value: 'Список проектов' },
+  ];
+
   return (
-    <Controls>
-      <JobTitle>Местоположение {state.code}</JobTitle>
-      <ButtonGroup>
-        <GreenButton
-          onClick={() => {
-            if (props.locationID) {
-              dispatch(updateLocationProps(state));
-            } else {
-              dispatch(addLocation(state));
-            }
-            routeChange();
-          }}
-        >
-          Сохранить
-        </GreenButton>
-        <SecondaryBtnStyled>Добавить конструкцию</SecondaryBtnStyled>
-      </ButtonGroup>
-    </Controls>
+    <>
+      <BreadCrumbs links={links} />
+      <HeaderWrapper>
+        <HeaderTitleWrapper>
+          <TitleLogo />
+          <JobTitle>Местоположение {state.code}</JobTitle>
+        </HeaderTitleWrapper>
+        <ButtonGroup>
+          <StyledButton
+            backgroundColor="#008556"
+            onClick={() => {
+              if (props.locationID) {
+                dispatch(updateLocationProps(state));
+              } else {
+                dispatch(addLocation(state));
+              }
+              routeChange();
+            }}
+          >
+            Сохранить
+          </StyledButton>
+          <StyledButton backgroundColor="#2c5de5">Добавить конструкцию</StyledButton>
+        </ButtonGroup>
+      </HeaderWrapper>
+    </>
   );
 };
 
