@@ -17,7 +17,7 @@ export const Title = styled.h1`
 `;
 
 export const Breadscrumbs = styled.div`
-  margin: 2vw 0 2vw 0;
+  margin: 2vw 0;
   font-size: 13px;
 `;
 

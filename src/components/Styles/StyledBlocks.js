@@ -30,7 +30,7 @@ export const Large = styled.div`
 export const BlockTitle = styled.div`
   text-transform: uppercase;
   font-family: 'SF UI Display Medium', sans-serif;
-  padding: 2vw;
+  padding: 1.5vw;
   border-bottom: 1px solid #d3dff0;
   color: #003360;
   font-weight: 600;
@@ -47,7 +47,7 @@ export const BlockTitleText = styled.h4`
   font-size: 14px;
 `;
 export const BlockBody = styled.div`
-  padding: 2vw;
+  padding: 0 1.5vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,7 +56,8 @@ export const BlockBody = styled.div`
 export const Row = styled.div`
   width: 100%;
   display: flex;
-  align-items: center;
+  padding: 1.5vw 0;
+  align-items: flex-end;
   justify-content: space-between;
 `;
 
@@ -69,6 +70,7 @@ export const Column = styled.div`
 
 export const InputTitle = styled.h4`
   font-size: 14px;
+  font-weight: 600;
   line-height: 16px;
   text-align: start;
   color: #1a1a1a;

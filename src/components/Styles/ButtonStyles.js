@@ -21,8 +21,8 @@ export const RedButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 157px;
-  height: 40px;
+  width: 160px;
+  height: 60px;
   background: #d42d11;
   border-radius: 4px;
   margin: 0 0 0 40px;
@@ -130,7 +130,7 @@ export const BtnSuccess = styled.button`
 `;
 
 export const RedDeleteBtn = styled.button`
-  height: 40px;
+  height: 55px;
   border: 1px solid #d42d11;
   box-sizing: border-box;
   border-radius: 4px;

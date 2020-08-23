@@ -1,13 +1,10 @@
-import BreadCrumbs from "../../../components/BreadCrumbs/BreadCrumbs";
-import {
-  ListHeader,
-  ListTitle,
-  StyledButton,
-  Title,
-  TitleLogo,
-} from "../../../components/Styles/ComponentsStyles";
-import React from "react";
-import { useHistory } from "react-router";
+import BreadCrumbs from '../../../components/BreadCrumbs/BreadCrumbs';
+import { TitleLogo } from '../../../components/Styles/ComponentsStyles';
+import React from 'react';
+import { useHistory } from 'react-router';
+import { JobTitle } from '../../../components/Styles/StyledBlocks';
+import { ButtonGroup } from '../../../components/Styles/ButtonStyles';
+import { StyledButton, HeaderWrapper, HeaderTitleWrapper } from '../../../styles/styles';
 
 export default function HeaderList() {
   const history = useHistory();
@@ -18,21 +15,25 @@ export default function HeaderList() {
   };
 
   const links = [
-    { id: "home", value: "Главная" },
-    { id: "installation", value: "Базы" },
-    { id: "constructions", value: "Список местоположений" },
+    { id: '', value: 'Главная' },
+    { id: 'base', value: 'Базы' },
+    { id: 'base/locations', value: 'Список местоположений' },
   ];
 
   return (
     <>
       <BreadCrumbs links={links} />
-      <ListHeader>
-        <ListTitle>
+      <HeaderWrapper>
+        <HeaderTitleWrapper>
           <TitleLogo />
-          <Title>Список местоположений</Title>
-        </ListTitle>
-        <StyledButton onClick={routeChange}>Создать</StyledButton>
-      </ListHeader>
+          <JobTitle>Список местоположений</JobTitle>
+        </HeaderTitleWrapper>
+        <ButtonGroup>
+          <StyledButton backgroundColor="#008556" onClick={routeChange}>
+            Создать новое
+          </StyledButton>
+        </ButtonGroup>
+      </HeaderWrapper>
     </>
   );
 }

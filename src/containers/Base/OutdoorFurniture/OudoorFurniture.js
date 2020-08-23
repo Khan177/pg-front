@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import LeftBar from '../../../components/LeftBar/LeftBar';
+import { LeftBar } from '../../../styles/styles';
 import FilterBar from './OutdoorFurnitureList/FilterBar/FilterBar';
-import SearchButton from '../../../components/ButtonGroup/SearchButton';
+import SearchBtn from '../../Base/Partners/LeftBar/SearchBtn';
 import HeaderList from './HeaderList';
 import {
   getOutdoorFurnitureData,
@@ -10,7 +10,6 @@ import {
   getCities,
   getDistricts,
   getPostalCodes,
-  setTable,
 } from '../../../store/actions/actions';
 import Table from '../../../components/Table';
 
@@ -38,22 +37,9 @@ export default function OutdoorFurniture() {
 
   return (
     <div className="outdoor-furniture">
-      <style>
-        {`
-          .outdoor-furniture {
-            display: flex;
-          }
-          .outdoor-table-bar {
-            padding: 2% 3%;
-            width:70vw
-          }
-        `}
-      </style>
-      <div style={{ flex: '0 1 5vw', margin: '0 0 0 0' }}>
-        <LeftBar>
-          <SearchButton />
-        </LeftBar>
-      </div>
+      <LeftBar>
+        <SearchBtn />
+      </LeftBar>
       <FilterBar />
       <div className="outdoor-table-bar">
         <HeaderList />
@@ -68,6 +54,18 @@ export default function OutdoorFurniture() {
           handleChangeFastSearch={(e) => setFastSearch(e.target.value)}
         />
       </div>
+      <style>
+        {`
+          .outdoor-furniture {
+            display: flex;
+            height: 100%;
+          }
+          .outdoor-table-bar {
+            padding: 2% 3%;
+            width: 70vw;
+          }
+        `}
+      </style>
     </div>
   );
 }

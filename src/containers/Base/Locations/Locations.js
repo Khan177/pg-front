@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SearchButton from '../../../components/ButtonGroup/SearchButton';
-import LeftBar from '../../../components/LeftBar/LeftBar';
+import { LeftBar } from '../../../styles/styles';
 import FilterByLocations from './FilterByLocations';
 import FilterByOrders from './FilterByOrders';
 import FilterByParameters from './FilterByParameters';
@@ -17,7 +16,7 @@ import {
 } from '../../../store/actions/locationsActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { FilterMenu, SearchTitle, FilterText } from '../../../components/Styles/StyledFilters';
-import ButtonGroup from '../../../components/ButtonGroup/ButtonGroup';
+import SearchBtn from '../Partners/LeftBar/SearchBtn';
 
 const Locations = (props) => {
   const dispatch = useDispatch();
@@ -36,15 +35,15 @@ const Locations = (props) => {
             display:flex;
           }
           .locations-table-bar{
-            display:flex;
-            flex-direction:column;
-            padding:2%;
-            width:60vw
+            display: flex;
+            flex-direction: column;
+            width: 70vw;
+            margin: 0 2vw;
           }
         `}
       </style>
       <LeftBar>
-        <SearchButton />
+        <SearchBtn />
       </LeftBar>
       <FilterMenu>
         <SearchTitle>

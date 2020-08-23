@@ -4,7 +4,7 @@ import { BaseHoverBlockLink, HeaderMenuLink, DropdownMenu, DropdownContent } fro
 const HeaderMenu = () => {
   return (
     <>
-      <HeaderMenuLink to={'/'}>Продажи</HeaderMenuLink>
+      <HeaderMenuLink to={'/sales/batch_placement'}>Продажи</HeaderMenuLink>
       <HeaderMenuLink to={'/installations/design'}>Монтажи</HeaderMenuLink>
       <DropdownMenu>
         <HeaderMenuLink to={'/base'}>Базы</HeaderMenuLink>

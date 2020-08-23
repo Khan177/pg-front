@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  BlockBody,
-  Row,
-  Medium,
-  BlockTitle,
-  InputTitle,
-} from '../../../../Styles/StyledBlocks';
+import { BlockBody, Row, Medium, BlockTitle, InputTitle } from '../../../../Styles/StyledBlocks';
 import GroupRadio from '../../../../Inputs/GroupRadio';
 import InputAnchor from '../../../../Inputs/InputAnchor';
 import { SecondaryBtnStyled } from '../../../../Styles/ButtonStyles';
@@ -20,7 +14,7 @@ export default function Details() {
       <BlockTitle>Детали конструкции</BlockTitle>
       <BlockBody>
         <Row>
-          <div style={{ width: '47%' }}>
+          <div style={{ width: '48%' }}>
             <InputTitle>Семейство конструкции</InputTitle>
             <InputAnchor
               value={current.familyConstruction || ''}
@@ -28,7 +22,7 @@ export default function Details() {
               onChange={(e) => dispatch(getConstructionProps('familyConstruction', e.target.value))}
             />
           </div>
-          <div style={{ width: '47%' }}>
+          <div style={{ width: '48%' }}>
             <InputTitle>Доступность конструкции</InputTitle>
             <InputAnchor
               value={current.availabilityConstruction || ''}
@@ -40,7 +34,7 @@ export default function Details() {
           </div>
         </Row>
         <Row>
-          <div style={{ width: '47%' }}>
+          <div style={{ width: '48%' }}>
             <InputTitle>Подсемейство конструкции</InputTitle>
             <InputAnchor
               value={current.subfamilyConstruction || ''}
@@ -50,7 +44,7 @@ export default function Details() {
               }
             />
           </div>
-          <div style={{ width: '47%' }}>
+          <div style={{ width: '48%' }}>
             <InputTitle>Модель</InputTitle>
             <InputAnchor
               value={current.model || ''}

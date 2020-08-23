@@ -21,7 +21,7 @@ export default function TechParams() {
       <BlockTitle>Технические параметры</BlockTitle>
       <BlockBody>
         <Row>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Техническая проблема</InputTitle>
             <InputAnchor
               value={current ? current.techProblem : ""}
@@ -30,7 +30,7 @@ export default function TechParams() {
               }
             />
           </div>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Комментарий</InputTitle>
             <InputAnchor
               value={current ? current.techComment : ""}
@@ -41,7 +41,7 @@ export default function TechParams() {
           </div>
         </Row>
         <Row>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Статус по подключению</InputTitle>
             <InputAnchor
               value={current ? current.connectionStatus : ""}
@@ -50,7 +50,7 @@ export default function TechParams() {
               }
             />
           </div>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Пометка</InputTitle>
             <InputAnchor
               value={current ? current.markup : ""}

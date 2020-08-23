@@ -9,13 +9,23 @@ export default function Other() {
   const classes = useStyles();
 
   return (
-    <Container className={classes.root}>
-      <BlockWrapper>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+      <div style={{ flex: '1 1 45%', margin: '1vw 1vw 1vw 0' }}>
         <Others style={{ minHeight: 800 }} />
+      </div>
+      <div style={{ flex: '1 1 45%', margin: '1vw 0 1vw 1vw' }}>
         <Medium>
           <ContactMap />
         </Medium>
-      </BlockWrapper>
-    </Container>
+      </div>
+    </div>
+    // <Container className={classes.root}>
+    //   <BlockWrapper>
+    //     <Others style={{ minHeight: 800 }} />
+    //     <Medium>
+    //       <ContactMap />
+    //     </Medium>
+    //   </BlockWrapper>
+    // </Container>
   );
 }

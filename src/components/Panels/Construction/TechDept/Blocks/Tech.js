@@ -20,7 +20,7 @@ export default function Tech() {
       <BlockTitle>Общие параметры</BlockTitle>
       <BlockBody>
         <Row>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Экипаж</InputTitle>
             <InputAnchor
               value={current ? current.crew : ""}
@@ -28,7 +28,7 @@ export default function Tech() {
               onChange={(e) => dispatch(getConstructionProps("crew", e.target.value))}
             />
           </div>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Инвентарный номер</InputTitle>
             <InputAnchor
               value={current ? current.generalInventoryNumber : ""}
@@ -40,7 +40,7 @@ export default function Tech() {
           </div>
         </Row>
         <Row>
-          <div style={{ width: "49%" }}>
+          <div style={{ width: "48%" }}>
             <InputTitle>Номер телефона конструкции</InputTitle>
             <InputAnchor
               value={current ? current.constructionPhoneNumber : ""}
