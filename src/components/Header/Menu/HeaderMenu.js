@@ -13,6 +13,7 @@ const HeaderMenu = () => {
           <BaseHoverBlockLink to="/base/construction">Конструкции</BaseHoverBlockLink>
           <BaseHoverBlockLink to="/base/partners">Контрагенты</BaseHoverBlockLink>
           <BaseHoverBlockLink to="/base/locations">Список местоположений</BaseHoverBlockLink>
+          <BaseHoverBlockLink to="/base/documents/agreements">Список проектов</BaseHoverBlockLink>
         </DropdownContent>
       </DropdownMenu>
       <HeaderMenuLink to={'/'}>Отчеты</HeaderMenuLink>

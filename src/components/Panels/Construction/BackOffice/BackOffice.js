@@ -3,7 +3,7 @@ import Details from './Blocks/Details';
 import Intro from './Blocks/Intro';
 import Sides from './Blocks/Sides';
 
-const BackOffice = (props) => {
+const BackOffice = () => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <div style={{ flex: '1 0 45%', margin: '1vw 1vw 1vw 0' }}>

@@ -11,6 +11,7 @@ import Construction from "./containers/Base/Construction/Construction";
 import Locations from "./containers/Base/Locations/Locations";
 import Location from "./containers/Base/Location/Location";
 import PartnerGeneralInfo from "./containers/Base/Partners/TabPanelForm/PartnerGeneralInfo";
+import Agreements from "./containers/Base/Documents/Agreements/Agreements";
 
 import Design from './containers/Installations/Design/Design';
 import BatchPlacement from "./containers/Sales/BatchPlacement/BatchPlacement";
@@ -39,6 +40,7 @@ const App = () => {
           />
           <Route path="/base/locations" exact component={Locations} />
           <Route path="/base/locations/location/:id?" exact component={Location} />
+          <Route path="/base/documents/agreements" exact component={Agreements} />
         </Switch>
       </BrowserRouter>
     </>
